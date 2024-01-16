@@ -1,0 +1,12 @@
+.just-text {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.box-img {
+
+    /* border: 2px solid black; */
+    border-radius: 60%;
+    padding: 38px;
+    background: black;
+}

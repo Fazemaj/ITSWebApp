@@ -1,0 +1,64 @@
+/* .h3 {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 120%;
+} */
+
+.header {
+    height: 10%;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-container {
+    background: #2641ed;
+}
+
+.img-container {
+    width: 200px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.infromation {
+    font-size: 15px;
+}
+
+.team-imgs {
+    display: flex;
+
+}
+
+.team-member p {
+    margin: 5px;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 25px;
+}
+
+.team-member p:first-child {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.secondary-title {
+    /* color: #050505; */
+    /* color: #fff; */
+    text-align: left;
+    font-family: General Sans, sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 61px;
+    margin-bottom: 10px;
+}
+
+.text-block{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 27px;
+    width: 600px;
+  }

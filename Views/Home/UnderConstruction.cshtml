@@ -1,0 +1,260 @@
+<style>
+    * {
+        color: black;
+    }
+
+    body{
+        background:#ededed
+    }
+
+    .section-header{
+        padding-top: 40px;
+        background: #ededed;
+    }
+
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .page-wrap {
+        overflow: hidden;
+    }
+
+    .hero {
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: 9;
+    }
+
+    .md-skin-dark {
+        color: rgba(255, 255, 255, .9);
+    }
+
+    .hero .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    .home {
+        margin-left: auto;
+        display: flex;
+    }
+
+    .home a {
+
+        font-size: 30px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold; 
+        margin-left: auto;
+    @* background: #363333; *@
+        background-color: #2e3c55;
+        padding: 23px 18px;
+        align-self: center;
+        border-radius: 45px;
+        margin-right: 80px;
+        box-shadow: 2px 2px 10px #00000054;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    .home a:hover{
+
+        transform: scale(1.01);
+        @* transition: transform 0.2s, background 0.4s; *@
+        background: #000;
+        box-shadow: 2px 2px 12px 3px #00000054;
+        transform: scale(1.02);
+    }
+
+    @* header {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 20px 70px;
+    } *@
+
+    .footer__left {
+        display: flex;
+        padding: 20px;
+        justify-content: space-between;
+        font-size: 20px;
+    }
+
+    .footer__left a {
+        font-size: 20px;
+    }
+
+    span{
+        display:flex;
+    }
+
+    .main-section{
+
+        height: 400px;
+    }
+
+    .copyright {
+        color: black;
+        font-size: 20px;
+        font-weight: 400;
+        padding-bottom: 40px;
+    }
+
+    @* .contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    } *@
+
+    .social{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .social a {
+        margin-right: 10px;
+    }
+
+    .footer__left > span + span:before {
+        content: '|';
+        display: inline-block;
+        margin: 0 40px;
+    }
+    
+    .section-footer{
+        background: #efefed;
+    }
+
+    .container-footer{
+        padding-top:30px;
+    }
+
+    .main-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1140px;
+}
+
+.text-block {
+    max-width: 830px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 21px;
+    line-height: 32px;
+}
+
+@@media screen and (max-width: 990px){
+
+    .main-title {
+        font-size: 35px;
+        font-weight: 600;
+        line-height: 40px;
+    }
+
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container div {
+        @* margin-left: auto; *@
+        @* margin-right: auto; *@
+        @* max-width: 200px; *@
+    }
+    .container div:nth-child(2){
+        margin-top: 20px;
+    }
+
+    .footer__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 20px;
+    }
+
+    .footer__left > span + span:before {
+        content: '|';
+        display: none;
+        @* margin: 0 40px; *@
+    }
+}
+
+</style>
+
+<div class="page-wrap">
+    <div class="content">
+        <div class="hero">
+            <div class="section-header">
+                <div class="container">
+                    <div class="img-container">
+                        <a id="its-a" class="navbtn its logo" href="/">
+                            <img id="logo-its" src="~/imgs/LogoITS.png" alt="ITS-logo">
+                        </a>
+                    </div>
+                    <div class="home">
+                        <a asp-action="Index">Go to Home page</a>
+                    </div>
+                </div>
+            </div>
+            <div class="main-section hero" >
+                <div class="section">
+                <div class="main-container">
+                    <h1 class="main-title">Under construction</h1>
+                    <p class="text-block">Our website is currently undergoing scheduled maintenance. We should be back shortly.Thank you for your patience.</p>
+                </div>
+            </div>
+            </div>
+            <div class="section-footer">
+                <div class="container-footer">
+                    <div class="container contact">
+                        <div class="footer__left">
+                            <span><a href="tel:+355 69 260 3591" class="footer-link">+355 69 260 3591</a></span>
+                            <span style="font-size: 20px;" class="footer-link">info@itechsolutions.al</span>
+                            <span>
+                                <div class="social">
+                                    <a href="https://www.linkedin.com/company/integrated-tech-solutions-its/" target="_blank"
+                                    class="socials-div w-inline-block">
+                                    <img style="height:30px; width:30px;" src="~/imgs/linkedin.png"
+                                    loading="lazy" alt="" class="">
+                                    </a>
+                                    <a href="https://www.facebook.com/itechsalbania/" target="_blank"
+                                    class="socials-div w-inline-block">
+                                    <img style="height:30px; width:30px;" src="~/imgs/facebook.png" loading="lazy" alt="" class="social-icon">
+                                        </a>
+                                    <a href="https://www.instagram.com/i_techsolutions.al/" target="_blank"
+                                    class="socials-div w-inline-block">
+                                    <img style="height:30px; width:30px;" src="~/imgs/instagram.png"
+                                    loading="lazy" alt="">
+                                    </a>
+                                </div>
+                            </span>
+				        </div>
+                    </div>
+                    <div class="container footer">
+                        <div class="copyright">
+                            &copy; 2022 Integrated Tech Solutions – All Rights reserved
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

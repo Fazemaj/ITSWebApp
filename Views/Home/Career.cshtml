@@ -1,0 +1,543 @@
+<style>
+    .carrer-container img {
+        width: 260px;
+        height: 260px;
+    }
+
+    .form-block {
+        max-width: 580px;
+        min-width: 200px;
+    }
+
+    .w-form {
+        margin: 35px 0 15px;
+        padding: 33px;
+        border-radius: 16px;
+        background: black;
+    }
+
+    .form-field {
+        background-color: rgba(255, 255, 255, 0);
+        border: 0 solid #000;
+        border-top-color: #4d4d4d;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        margin-bottom: 40px;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+
+    .w-input,
+    .w-select {
+        width: 100%;
+        height: 38px;
+        vertical-align: middle;
+        border: 1px solid #ccc;
+        margin-bottom: 22px;
+        padding: 8px 12px;
+        font-size: 14px;
+        line-height: 1.42857;
+        display: block;
+    }
+
+    .Positions {
+
+        position: relative;
+        width: 240px;
+    }
+
+    .Positions select {
+        display: none;
+        /*hide original SELECT element:*/
+    }
+
+    .select-selected {
+        background: #292a2a;
+    }
+
+    /*style the arrow inside the select element:*/
+    .select-selected:after {
+        position: absolute;
+        content: "";
+        top: 14px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-color: #fff transparent transparent transparent;
+    }
+
+    /*point the arrow upwards when the select box is open (active):*/
+    .select-selected.select-arrow-active:after {
+        border-color: transparent transparent #fff transparent;
+        top: 7px;
+    }
+
+    /*style the items (options), including the selected item:*/
+    .select-items div,
+    .select-selected {
+        color: #ffffff;
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    /*style items (options):*/
+    .select-items {
+        position: absolute;
+        background-color: #4e5154;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+
+    /*hide the items when the select box is closed:*/
+    .select-hide {
+        display: none;
+    }
+
+    .select-items div:hover,
+    .same-as-selected {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+</style>
+<main>
+    <div class="section wf-section">
+        <div class="container ">
+            <div class="main-title-wrapper">
+                <h1 class="main-title left">CAREER IN ITS</h1>
+            </div>
+            <div class="carrer-container">
+                <div class="text-block left">
+                    We believe in a great company’s culture by bringing together our teams and appreciating their
+                    contribution.
+                    We promote respect, teamwork, and work-life balance.
+                    </br>
+                    </br>
+                    ITS’s long-term success as a consulting and technology-oriented company depends on attracting the
+                    most talented and capable candidates.
+                    The candidate’s selection process is well-established
+                    through our internal recruitment policy, based on merit, and the candidate’s ability to perform the
+                    work according to ITS’s mission values.
+                    </br>
+                    </br>
+                    We strongly believe in the path we have set to become a leading company operating with international
+                    standards and technical
+                    excellence based on the continuous development of our people. Our team members thrive in a
+                    fast-paced and collaborative environment.
+                    </br>
+                    They are a group of professionals with individual passion and quality to devise tech solutions. We
+                    seek the best and brightest
+                    to join us on our journey.
+                </div>
+                <div class="img-box">
+                    <img src="~/imgs/career2.png" alt="career boost image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section wf-section">
+        <div class="container">
+            <div class="main-title-wrapper">
+                <h1 class="main-title left">ITS’s recruitment policy aims</h1>
+            </div>
+            <div class="text-block aims-container">
+                <div class="offer-card" asp-action="MC">
+                    <ul class="card-title">
+                        <li>To provide a selection of qualified and experienced staff, with professional skills at all
+                            levels of
+                            service at ITS, to support the business needs in all the areas where it operates.
+                        </li>
+                        <br />
+                        <li>To ensure and promote the development of individual skills, without discrimination on the
+                            grounds of
+                            age, physical disability, origin, race, religion, gender, etc.
+                        </li>
+                        <br />
+                        <li>To provide a work environment where the best employees are distinguished, remunerated, and
+                            motivated, to
+                            encourage career advancement and development.
+                        </li>
+                        <br />
+                        <li>To emphasize with all the means and methods that human dignity is an essential condition for
+                            success at
+                            work.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section wf-section">
+        <div class="container">
+            <div class="main-title-wrapper">
+                <h1 class="main-title left">What we offer</h1>
+            </div>
+            <div class="offers-container">
+                <div class="offer-card" asp-action="MC">
+                    <ul class="card-title">
+                        <li>Innovative and collaborative work environment</li>
+                        </br>
+                        <li>Periodic Team Building activities (Retreats, Happy hours, Sport
+                            Activities, Gathering, Celebrations, etc.)</li>
+                        </br>
+                        <li>Technical Training through on-the-job experience and structured learning for recent
+                            graduates</li>
+                    </ul>
+                </div>
+                <div class="offer-card" asp-action="MC">
+                    <ul class="card-title">
+                        <li>Guidance during your work performance</li>
+                        </br>
+                        <li>Annual promotions and reward</li>
+                        </br>
+                        <li>Possibility to grow professionally</li>
+                        </br>
+                        <li>Enhancement of employee’s experience through staff perks</li>
+                    </ul>
+                </div>
+            </div>
+            @* <div class="text-block left">
+            <ul>
+            <li>Innovative and collaborative work environment</li>
+            <li>Possibility to grow professionally</li>
+            <li>Guidance during your work performance</li>
+            <li>Technical Training through on-the-job experience and structured learning for recent
+            graduates
+            </li>
+            <li>Annual promotions and reward</li>
+            <li>Periodic Team Building activities (Retreats, Happy hours, Sport
+            Activities, Gathering, Celebrations, etc.)</li>
+            <li>Enhancement of employee’s experience through staff perks</li>
+            </ul>
+            </div> *@
+        </div>
+    </div>
+    <div class="section wf-section">
+        <div class="container">
+            <div class="main-title-wrapper">
+                <h1 class="main-title left">JOB OPPORTUNITIES</h1>
+            </div>
+            <div class="jobs-container">
+                <div class="job-container">
+                    <button type="button" class="collapsible">
+                        <div class="job-title">SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)</div>
+                        <a class="apply-cta" href="#">Apply Now</a>
+                    </button>
+                    <div class="content">
+                        <div class="sub-content">
+                            <h4 style="color: #;">Duties & Responsibilities</h4>
+                            <ul>
+                                <li>Manage the ERP System of the international clients for the optimization of their
+                                    work process;</li>
+                                <li>Ensure smooth running of the automation industry logistics process through the
+                                    customized ERP system used by the client</li>
+                                <li>Consulting, monitoring, and supervision of deliveries through international postal
+                                    agencies;</li>
+                                <li>Training and instructing suppliers on the correct use of the ERP system for a normal
+                                    work process</li>
+                                <li> Help clients transform their value chains into competitive advantages by driving
+                                    proactive insights and decision making, and
+                                    you’ll tackle our clients’ complex business issues. </li>
+                            </ul>
+                        </div>
+                        <div class="sub-content">
+                            <h4 style="color: #;">Candidate’s qualifications</h4>
+                            <ul>
+                                <li>Graduated in Computer Science, Engineering, Business Informatics, Finance, or
+                                    similar
+                                    fields</li>
+                                <li>Previews work experience in the field will be considered an advantage- ;</li>
+                                <li>Possess solid analytical, interpersonal, and communication skill</li>
+                                <li>Fluent in German, very good knowledge of English</li>
+                                <li>Proficiency with the Microsoft Office applications</li>
+                                <li>Detail-oriented and enjoy working with software’s</li>
+                                <li>Possess solid analytical, interpersonal, and communication skill</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="job-container">
+                    <button type="button" class="collapsible">
+                        <div class="job-title">SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)</div>
+                        <a class="apply-cta" href="#">Apply Now</a>
+                    </button>
+                    <div class="content">
+                        <div class="sub-content">
+                            <h4 style="color: #;">Duties & Responsibilities</h4>
+                            <ul>
+                                <li>Manage the ERP System of the international clients for the optimization of their
+                                    work process;</li>
+                                <li>Ensure smooth running of the automation industry logistics process through the
+                                    customized ERP system used by the client</li>
+                                <li>Consulting, monitoring, and supervision of deliveries through international postal
+                                    agencies;</li>
+                                <li>Training and instructing suppliers on the correct use of the ERP system for a normal
+                                    work process</li>
+                                <li> Help clients transform their value chains into competitive advantages by driving
+                                    proactive insights and decision making, and
+                                    you’ll tackle our clients’ complex business issues. </li>
+                            </ul>
+                        </div>
+                        <div class="sub-content">
+                            <h4 style="color: #;">Candidate’s qualifications</h4>
+                            <ul>
+                                <li>Graduated in Computer Science, Engineering, Business Informatics, Finance, or
+                                    similar
+                                    fields</li>
+                                <li>Previews work experience in the field will be considered an advantage- ;</li>
+                                <li>Possess solid analytical, interpersonal, and communication skill</li>
+                                <li>Fluent in German, very good knowledge of English</li>
+                                <li>Proficiency with the Microsoft Office applications</li>
+                                <li>Detail-oriented and enjoy working with software’s</li>
+                                <li>Possess solid analytical, interpersonal, and communication skill</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="job-container">
+                    <button type="button" class="collapsible">
+                        <div class="job-title">SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)</div>
+                        <a class="apply-cta" href="#">Apply Now</a>
+                    </button>
+                    <div class="content">
+                        <div class="sub-content">
+                            <h4 style="color: #;">Duties & Responsibilities</h4>
+                            <ul>
+                                <li>Manage the ERP System of the international clients for the optimization of their
+                                    work process;</li>
+                                <li>Ensure smooth running of the automation industry logistics process through the
+                                    customized ERP system used by the client</li>
+                                <li>Consulting, monitoring, and supervision of deliveries through international postal
+                                    agencies;</li>
+                                <li>Training and instructing suppliers on the correct use of the ERP system for a normal
+                                    work process</li>
+                                <li> Help clients transform their value chains into competitive advantages by driving
+                                    proactive insights and decision making, and
+                                    you’ll tackle our clients’ complex business issues. </li>
+                            </ul>
+                        </div>
+                        <div class="sub-content">
+                            <h4 style="color: #;">Candidate’s qualifications</h4>
+                            <ul>
+                                <li>Graduated in Computer Science, Engineering, Business Informatics, Finance, or
+                                    similar
+                                    fields</li>
+                                <li>Previews work experience in the field will be considered an advantage- ;</li>
+                                <li>Possess solid analytical, interpersonal, and communication skill</li>
+                                <li>Fluent in German, very good knowledge of English</li>
+                                <li>Proficiency with the Microsoft Office applications</li>
+                                <li>Detail-oriented and enjoy working with software’s</li>
+                                <li>Possess solid analytical, interpersonal, and communication skill</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section wf-section">
+        <div class="container">
+            <div class="main-title-wrapper">
+                <h1 class="main-title left"> WANT TO BE PART OF ITS</h1>
+                <p>Looking for a new position? Ready to upgrade?</p>
+                <p>Looking for better support? ITS is here for you.</p>
+            </div>
+            <div class="form-block w-form">
+                <form onsubmit="sendEmail(); reset();  return false;">
+                    <input id="namefield" type="text" class="form-field w-input" placeholder="Full Name *" required="">
+                    <input id="emailfield" class="form-field w-input" type="email" placeholder="Email Address *"
+                        required="">
+                    <input id="phonefield" class="form-field w-input" type="number"
+                        placeholder="Phone number(Optional)">
+                    <div class="resume">
+                        <label for="inputfile">Cv ( resume )</label>
+                        <input type="file" id="myFile" name="filename" placeholder="Upload resume">
+                        <span class="help-block">Upload your resume</span>
+                    </div>
+                    @* <div class="Positions">
+                    <select id="selectposition" name="Open Position">
+                    <option value="Select position:">Select position:</option>
+                    <option value=".NETDeveloper">.NET Developer</option>
+                    <option value="AlDeveloper">Al Developer</option>
+                    <option value="BCConsultant">BC Consultant</option>
+                    <option value="SUPPLYCHAINMANAGEMENTCONSULTANT">SUPPLY CHAIN MANAGEMENT CONSULTANT</option>
+                    </select>
+                    </div> *@
+                    <div class="Positions">
+                        <select id="selectposition" name="Open Position" required="">
+                            <option value="">Please select a position:</option>
+                            <option value=".NET Developer">.NET Developer</option>
+                            <option value="Al Developer">Al Developer</option>
+                            <option value="BC Consultant">BC Consultant</option>
+                            <option value="SUPPLY CHAIN MANAGEMENT CONSULTANT">SUPPLY CHAIN MANAGEMENT CONSULTANT
+                            </option>
+                        </select>
+                    </div>
+                    <div class="button-box">
+                        <button type="submit" class="main-cta w-button">Apply</button>
+                    </div>
+                </form>
+                @* <div class="success w-form-done" tabindex="-1" role="region" aria-label="Email Form success">
+                <img src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/62bf09698c2d68449b1c78ab_sent.svg"
+                loading="lazy" alt="" class="successimg">
+                <div class="successtext">Thank you! Your submission has been received!</div>
+                <a href="/" class="secondary-cta w-button">Go to homepage</a>
+                </div>
+                <div class="error w-form-fail w-form-done" tabindex="-1" role="region" aria-label="Email Form failure">
+                <img src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/62bf0c9ba0ee771a563cc26d_error.svg"
+                loading="lazy" alt="" class="errorimg">
+                <div class="errortext">Oops! Something went wrong while submitting the form.</div>
+                </div> *@
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    const emails = ["fazemaj@itechsolutions.al", "frankoazemaj@gmail.com"];
+    const sender = "frankoazemaj@gmail.com";
+
+    @* file = document.querySelector('#files > input[type="file"]').files[0];
+
+    const toBase64 = file => new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = reject;
+        });
+    }
+
+    var base64File = await toBase64(file);
+    console.log(base64File); *@
+
+    async function sendEmail() {
+
+        Email.send({
+            SecureToken: "07b23fc0-b21b-4b02-903e-d8d25247e28d",
+            To: emails,
+            From: emails[0],
+            Subject: "Email from the website contact form",
+            Body: "Name: " + document.getElementById('namefield').value
+                + "<br> Email: " + document.getElementById('emailfield').value
+                + "<br> Phone: " + document.getElementById('phonefield').value
+                + "<br> Position: " + document.getElementById("selectposition").value,
+            Attachments: [
+                {
+                    name: "career.jpg",
+                    data: "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"
+                }]
+        }).then(
+            message => alert("Success" + message)
+        );
+
+        message => alert("Success, " + message);
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.style.margin = "0px 25px";
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.margin = "0px 25px 15px";
+            }
+        });
+    }
+
+
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    /*look for any elements with the class "Positions":*/
+    x = document.getElementsByClassName("Positions");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+        selElmnt = x[i].getElementsByTagName("select")[0];
+        ll = selElmnt.length;
+        /*for each element, create a new DIV that will act as the selected item:*/
+        a = document.createElement("DIV");
+        a.setAttribute("class", "select-selected");
+        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+        x[i].appendChild(a);
+        /*for each element, create a new DIV that will contain the option list:*/
+        b = document.createElement("DIV");
+        b.setAttribute("class", "select-items select-hide");
+        for (j = 1; j < ll; j++) {
+            /*for each option in the original select element,
+            create a new DIV that will act as an option item:*/
+            c = document.createElement("DIV");
+            c.innerHTML = selElmnt.options[j].innerHTML;
+            c.addEventListener("click", function (e) {
+                /*when an item is clicked, update the original select box,
+                and the selected item:*/
+                var y, i, k, s, h, sl, yl;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                sl = s.length;
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < sl; i++) {
+                    if (s.options[i].innerHTML == this.innerHTML) {
+                        s.selectedIndex = i;
+                        h.innerHTML = this.innerHTML;
+                        y = this.parentNode.getElementsByClassName("same-as-selected");
+                        yl = y.length;
+                        for (k = 0; k < yl; k++) {
+                            y[k].removeAttribute("class");
+                        }
+                        this.setAttribute("class", "same-as-selected");
+                        break;
+                    }
+                }
+                h.click();
+            });
+            b.appendChild(c);
+        }
+        x[i].appendChild(b);
+        a.addEventListener("click", function (e) {
+            /*when the select box is clicked, close any other select boxes,
+            and open/close the current select box:*/
+            e.stopPropagation();
+            closeAllSelect(this);
+            this.nextSibling.classList.toggle("select-hide");
+            this.classList.toggle("select-arrow-active");
+        });
+    }
+    function closeAllSelect(elmnt) {
+        /*a function that will close all select boxes in the document,
+        except the current select box:*/
+        var x, y, i, xl, yl, arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        xl = x.length;
+        yl = y.length;
+        for (i = 0; i < yl; i++) {
+            if (elmnt == y[i]) {
+                arrNo.push(i)
+            } else {
+                y[i].classList.remove("select-arrow-active");
+            }
+        }
+        for (i = 0; i < xl; i++) {
+            if (arrNo.indexOf(i)) {
+                x[i].classList.add("select-hide");
+            }
+        }
+    }
+    /*if the user clicks anywhere outside the select box,
+    then close all select boxes:*/
+    document.addEventListener("click", closeAllSelect);
+
+    @*
+
+        *@
+
+
+
+</script>

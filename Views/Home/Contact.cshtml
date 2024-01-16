@@ -1,0 +1,218 @@
+@* @model EmailData; *@
+
+<style>
+    .w-input,
+    .w-select {
+        width: 100%;
+        height: 38px;
+        vertical-align: middle;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        font-size: 14px;
+        line-height: 1.42857;
+        display: block;
+    }
+
+    .form-wrapper {
+        grid-column-gap: 32px;
+        grid-row-gap: 32px;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-columns: 1fr;
+        align-items: center;
+        margin-top: 60px;
+        display: grid;
+    }
+
+    .form-field {
+    @*color:#fff;*@@*color:#000;*@background-color: rgba(255, 255, 255, 0);
+        border: 0 solid #000;
+        border-top-color: #4d4d4d;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        margin-bottom: 40px;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+
+    .form-block {
+        max-width: 580px;
+        min-width: 200px;
+    }
+
+    .w-form {
+        margin: 0 0 15px;
+    }
+
+    @*.main-cta{color:#000;border:none;cursor:pointer;background:#5c2372c5;border-radius:5px;justify-content:center;margin-left:auto;margin-right:auto;padding:16px32px;font-family:GeneralSans,sans-serif;font-size:17px;font-weight:600;transition:all.3s;}.main-cta:active{transform:scale(.98);}.main-cta:hover{background-color:#5c2372;}*@.w-form-done {
+        text-align: center;
+        background-color: #ddd;
+        padding: 20px;
+        display: none;
+    }
+
+    .js-content {
+        justify-self: center;
+    }
+
+    .textarea {
+        max-width: 580px;
+        min-height: 150px;
+        min-width: 200px;
+    }
+
+    .section {
+        padding-top: 120px;
+        padding-bottom: 120px;
+        display: block;
+    }
+
+    .breadcrumb {
+        color: #cbd5e1;
+        font-size: 21px;
+    }
+
+    .main-title-wrapper {
+        max-width: 1170px;
+    }
+
+    .form-wrapper {
+        grid-column-gap: 32px;
+        grid-row-gap: 32px;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-columns: 1fr;
+        align-items: center;
+        margin-top: 60px;
+        display: grid;
+    }
+
+
+    .success {
+        color: #4ade80;
+        background-color: rgba(255, 255, 255, 0);
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .error {
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .w-form-fail {
+        background-color: #ffdede;
+        margin-top: 10px;
+        padding: 10px;
+        display: none;
+    }
+</style>
+<div class="section wf-section">
+    <div class="container">
+        <div class="main-title-wrapper">
+            <h1 class="main-title left">Contact</h1>
+        </div>
+        <div class="form-wrapper">
+            <div class="form-block w-form">
+                @* onsubmit="sendEmail(); reset(); return false;" action="https://formsubmit.co/el/piliwu" *@
+                <form onsubmit="sendEmail(); reset();  return false;">
+                    @* maxlength="256" name="name" data-name="Name" id="name" id="contact-form" *@
+                    <input id="name" type="text" class="form-field w-input" placeholder="Full Name *" required="">
+                    <input id="emailfield" class="form-field w-input" type="email" placeholder="Email Address *"
+                        required="">
+                    <input id="phone" class="form-field w-input" type="number" maxlength="256"
+                        placeholder="Phone number (optional)">
+                    <textarea id="tellMore" maxlength="5000" type="text" placeholder="Tell us some more *" required=""
+                        class="form-field textarea w-input"></textarea>
+                    <div class="button-box">
+                        <button type="submit" class="main-cta w-button">Send</button>
+                    </div>
+                </form>
+                @* <div class="success w-form-done" tabindex="-1" role="region" aria-label="Email Form success">
+                <img src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/62bf09698c2d68449b1c78ab_sent.svg"
+                loading="lazy" alt="" class="successimg">
+                <div class="successtext">Thank you! Your submission has been received!</div>
+                <a href="/" class="secondary-cta w-button">Go to homepage</a>
+                </div>
+                <div class="error w-form-fail w-form-done" tabindex="-1" role="region" aria-label="Email Form failure">
+                <img src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/62bf0c9ba0ee771a563cc26d_error.svg"
+                loading="lazy" alt="" class="errorimg">
+                <div class="errortext">Oops! Something went wrong while submitting the form.</div>
+                </div> *@
+            </div>
+            <div class="js-content">
+                <div class="contact-text">Also contact as at:<br></div>
+                <div b-0ppu27byog="" class="footer-link copy">
+                    <div b-0ppu27byog="" id="email" fs-copyclip-element="copy-sibling" class="copy-email">
+                        contact@itechsolutions.al</div>
+                    <img class="copy-js" onclick="copyContent()" src="/imgs/CopyIcon2.png" loading="lazy" alt="">
+                    <div b-0ppu27byog="" id="copied" class="copied-div copiedStyle">
+                        <div b-0ppu27byog="" class="copied">Copied</div>
+                        @* <img b-0ppu27byog=""
+                        src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/6256dfa94208d802d48cae34_polygon.svg"
+                        loading="lazy" alt="" class="triangle-2">
+                        <img b-0ppu27byog=""
+                        src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/6256e09a9ad67a21ea6e5ae6_yellow-tick.svg"
+                        loading="lazy" alt="" class="yellow-tick"> *@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script type="text/javascript">
+
+    const recivers = ["fazemaj@itechsolutions.al", "frankoazemaj@gmail.com"];
+    const sender = "frankoazemaj@gmail.com";
+
+    function sendEmail() {
+       
+        Email.send({
+            SecureToken : "07b23fc0-b21b-4b02-903e-d8d25247e28d",
+            To: recivers,
+            From: recivers[0],
+            Subject: "Email from the website contact form",
+            Body: "Name: " + document.getElementById('name').value
+                + "<br> Email: " + document.getElementById('emailfield').value
+                + "<br> Phone: " + document.getElementById('phone').value
+                + "<br> Message: " + document.getElementById('tellMore').value
+        }).then(
+            message => alert("Success" + message)
+            );
+
+        message => alert("Success, " + message);
+    }
+
+     @* Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "frankoazemaj@gmail.com",
+            Password: "8939AC82DB475F2C7D2311F63495B7960D73",
+            To: 'frankoazemaj@gmail.com',
+            From: document.getElementById('emailfield').value,
+            Subject: "Email from the website contact form",
+            Body: "Name: " + document.getElementById('name').value
+                + "<br> Email: " + document.getElementById('emailfield').value
+                + "<br> Phone: " + document.getElementById('phone').value
+                + "<br> Message: " + document.getElementById('tellMore').value
+        }).then(
+            message => alert(message)
+            );
+
+        message => alert(message); *@
+    @*Your security token is 07b23fc0-b21b-4b02-903e-d8d25247e28d *@
+
+    @* const message = await window.Email.send({
+            SecureToken: "8939AC82DB475F2C7D2311F63495B7960D73",
+            To: 'frankoazemaj@gmail.com',
+            From: document.getElementById('emailfield').value,
+            Subject: "This is the subject",
+            Body: "And this is the body"
+            });
+            if (message === "OK") {
+            message => alert(message)
+            } *@
+
+    
+</script>

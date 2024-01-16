@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>@ViewData["Title"] - ITS_Web</title>
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ITS-Web.styles.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/ITS-Web.styles.scss" asp-append-version="true" /> *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <style>
+
+@* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  box-sizing: border-box;
+  font-family: 'Open Sans';
+  font-style: normal;
+} *@
+
+
+
+        @* .img-containerimg{width:87px;} *@
+
+        .menubtn:hover {
+            color: #0055dc;
+        }
+
+.footer-link:hover{
+    color: #5c2372;
+}
+
+.social-icon{
+    background: white;
+    border-radius: 20px;
+    border:none;
+}
+
+.copy-js {
+    cursor: pointer;
+    margin-left: 10px;
+}
+.copiedStyle{
+    display: flex;
+    opacity: 0;
+}
+.animation{
+    display: flex;
+    opacity: 0;
+    animation-name: Addstyle;
+    animation-duration: 1s;
+}
+.footer-link {
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 26px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+    transition: all .3s;
+    display: flex;
+}
+
+.main-cta {
+        @* color: #000; *@
+        border: none;
+        cursor: pointer;
+        background: #5c2372c5;
+        border-radius: 5px;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 16px 32px;
+        font-size: 17px;
+        font-weight: 600;
+        transition: all .3s;
+    }
+
+    .main-cta:active {
+        transform: scale(.98);
+    }
+
+    .main-cta:hover {
+        color:white;
+        background-color: #5c2372;
+    }
+
+    .serviceItem img {
+        width:45px;
+        height:45px;
+    }
+
+    .dropdown img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .serviceItem{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+
+    .navitem{
+
+        border-radius: 14px;
+        background: #1010107a;
+        margin-top: 8px;
+        margin-bottom: 0px;
+        padding: 16px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .navitem:hover{
+        background: #101010;
+        color:white;
+        transform: scale(1.01);
+        transition: transform 0.4s,
+                    color 0.4s;
+    }
+
+    
+
+    .dropClick{
+        cursor: pointer;
+        font-size: 16px;  
+        border: none;
+        outline: none;
+        color: white;
+         background: #1010107a;
+        font-family: inherit;
+    }
+
+    i{
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+
+    .dropdown-mobile a {
+        /* color: white; */
+        padding: 12px 16px;
+        margin: 12px;
+        border-radius: px;
+        text-decoration: none;
+        display: block;
+        box-shadow: 3px 1px 10px 0.5px black;
+    }  
+
+@@keyframes Addstyle {
+from {opacity: 0;}
+to {opacity:1 ;}
+}
+
+
+@* //////////////////////////////////////////////////////////// *@
+    
+    
+</style>
+@if (ViewBag.ShowTopBar ?? false)
+{
+   <div id="navcontainer" class="container">
+        <div id="navbar" class="topnav nav">
+            <div class="img-container">
+                <a id="its-a" class="navbtn its logo" asp-action="Index">
+                    <img id="logo-its" src="~/imgs/LogoITS.png" alt="ITS-logo" />
+                    @* <div class="its-name">
+                    INTEGRATED <br>
+                    TECH <br>
+                    SOLUTIONS
+                    </div> *@
+                </a>
+            </div>
+            <nav class="nav-menu w-nav-menu">
+                <a class="menubtn navbtn" asp-action="Index">Home</a>
+                <a class="menubtn navbtn" asp-action="About">About</a>
+                <div class="dropdown navbtn">
+                    <a class="menubtn dropbtn">Services
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a class="menubtn" asp-action="MC">Management Consulting</a>
+                        <a class="menubtn" asp-action="BC">Microsoft Dynamics D365 Business Central</a>
+                        @* <div class="serviceItem">
+                            <img src="~/imgs/business-central-logo.png" alt="BC logo">
+                            <div style="margin-top: auto; margin-bottom:auto;">Buisness Central</div>
+                        </div> *@
+                        <a class="menubtn" asp-action="UnderConstruction">IT outsourcing</a>
+                    </div>
+                </div>
+                <a class="menubtn navbtn"  asp-action="Career">Career</a>
+                <a class="menubtn navbtn" asp-action="Contact">Contact</a>
+            </nav>
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu" style="height: 380px; overflow: scroll;">
+                    <a class="menubtn navbtn navitem" asp-action="Index">Home</a>
+                    <a class="menubtn navbtn navitem" asp-action="About">About</a>
+                    <button class="dropClick navbtn navitem" onclick="dropfunction()">Services
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div  class="dropdown-mobile" id="dropServices" >
+                        <a class="navitem" asp-action="MC">Management Consulting</a>
+                        <a class="navitem" asp-action="BC">Microsoft Dynamics D365 Business Central</a>
+                        @* <div class="serviceItem">
+                            <img src="~/imgs/business-central-logo.png" alt="BC logo">
+                            <div style="margin-top: auto; margin-bottom:auto;">Buisness Central</div>
+                        </div> *@
+                        <a class="navitem" asp-action="UnderConstruction">IT outsourcing</a>
+                    </div>
+                    <a class="navitem navbtn"  asp-action="Career">Career</a>
+                    <a class="navitem navbtn" asp-action="Contact">Contact</a>
+                </ul>
+            </div>
+        </div>
+        @* <div class="mobile-nav-wrapper" style="transform: translate3d(0vh, 16px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    will-change: background, transform;
+    background-color: rgba(49, 58, 72, 0.85);
+    display: block;">
+            <div class="mobile-nav-container">
+                <a class="menubtn navbtn" asp-action="Index">Home</a>
+                <a class="menubtn navbtn" asp-action="Index">Home</a>
+                <div class="dropdown-wrapper-mobile">
+                    <a class="menubtn dropbtn">Services</a>
+                </div>
+                <div class="hidden-dropdown-wrapper-1">
+                        <a class="menubtn" asp-action="MC">Management Consulting</a>
+                        <a class="menubtn" asp-action="BC">Microsoft Dynamics D365 Business Central</a>
+                        <a class="menubtn" href="#">SAP</a>
+                        <a class="menubtn" href="#">FACT</a>
+                </div>
+            </div>
+        </div> *@
+    </div>
+}
+    
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+    @if (ViewBag.ShowTopBar ?? false)
+    {
+        <div id="footer" class="section footer wf-section">
+        <div class="container links">
+            <div class="footer-div">
+                <h5 class="footer-title">Get in Touch</h5>
+                <a href="tel:+355 69 260 3591" class="footer-link">+355 69 260 3591
+                </a>
+                <div class="footer-link copy">
+                    <div id="email" fs-copyclip-element="copy-sibling" class="copy-email">info@itechsolutions.al</div>
+                    <img class="copy-js" onclick="copyContent()" src="~/imgs/CopyIcon2.png" loading="lazy" alt="">
+                    <div id="copied" class="copied-div copiedStyle">
+                        <div  class="copied">Copied</div>
+                        @* <img src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/6256dfa94208d802d48cae34_polygon.svg" loading="lazy" alt="" class="triangle-2"> *@
+                        @* <img src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/6256e09a9ad67a21ea6e5ae6_yellow-tick.svg" loading="lazy" alt="" class="yellow-tick"> *@
+                        @* <img src="~/imgs/tick.png" loading="lazy" alt="" class="yellow-tick"> *@
+                    </div>
+                </div>
+
+
+                <a asp-action="Contact" class="main-cta left w-button footer-link" style="margin-left:0">Contact</a>
+            </div>
+            <div class="footer-div">
+                <h5 class="footer-title">Links</h5>
+                <a href="/" aria-current="page" class="footer-link w--current">Home</a>
+                <a asp-action="About" class="footer-link">About Us</a>
+                <a asp-action="Careers" class="footer-link">Careers</a>
+            </div>
+            <div class="footer-div">
+                <h5 class="footer-title">Services</h5>
+                <a asp-action="MC" class="footer-link">Management Consulting</a>
+                <a asp-action="BC" class="footer-link">Microsoft Dynamics D365 Business Central</a>
+                <a asp-action="UnderConstruction" class="footer-link">IT outsourcing</a>
+            </div>
+            <div class="footer-div">
+                <h5 class="footer-title">Follow Us</h5>
+                <a href="https://www.linkedin.com/company/integrated-tech-solutions-its/" target="_blank" class="socials-div w-inline-block">
+                    <img src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/624703383156e2a1140fb887_Group%205531.svg" loading="lazy" alt="" class="">
+                    <div class="footer-link social">LinkedIn</div>
+                </a>
+                <a href="https://www.facebook.com/itechsalbania/" target="_blank"
+                    class="socials-div w-inline-block">
+                    <img src="~/imgs/fbicon.png" loading="lazy" alt="" class="social-icon">
+                    <div class="footer-link social">Facebook</div>
+                </a>
+                <a href="https://www.instagram.com/i_techsolutions.al/" target="_blank" class="socials-div w-inline-block">
+                    <img src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/6247036d9a08db1a529f72ea_instagram.svg" loading="lazy" alt="">
+                    <div class="footer-link social">Instagram</div>
+                </a>
+            </div>
+        </div>
+        <div class="container footer">
+                <div class="container">
+                    &copy; 2022 Integrated Tech Solutions – All Rights reserved
+                </div>
+            </div>
+        </div>
+    }
+    
+    @* <footer class="footer text-muted">
+    </footer> *@
+    <script>
+        function navFunction() {
+            var x = document.getElementById("navbar");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navcontainer");
+        var sticky = navbar.offsetTop;
+        var navbarchild = document.getElementById("navbar");
+        @* var imglogo = document.getElementById("logo-its");
+            const image = document.createElement('img'); *@
+
+
+            function myFunction() {
+                @* navbar.style.transform = "translate3d(0px,"+ pageXOffset"px,0px)"; *@
+                if (window.pageYOffset > sticky) {
+                    navbar.classList.add("sticky");
+                    @* navbar.style.transform = "translate3d(0px,"+ pageXOffset"px,0px)"; *@
+                    navbarchild.classList.add("stickyBg");
+        @* imglogo.remove();
+                        image.src = "@Url.Content("~/imgs/its-logo-lighter.png")";
+                        document.getElementById('its-a').appendChild(image); *@
+            } else {
+                    navbar.classList.remove("sticky");
+                    navbarchild.classList.remove("stickyBg");
+        @* image.remove();
+                        document.getElementById('its-a').appendChild(imglogo); *@
+            }
+            }
+
+    function dropfunction(){
+        document.getElementById("dropServices").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+        if (!e.target.matches('.dropClick')) {
+            var myDropdown = document.getElementById("dropServices");
+            if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
+            }
+        }
+    }
+
+        
+        
+    </script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

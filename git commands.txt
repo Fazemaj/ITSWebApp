@@ -1,0 +1,2 @@
+first --> git commit -a -m "your commit message"
+second --> git push

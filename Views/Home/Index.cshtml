@@ -1,0 +1,349 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .team-member {
+        width: calc(100%/4);
+        aspect-ratio: 1/1;
+    }
+
+    .team-member img {
+        width: 100%;
+    }
+
+    .card {
+    max-width: 625px;
+    min-height: 650px;
+    cursor: pointer;
+    background: #000000;
+    @* background:#192231; *@
+    border-radius: 16px;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px;
+    text-decoration: none;
+    transition: all .3s;
+    display: flex;
+    }
+   
+
+    .card:hover {
+        background-color: #656668;
+        transform: scale(1);
+    }
+
+    a:active,
+    a:hover {
+        outline: 0;
+    }
+
+    .card.ai {
+    @*background-image:url(https://uploads-ssl.webflow.com/623b0c2…/628231c…_ai-ml-card.svg);*@background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 40%;
+    }
+
+    .first {
+        will-change: transform, opacity;
+        transform: translate3d(0px, 21.3288px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        transform-style: preserve-3d;
+        opacity: 0.82226;
+    }
+
+    .w-button {
+        @* color: #000000; *@
+    @*color:#fff;*@line-height: inherit;
+        cursor: pointer;
+        background-color: #3898ec;
+        /* border: 0; */
+        border-radius: 0;
+        padding: 9px 15px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .main-cta {
+        @* color: #000; *@
+        cursor: pointer;
+        background: #5c2372c5;
+        border-radius: 4px;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 16px 32px;
+        font-family: General Sans, sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        transition: all .3s;
+    }
+
+    .main-cta:active {
+        transform: scale(.98);
+    }
+
+    .main-cta:hover {
+        background-color: #5c2372;
+    }
+
+    .mySlides {
+        display: none
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+    @*max-width:1000px;*@position: relative;
+        margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+        color: #ffffff;
+        position: absolute;
+        @* bottom: 40%;
+        left:10%;
+        right: 10%; *@
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        @* background-color: #bbb; *@
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @@keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @@media only screen and (max-width:800px) {
+    /* For tablets: */
+    .main {
+        width: 80%;
+        padding: 0;
+    }
+    .right {
+        width: 100%;
+    }
+    }
+
+@@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+
+@@media screen and (max-width: 991px){
+    .card {
+        min-height: 520px;
+    }
+}
+
+@@media screen and (max-width: 767px){
+    .card {
+        padding: 24px;
+    }
+}
+
+
+@@media screen and (max-width: 479px){
+
+    .card {
+        min-height: 430px;
+    }
+}
+
+</style>
+<div class="body">
+    <main>
+        <div class="section-header">
+            <div class="container">
+                    @* <img src="~/imgs/bgimg1.jpg" style="width:100%; height:100vh;"> *@
+                    <div class="main-title just-text">Integrate innovative & intelligent solutions into your business!</div>
+            </div>
+            @* <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 2</div>
+                    <img src="~/imgs/BgImg2.jpg" style="width:100%; height:100vh;">
+                    <div class="text main-title just-text container">At Integrated Tech Solutions, we believe in the power of
+                        people
+                        coming
+                        together and the limitless possibilities that technology offers. Join us on our mission to
+                        integrate
+                        innovative solutions into your business</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="~/imgs/bgimg1.jpg" style="width:100%; height:100vh;">
+                    <div class="text main-title just-text"> we believe in the power of people coming
+                        together</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <!-- <span class="dot" onclick="currentSlide(3)"></span> -->
+            </div> *@
+        </div>
+        <div class="section">
+            <div class="container">
+                <h2 class="secondary-title">WHAT WE DO</h2>
+                <div class="cards-div">
+                    <a class="card first" asp-action="MC">
+                        <h3 class="card-title">
+                            Management Consulting
+                        </h3>
+                        <div class="card-text just-text">
+                            We take high pride in offering outstanding
+                            services that cover a 360° view of the organizations
+                            from visioning to architecture, from processes to
+                            technology, executed through integrated project
+                            management. We value our clients to be delivered
+                            all-inclusive solutions harmonized through different
+                            organization & business domains. Our services include:
+                        </div>
+                        <div class="card-link">
+                            Learn more
+                        </div>
+                    </a>
+                    <a class="card first" asp-action="BC">
+                        <h3 class="card-title">
+                            Microsoft Dynamics D365 Business Central
+                        </h3>
+                        <div class="card-text">
+                            Microsoft Dynamics 365 Business Central, the latest version of old Microsoft
+                             Dynamics NAV is now available on Azure Cloud or On-Premises implementations.
+                              Microsoft Dynamics 365 Business Central, MS D365 BC, is an extremely flexible,
+                               resourceful, and adaptable business software application from Microsoft.
+                                One of the biggest advantages of using the Microsoft Dynamics 365 Business
+                                 Central platform is that it can be tailored according to your specific business
+                                  needs and requirements. 
+                                  @* MS D365 BC is a full, integrated solution for your business, 
+                                  which lets you manage finances, inventory, sales and all business processes in one place.
+                                   Microsoft Dynamics 365 Business Central is an ERP solution that adapts to be the best fit for your business. 
+                                    Partner. Implementation. Upgrade. Support *@
+
+                        </div>
+                        <div class="card-link">
+                            Learn more
+                        </div>
+                    </a>
+                    <a class="card first" asp-action="UnderConstruction">
+                        <h3 class="card-title">
+                            IT outsourcing
+                        </h3>
+                        <div class="card-text">
+                            We tailor our services according to our client’s short-term and long-term needs. 
+                            Whether you are seeking a new IT solution, integrated solution to support existing
+                             technology components, or want to completely outsource your IT environment, 
+                             we provide exceptional value and innovation to achieve measurable reliability
+                              and performance results in a way that drives value. We work as an extension 
+                              of your organization to manage an increasingly complex environment of technology
+                              , processes, systems, and software. 
+                        </div>
+                        <div class="card-link">
+                            Learn more
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+@* <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script> *@
