@@ -81,14 +81,12 @@ function removeAnime(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-file = document.querySelector('#files > input[type="file"]').files[0];
+//file = document.querySelector('#files > input[type="file"]').files[0];
 
-const toBase64 =  file => new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = reject;
-});
+ const toBase64 = file => new Promise((resolve, reject) => {
+     const reader = new FileReader();
+     reader.readAsDataURL(file);
+     reader.onload = () => resolve(reader.result);
+     reader.onerror = reject;
+ });
 
-var base64File = toBase64(file);
-console.log(base64File);
