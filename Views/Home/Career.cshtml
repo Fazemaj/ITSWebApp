@@ -1,8 +1,31 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+
 <style>
+
+    .offer-container-wrapper {
+    display: flex; 
+    justify-content: space-between;
+}
+
+
+.offer-container-wrapper {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+}
+
+[data-aos^="fade"][data-aos^="fade"].aos-animate {
+  opacity: 0.8;
+  transform: translateZ(0);
+}
+     
     .carrer-container img {
         width: 260px;
         height: 260px;
     }
+    
 
     .form-block {
         max-width: 580px;
@@ -140,29 +163,32 @@
             <div class="main-title-wrapper">
                 <h1 class="main-title left">What we offer</h1>
             </div>
-            <div class="offers-container">
-                <div class="offer-card" asp-action="MC">
-                    <ul class="card-title">
-                        <li>Innovative and collaborative work environment</li>
-                        </br>
-                        <li>Periodic Team Building activities (Retreats, Happy hours, Sport
-                            Activities, Gathering, Celebrations, etc.)</li>
-                        </br>
-                        <li>Technical Training through on-the-job experience and structured learning for recent
-                            graduates</li>
-                    </ul>
-                </div>
-                <div class="offer-card" asp-action="MC">
-                    <ul class="card-title">
-                        <li>Guidance during your work performance</li>
-                        </br>
-                        <li>Annual promotions and reward</li>
-                        </br>
-                        <li>Possibility to grow professionally</li>
-                        </br>
-                        <li>Enhancement of employee’s experience through staff perks</li>
-                    </ul>
-                </div>
+           <div class="offers-container"  >
+    <div class="offer-container-wrapper">
+        <div class="offer-card" asp-action="MC" data-aos="fade-right" >
+            <ul class="card-title">
+                <li>Guidance during your work performance</li>
+                <br>
+                <li>Annual promotions and reward</li>
+                <br>
+                <li>Possibility to grow professionally</li>
+                <br>
+                <li>Enhancement of employee’s experience through staff perks</li>
+            </ul>
+        </div>
+        <div class="offer-card" asp-action="MC" data-aos="fade-left" >
+            <ul class="card-title">
+                <li>Innovative and collaborative work environment</li>
+                <br>
+                <li>Periodic Team Building activities (Retreats, Happy hours, Sport
+                    Activities, Gathering, Celebrations, etc.)</li>
+                <br>
+                <li>Technical Training through on-the-job experience and structured learning for recent
+                    graduates</li>
+            </ul>
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </div>
@@ -327,7 +353,11 @@
         </div>
     </div>
 </main>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init();
+    </script>
 @* <script src="https://smtpjs.com/v3/smtp.js"></script> *@
 <script>
 
