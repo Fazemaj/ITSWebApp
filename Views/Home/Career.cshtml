@@ -175,7 +175,7 @@
                 <div class="job-container">
                     <a type="button" class="collapsible">
                         <div class="job-title">SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)</div>
-                        <button onclick="showModal()" class="apply-cta">Apply Now</button>
+                        <button onclick="showModal('SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)')" class="apply-cta">Apply Now</button>
                     </a>
                     <div class="content">
                         <div class="sub-content">
@@ -213,7 +213,7 @@
                 <div class="job-container">
                     <a type="button" class="collapsible">
                         <div class="job-title">SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)</div>
-                        <button onclick="showModal()" class="apply-cta">Apply Now</button>
+                        <button onclick="showModal('SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)')" class="apply-cta">Apply Now</button>
                     </a>
                     <div class="content">
                         <div class="sub-content">
@@ -251,7 +251,7 @@
                 <div class="job-container">
                     <a type="button" class="collapsible">
                         <div class="job-title">SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)</div>
-                        <button onclick="showModal()" class="apply-cta">Apply Now</button>
+                        <button onclick="showModal('SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)')" class="apply-cta">Apply Now</button>
                     </a>
                     <div class="content">
                         <div class="sub-content">
@@ -306,8 +306,9 @@
                         placeholder="Phone number(Optional)">
                     <div class="resume">
                         <label for="inputfile">Cv ( resume )</label>
-                        <input type="file" id="myFile" name="CV" placeholder="Upload resume">
-                        <span class="help-block">Upload your resume</span>
+                        <div data-fileupload="true" style="dispaly:none">
+                        
+                        @* <span class="help-block">Upload your resume</span> *@
                     </div>
                     <div class="Positions">
                         <select id="selectposition" name="Open Position" required="">
@@ -328,53 +329,8 @@
     </div>
 </main>
 
-@* <script src="https://smtpjs.com/v3/smtp.js"></script> *@
+<script src="https://web3forms.com/client/script.js" async defer></script>
 <script>
-
-    // async function sendEmail() {
-    //     var file = document.getElementById("myFile").files[0];
-
-    //     var name = document.getElementById('namefield').value;
-    //     var email = document.getElementById('emailfield').value;
-    //     var phone = document.getElementById('phonefield').value;
-    //     var position = document.getElementById('selectposition').value;
-
-    //     var file64 =await toBase64(file);
-    //     console.log(file64);
-        
-    //     CompleteSendEmail(name, email, phone, position, file64);
-    // }
-    // async function BeforeSendEmail() {
-
-    //     var name = document.getElementById('fname').value;
-    //     var email = document.getElementById('efield').value;
-    //     var phone = document.getElementById('pfield').value;
-
-    //     var file = document.getElementById("cvfield").files[0];
-    //     var position = ".NET Developer";
-
-    async function sendEmail() {
-
-        Email.send({
-            SecureToken: "07b23fc0-b21b-4b02-903e-d8d25247e28d",
-            To: emails,
-            From: emails[0],
-            Subject: "Email from the website contact form",
-            Body: "Name: " + document.getElementById('namefield').value
-                + "<br> Email: " + document.getElementById('emailfield').value
-                + "<br> Phone: " + document.getElementById('phonefield').value
-                + "<br> Position: " + document.getElementById("selectposition").value,
-            Attachments: [
-                {
-                    name: "career.jpg",
-                    data: "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"
-                }]
-        }).then(
-            message => alert("Success" + message)
-        );
-
-        message => alert("Success, " + message);
-    }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -469,16 +425,15 @@
 </script>
 
 <script>
-    function showModal() {
+    function showModal(title) {
+        var position = title;
         swalWithBootstrapButtons.fire(
             {
-                title: "Applying for ..." ,
-                html: '    <div class="form-block w-form"> <form action="https://api.web3forms.com/submit" method="POST"><input id="fname" type="text" class="form-field w-input" placeholder="Full Name *" required=""><input id="efield" class="form-field w-input" type="email" placeholder="Email Address *" required=""><input id="pfield" class="form-field w-input" type="number" placeholder="Phone number(Optional)"><div class="resume"><span class="help-block">Upload your resume<\/span><input type="file" id="cvfield" name="filename" placeholder="Upload resume"><\/div><div class="button-box"><button type="submit" class="main-cta w-button">Apply<\/button><\/div><\/form><\/div>'
-                    , showConfirmButton: !1
+                title: "Confirm" ,
+                html: '    <div class="form-block w-form"><form action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024"><input class="form-field w-input" value="'+ position +'"" name="position" readonly><input id="fname" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required=""><input id="efield" name="email" class="form-field w-input" type="email" placeholder="Email Address *" required=""><input id="pfield" name="phone" class="form-field w-input" type="number" placeholder="Phone number(Optional)"><div class="resume"><input data-fileupload="true" type="file"><\/div><div class="button-box"><button type="submit" class="main-cta w-button">Apply<\/button><\/div><\/form><\/div>'                    
+                , showConfirmButton: !1
             }
         )
     }
     const swalWithBootstrapButtons = Swal.mixin({ buttonsStyling: !1 });
 </script>
-
-<script src="https://web3forms.com/client/script.js" async defer></script>
