@@ -5,7 +5,7 @@
   color: rgb(255, 255, 255);
   /* color: white; */
   box-sizing: border-box;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
 }
 
@@ -25,7 +25,7 @@ body {
   /* color: #333; */
   /* color: rgb(16, 24, 38); */
   /* background: #2a2f38; */
-  background: #19191a;
+  background: linear-gradient(to bottom, #532284, #4539ae, #512d99, #3546c7);
   font-size: 17px;
   /* background: linear-gradient(307deg, rgba(18,31,69,1) 18%, rgba(25,25,25,1) 63%, rgba(25,25,25,1) 89%); */
   /* background: #ffffff; */
@@ -45,7 +45,6 @@ body {
   box-sizing: border-box;
 }
 
-
 .div-block {
   margin-top: 80px;
 }
@@ -64,12 +63,10 @@ body {
 
 .section {
   padding-bottom: 120px;
-  padding-top: 120px;
   display: block;
 }
 
 .sticky {
-
   position: fixed;
   top: 0;
   right: 0;
@@ -86,13 +83,14 @@ body {
 }
 
 .main-title {
-  font-size: 64px;
+  font-size: 57px;
   font-weight: 600;
   text-align: center;
   /* font-family: General Sans, sans-serif; */
   line-height: 120%;
+  margin-top: 140px;
 }
-.left{
+.left {
   text-align: left;
 }
 
@@ -101,15 +99,14 @@ body {
   font-weight: 600;
   /* font-family: General Sans, sans-serif; */
   line-height: 120%;
+  padding-top: 140px;
 }
 
 .teartiary-title {
   text-align: left;
   margin-top: 0;
-  margin-bottom: 24px;
-  font-size: 60px;
-  line-height: 60px;
-  color: #5c2372;
+  font-size: 40px;
+  line-height: 47px;
 }
 
 .t-t-smaller {
@@ -137,17 +134,14 @@ body {
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   grid-template-rows: auto auto;
-  grid-template-columns: .25fr 1fr;
+  grid-template-columns: 0.25fr 1fr;
   grid-auto-columns: 1fr;
-  margin-bottom: 220px;
   display: grid;
-
 }
 
 .strategy img {
-  width: 160px;
-  height: 160px;
-  align-self: self-end;
+  width: 80px;
+  height: 80px;
 }
 
 .its-name {
@@ -155,7 +149,7 @@ body {
 }
 
 .breadcrumb {
-  margin-top: 40px;
+  margin-top: 80px;
   margin-bottom: 40px;
   /* color: #000000; */
   /* color: #cbd5e1; */
@@ -211,10 +205,9 @@ table p {
   color: #0055dc;
 }
 
-.color:hover{
+.color:hover {
   color: #0055dc;
 }
-
 
 .navbtn {
   float: left;
@@ -235,26 +228,14 @@ table p {
   padding: 0px;
 }
 
-.its:hover {
-  /* color: rgb(0, 0, 0); */
-  /* color: white; */
-}
-
-
 .logo img {
-
   width: 240px;
   height: 80px;
-
 }
-
 
 #navbar a.active {
   color: rgb(0, 0, 0);
 }
-
-
-
 
 .dropbtn {
   /* background-color: #4CAF50; */
@@ -279,7 +260,6 @@ table p {
   border-radius: 8px;
   /* background: rgb(20 28 52); */
   z-index: 1;
-
 }
 
 .dropdown-content a {
@@ -290,7 +270,6 @@ table p {
   border-radius: 8px;
   text-decoration: none;
   display: block;
-
 }
 
 .dropdown-content a:hover {
@@ -305,12 +284,12 @@ table p {
   display: block;
 }
 
-.just-text{
+.just-text {
   text-align: justify;
   text-justify: inter-word;
- }
+}
 
- .animation {
+.animation {
   display: flex;
   opacity: 0;
   animation-name: Addstyle;
@@ -319,26 +298,26 @@ table p {
 
 @keyframes Addstyle {
   from {
-      opacity: 0;
+    opacity: 0;
   }
 
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
-@media screen and (max-width: 991px){
+@media screen and (max-width: 991px) {
   .section {
-      padding-top: 120px;
-      padding-bottom: 120px;
+    padding-top: 120px;
+    padding-bottom: 120px;
   }
 
   .container {
-      max-width: 690px;
-      margin-left: auto;
-      margin-right: auto;
+    max-width: 690px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  #navbar{
+  #navbar {
     max-width: 690px;
     margin-left: auto;
     margin-right: auto;
@@ -346,17 +325,16 @@ table p {
     padding-bottom: 0;
     padding-left: 20px;
   }
-    
 }
 
-@media screen and (max-width: 479px){
+@media screen and (max-width: 479px) {
   .container {
     max-width: 345px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .just-text{
+  .just-text {
     text-align: unset;
     font-size: 10px;
   }
@@ -371,12 +349,9 @@ table p {
   }
 
   .logo img {
-
     width: 180px;
     height: 60px;
-  
   }
-
 }
 
 /* .navigation{
@@ -498,195 +473,240 @@ table p {
   background-color: rgb(16, 24, 38);
 } */
 
-
-
-
 /* Open Sans Code css */
 /* cyrillic-ext */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTa-j2U0lmluP9RWlSytm3ho.woff2) format('woff2');
+  src: local("Open Sans Light"), local("OpenSans-Light"),
+    url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTa-j2U0lmluP9RWlSytm3ho.woff2)
+      format("woff2");
   unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
 }
 
 /* cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTZX5f-9o1vgP2EXwfjgl7AY.woff2) format('woff2');
+  src: local("Open Sans Light"), local("OpenSans-Light"),
+    url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTZX5f-9o1vgP2EXwfjgl7AY.woff2)
+      format("woff2");
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* greek-ext */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRWV49_lSm1NYrwo-zkhivY.woff2) format('woff2');
+  src: local("Open Sans Light"), local("OpenSans-Light"),
+    url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRWV49_lSm1NYrwo-zkhivY.woff2)
+      format("woff2");
   unicode-range: U+1F00-1FFF;
 }
 
 /* greek */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTaaRobkAwv3vxw3jMhVENGA.woff2) format('woff2');
+  src: local("Open Sans Light"), local("OpenSans-Light"),
+    url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTaaRobkAwv3vxw3jMhVENGA.woff2)
+      format("woff2");
   unicode-range: U+0370-03FF;
 }
 
 /* vietnamese */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTf8zf_FOSsgRmwsS7Aa9k2w.woff2) format('woff2');
+  src: local("Open Sans Light"), local("OpenSans-Light"),
+    url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTf8zf_FOSsgRmwsS7Aa9k2w.woff2)
+      format("woff2");
   unicode-range: U+0102-0103, U+1EA0-1EF1, U+20AB;
 }
 
 /* latin-ext */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTT0LW-43aMEzIO6XUTLjad8.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+  src: local("Open Sans Light"), local("OpenSans-Light"),
+    url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTT0LW-43aMEzIO6XUTLjad8.woff2)
+      format("woff2");
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F,
+    U+A720-A7FF;
 }
 
 /* latin */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  src: local("Open Sans Light"), local("OpenSans-Light"),
+    url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2)
+      format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
 /* cyrillic-ext */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  src: local("Open Sans"), local("OpenSans"),
+    url(https://fonts.gstatic.com/s/opensans/v13/K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2)
+      format("woff2");
   unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
 }
 
 /* cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/RjgO7rYTmqiVp7vzi-Q5URJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  src: local("Open Sans"), local("OpenSans"),
+    url(https://fonts.gstatic.com/s/opensans/v13/RjgO7rYTmqiVp7vzi-Q5URJtnKITppOI_IvcXXDNrsc.woff2)
+      format("woff2");
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* greek-ext */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  src: local("Open Sans"), local("OpenSans"),
+    url(https://fonts.gstatic.com/s/opensans/v13/LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc.woff2)
+      format("woff2");
   unicode-range: U+1F00-1FFF;
 }
 
 /* greek */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  src: local("Open Sans"), local("OpenSans"),
+    url(https://fonts.gstatic.com/s/opensans/v13/xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc.woff2)
+      format("woff2");
   unicode-range: U+0370-03FF;
 }
 
 /* vietnamese */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  src: local("Open Sans"), local("OpenSans"),
+    url(https://fonts.gstatic.com/s/opensans/v13/59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc.woff2)
+      format("woff2");
   unicode-range: U+0102-0103, U+1EA0-1EF1, U+20AB;
 }
 
 /* latin-ext */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+  src: local("Open Sans"), local("OpenSans"),
+    url(https://fonts.gstatic.com/s/opensans/v13/u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2)
+      format("woff2");
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F,
+    U+A720-A7FF;
 }
 
 /* latin */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  src: local("Open Sans"), local("OpenSans"),
+    url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2)
+      format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
 /* cyrillic-ext */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSq-j2U0lmluP9RWlSytm3ho.woff2) format('woff2');
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"),
+    url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSq-j2U0lmluP9RWlSytm3ho.woff2)
+      format("woff2");
   unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
 }
 
 /* cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSpX5f-9o1vgP2EXwfjgl7AY.woff2) format('woff2');
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"),
+    url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSpX5f-9o1vgP2EXwfjgl7AY.woff2)
+      format("woff2");
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* greek-ext */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNShWV49_lSm1NYrwo-zkhivY.woff2) format('woff2');
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"),
+    url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNShWV49_lSm1NYrwo-zkhivY.woff2)
+      format("woff2");
   unicode-range: U+1F00-1FFF;
 }
 
 /* greek */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSqaRobkAwv3vxw3jMhVENGA.woff2) format('woff2');
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"),
+    url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSqaRobkAwv3vxw3jMhVENGA.woff2)
+      format("woff2");
   unicode-range: U+0370-03FF;
 }
 
 /* vietnamese */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSv8zf_FOSsgRmwsS7Aa9k2w.woff2) format('woff2');
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"),
+    url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSv8zf_FOSsgRmwsS7Aa9k2w.woff2)
+      format("woff2");
   unicode-range: U+0102-0103, U+1EA0-1EF1, U+20AB;
 }
 
 /* latin-ext */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSj0LW-43aMEzIO6XUTLjad8.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"),
+    url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSj0LW-43aMEzIO6XUTLjad8.woff2)
+      format("woff2");
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F,
+    U+A720-A7FF;
 }
 
 /* latin */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"),
+    url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2)
+      format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }

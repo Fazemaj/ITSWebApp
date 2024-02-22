@@ -1,102 +1,160 @@
-    <div class="section" style="padding-top: 50px;">
-        <div class="container">
-            <main>
-                <div class="breadcrumb">Our Services</div>
-                <h1 class="submain-title">Microsoft Dynamics D365 Business Central ​</h1>
-                <p class="text-block">Need a new partner? Looking for a new implementation? Ready to upgrade? Looking for better support? No matter your needs, ITS is here to help. </p>
-            </main>
-        </div>
-    </div>
-    <div class="section">
-        <div class="container">
-            <div class="strategy tech-wrapper">
-                @* <div class="box-img">
-                    <img src="~/imgs/implementService.png" alt="">
-                </div> *@
-                <img src="~/imgs/Implement.png" alt="">
-                <div class="st-content">
-                    <h1 class="teartiary-title">Implementation Services</h1>
-                    <div class="text-block">
-                        We offer end to end implementation by carrying out all process steps from business requirement analysis, 
-                        system architecture design, business and technical analysis, configuration & development, integration with 
-                        other external IT systems, testing, training, data migration, organization change management, and post 
-                        implementation support
-                    </div>
-                </div>
-            </div>
-            <div class="strategy tech-wrapper">
-                @* <div class="box-img">
-                    <img src="~/imgs/CircleUpgrade.png" alt="">
-                </div> *@
-                <img src="~/imgs/CircleUpgrade.png" alt="">
-                <div class="st-content">
-                    <h1 class="teartiary-title">Upgrade Services​</h1>
-                    <div class="text-block">
-                        If you are still using an older version of Microsoft Dynamics 365 Business Central, we can help you upgrade to the latest version.
-                        ITS has developed an Microsoft Dynamics 365 Business Central Upgrade Program that will enable you to get to the latest version
-                        faster than ever. 
-                    </div>
-                </div>
-            </div>
-            <div class="strategy tech-wrapper">
-                <div class="box-img">
-                    <img src="~/imgs/cpu (2).png" alt="">
-                </div>
-                <div class="st-content">
-                    <h1 class="teartiary-title">NAV Restoration​</h1>
-                    <div class="text-block">
-                        Our NAV Restoration services provide unhappy Microsoft Dynamics NAV users with a unique opportunity: a health check, action plan,
-                        improvements, and support. We can not only remedy your current problems, but also provide you with a solid platform and a strategic
-                        partnership to ensure that your Dynamics NAV software solution meets your needs indefinitely. 
-                    </div>
-                </div>
-            </div>
-            <div class="strategy tech-wrapper">
-                @* <div class="box-img">
-                    <img src="~/imgs/cpu (2).png" alt="">
-                </div> *@
-                <img src="~/imgs/applicationSp.png" alt="">
-                <div class="st-content">
-                    <h1 class="teartiary-title">Application Support​</h1>
-                    <div class="text-block">
-                        When you become our Microsoft Dynamics 365 Business Central client, we stick with you till the end. 
-                        You can now focus on your core business while we ensure smooth functioning and uninterrupted operations
-                        of your total Microsoft Dynamics 365 Business Central system, with onsite or remote support Help Desk services. 
-                        Our well-experienced services team is ready to assist you by providing high availability for uninterrupted business
-                        operations by troubleshooting and resolving problems at any level.
-                    </div>
-                </div>
-            </div>
-            <div class="strategy tech-wrapper">
-                <div class="box-img">
-                    <img src="~/imgs/cpu (2).png" alt="">
-                </div>
-                <div class="st-content">
-                    <h1 class="teartiary-title">Central Cloud Solution​</h1>
-                    <div class="text-block">
-                        Microsoft Dynamics 365 Business Central is available both on-premises and on the cloud. 
-                        If you wish to learn more about the benefits of Microsoft Dynamics 365 Business Central
-                        on cloud or want to migrate your solution to the cloud ITS can surely help
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @* <script>
-        window.onscroll = function() {myFunction()};
-        
-        var navbar = document.getElementById("navcontainer");
-        var sticky = navbar.offsetTop;
-        var navbarchild = document.getElementById("navbar");
+<style>
+    .last-service {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 17px;
+    }
 
-        function myFunction() {
-          if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-            
-            navbarchild.classList.add("stickyBg");
-          } else {
-            navbar.classList.remove("sticky");
-            navbarchild.classList.remove("stickyBg");
-          }
-        }
-    </script>  *@
+    .tech-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .strategy {
+        width: 48%;
+        margin-bottom: 20px;
+        display: flex;
+        background: #141313;
+        border-radius: 16px;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 40px;
+        text-decoration: none;
+        opacity: 0.82226
+    }
+
+    .box-img {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .st-content {
+        flex: 2;
+        padding-left: 20px;
+    }
+
+    .last-service {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+</style>
+
+
+<div class="section" style="padding-top: 50px;">
+    <div class="container">
+        <main>
+            <h1 class="submain-title">Microsoft Dynamics D365 Business Central ​</h1>
+            <p class="text-block">Need a new partner? Looking for a new implementation? Ready to upgrade? Looking for
+                better support? No matter your needs, ITS is here to help. </p>
+        </main>
+    </div>
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="tech-wrapper">
+            <div class="strategy tech-wrapper">
+                <div class="box-img">
+                    <img src="~/imgs/implementation.png" alt="">
+                    <h1 class="teartiary-title">Implementation Services</h1>
+                </div>
+                <div class="st-content">
+
+                    <div class="text-block">
+                        We offer end to end implementation by carrying out all process steps from business requirement
+                        analysis, system architecture design, business and technical analysis, configuration &
+                        development, integration with other external IT systems, testing, training, data migration,
+                        organization change management, and post implementation support
+                    </div>
+                </div>
+            </div>
+            <div class="strategy tech-wrapper">
+                <div class="box-img">
+                    <img src="~/imgs/upgrade services.png" alt="">
+                    <h1 class="teartiary-title">Upgrade Services​</h1>
+                </div>
+                <div class="st-content">
+
+                    <div class="text-block">
+                        If you are still using an older version of Microsoft Dynamics 365 Business Central, we can help
+                        you upgrade to the latest version. ITS has developed an Microsoft Dynamics 365 Business Central
+                        Upgrade Program that will enable you to get to the latest version faster than ever.
+                    </div>
+                </div>
+            </div>
+            <div class="strategy tech-wrapper">
+                <div class="box-img">
+                    <img src="~/imgs/NAV.png" alt="">
+                    <h1 class="teartiary-title">NAV Restoration​</h1>
+                </div>
+                <div class="st-content">
+
+                    <div class="text-block">
+                        Our NAV Restoration services provide unhappy Microsoft Dynamics NAV users with a unique
+                        opportunity: a health check, action plan, improvements, and support. We can not only remedy your
+                        current problems, but also provide you with a solid platform and a strategic partnership to
+                        ensure that your Dynamics NAV software solution meets your needs indefinitely.
+                    </div>
+                </div>
+            </div>
+            <div class="strategy tech-wrapper">
+                <div class="box-img">
+                    <img src="~/imgs/Application.er.png" alt="">
+                    <h1 class="teartiary-title">Application Support​</h1>
+                </div>
+                <div class="st-content">
+
+                    <div class="text-block">
+                        When you become our Microsoft Dynamics 365 Business Central client, we stick with you till the
+                        end. You can now focus on your core business while we ensure smooth functioning and
+                        uninterrupted operations of your total Microsoft Dynamics 365 Business Central system, with
+                        onsite or remote support Help Desk services. Our well-experienced services team is ready to
+                        assist you by providing high availability for uninterrupted business operations by
+                        troubleshooting and resolving problems at any level.
+                    </div>
+                </div>
+            </div>
+            <div class="last-service">
+                <div class="strategy tech-wrapper">
+                    <div class="box-img">
+                        <img src="~/imgs/central cloud.png" alt="">
+                        <h1 class="teartiary-title">Central Cloud Solution​</h1>
+                    </div>
+                    <div class="st-content">
+
+                        <div class="text-block">
+                            Microsoft Dynamics 365 Business Central is available both on-premises and on the cloud. If
+                            you
+                            wish to learn more about the benefits of Microsoft Dynamics 365 Business Central on cloud or
+                            want to migrate your solution to the cloud ITS can surely help
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* <script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navcontainer");
+var sticky = navbar.offsetTop;
+var navbarchild = document.getElementById("navbar");
+
+function myFunction() {
+if (window.pageYOffset >= sticky) {
+navbar.classList.add("sticky")
+
+navbarchild.classList.add("stickyBg");
+} else {
+navbar.classList.remove("sticky");
+navbarchild.classList.remove("stickyBg");
+}
+}
+</script> *@

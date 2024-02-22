@@ -3,16 +3,16 @@
         color: black;
     }
 
-    body{
-        background:#ededed
+    body {
+        background: #ededed
     }
 
-    .section-header{
+    .section-header {
         padding-top: 40px;
         background: #ededed;
     }
 
-    .container{
+    .container {
         margin-left: auto;
         margin-right: auto;
         display: flex;
@@ -53,10 +53,9 @@
         font-size: 30px;
         text-decoration: none;
         color: white;
-        font-weight: bold; 
+        font-weight: bold;
         margin-left: auto;
-    @* background: #363333; *@
-        background-color: #2e3c55;
+    @*background:#363333;*@background-color: #2e3c55;
         padding: 23px 18px;
         align-self: center;
         border-radius: 45px;
@@ -68,26 +67,15 @@
         vertical-align: middle;
     }
 
-    .home a:hover{
+    .home a:hover {
 
         transform: scale(1.01);
-        @* transition: transform 0.2s, background 0.4s; *@
-        background: #000;
+    @*transition:transform0.2s,background0.4s;*@background: #000;
         box-shadow: 2px 2px 12px 3px #00000054;
         transform: scale(1.02);
     }
 
-    @* header {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        -ms-flex-align: center;
-        align-items: center;
-        padding: 20px 70px;
-    } *@
-
-    .footer__left {
+    @*header{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;padding:20px70px;}*@.footer__left {
         display: flex;
         padding: 20px;
         justify-content: space-between;
@@ -98,11 +86,11 @@
         font-size: 20px;
     }
 
-    span{
-        display:flex;
+    span {
+        display: flex;
     }
 
-    .main-section{
+    .main-section {
 
         height: 400px;
     }
@@ -114,13 +102,7 @@
         padding-bottom: 40px;
     }
 
-    @* .contact {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    } *@
-
-    .social{
+    @*.contact{display:flex;flex-direction:row;justify-content:space-around;}*@.social {
         display: flex;
         flex-direction: row;
     }
@@ -129,73 +111,71 @@
         margin-right: 10px;
     }
 
-    .footer__left > span + span:before {
+    .footer__left>span+span:before {
         content: '|';
         display: inline-block;
         margin: 0 40px;
     }
-    
-    .section-footer{
+
+    .section-footer {
         background: #efefed;
     }
 
-    .container-footer{
-        padding-top:30px;
+    .container-footer {
+        padding-top: 30px;
     }
 
     .main-container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1140px;
-}
-
-.text-block {
-    max-width: 830px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 21px;
-    line-height: 32px;
-}
-
-@@media screen and (max-width: 990px){
-
-    .main-title {
-        font-size: 35px;
-        font-weight: 600;
-        line-height: 40px;
-    }
-
-    .container{
         margin-left: auto;
         margin-right: auto;
-        display: flex;
-        flex-direction: column;
+        max-width: 1140px;
     }
 
-    .container div {
-        @* margin-left: auto; *@
-        @* margin-right: auto; *@
-        @* max-width: 200px; *@
-    }
-    .container div:nth-child(2){
-        margin-top: 20px;
-    }
-
-    .footer__left {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        font-size: 20px;
+    .text-block {
+        max-width: 830px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 21px;
+        line-height: 32px;
     }
 
-    .footer__left > span + span:before {
-        content: '|';
-        display: none;
-        @* margin: 0 40px; *@
-    }
-}
+    @@media screen and (max-width: 990px) {
 
+        .main-title {
+            font-size: 35px;
+            font-weight: 600;
+            line-height: 40px;
+        }
+
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container div {
+    @*margin-left:auto;*@@*margin-right:auto;*@@*max-width:200px;*@
+        }
+
+        .container div:nth-child(2) {
+            margin-top: 20px;
+        }
+
+        .footer__left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 20px;
+        }
+
+        .footer__left>span+span:before {
+            content: '|';
+            display: none;
+    @*margin:040px;*@
+        }
+    }
 </style>
 
 <div class="page-wrap">
@@ -213,13 +193,14 @@
                     </div>
                 </div>
             </div>
-            <div class="main-section hero" >
+            <div class="main-section hero">
                 <div class="section">
-                <div class="main-container">
-                    <h1 class="main-title">Under construction</h1>
-                    <p class="text-block">Our website is currently undergoing scheduled maintenance. We should be back shortly.Thank you for your patience.</p>
+                    <div class="main-container">
+                        <h1 class="main-title">Under construction</h1>
+                        <p class="text-block">Our website is currently undergoing scheduled maintenance. We should be
+                            back shortly.Thank you for your patience.</p>
+                    </div>
                 </div>
-            </div>
             </div>
             <div class="section-footer">
                 <div class="container-footer">
@@ -229,23 +210,24 @@
                             <span style="font-size: 20px;" class="footer-link">info@itechsolutions.al</span>
                             <span>
                                 <div class="social">
-                                    <a href="https://www.linkedin.com/company/integrated-tech-solutions-its/" target="_blank"
-                                    class="socials-div w-inline-block">
-                                    <img style="height:30px; width:30px;" src="~/imgs/linkedin.png"
-                                    loading="lazy" alt="" class="">
+                                    <a href="https://www.linkedin.com/company/integrated-tech-solutions-its/"
+                                        target="_blank" class="socials-div w-inline-block">
+                                        <img style="height:30px; width:30px;" src="~/imgs/linkedin.png" loading="lazy"
+                                            alt="" class="">
                                     </a>
                                     <a href="https://www.facebook.com/itechsalbania/" target="_blank"
-                                    class="socials-div w-inline-block">
-                                    <img style="height:30px; width:30px;" src="~/imgs/facebook.png" loading="lazy" alt="" class="social-icon">
-                                        </a>
+                                        class="socials-div w-inline-block">
+                                        <img style="height:30px; width:30px;" src="~/imgs/facebook.png" loading="lazy"
+                                            alt="" class="social-icon">
+                                    </a>
                                     <a href="https://www.instagram.com/i_techsolutions.al/" target="_blank"
-                                    class="socials-div w-inline-block">
-                                    <img style="height:30px; width:30px;" src="~/imgs/instagram.png"
-                                    loading="lazy" alt="">
+                                        class="socials-div w-inline-block">
+                                        <img style="height:30px; width:30px;" src="~/imgs/instagram.png" loading="lazy"
+                                            alt="">
                                     </a>
                                 </div>
                             </span>
-				        </div>
+                        </div>
                     </div>
                     <div class="container footer">
                         <div class="copyright">
