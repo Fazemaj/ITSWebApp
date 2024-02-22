@@ -18,6 +18,10 @@
   margin-top: 24px;
 }
 
+.help-block{
+  padding-bottom: 30px;
+}
+
 .offers-container {
   grid-column-gap: 36px;
   grid-row-gap: 36px;

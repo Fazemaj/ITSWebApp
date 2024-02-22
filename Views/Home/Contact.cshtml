@@ -135,102 +135,29 @@
                 <p><strong>Location:</strong> Tirana, Albania</p>
                 <p><strong>Street:</strong> Jordan Misja</p>
                 <p><strong>Email:</strong> info@itechsolutions.al</p>
-                <p><strong>Phone:</strong> +123 456 7890</p>
+                <a class="phone" href="tel:+355 69 260 3591"><strong>Email:</strong> +355 69 260 3591</a>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d748.9359400617928!2d19.811488!3d41.336185!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1708586448151!5m2!1sen!2sus"
                     width="70%" height="210" style="border:5;  border-radius: 20px; " allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="form-block w-form">
-                @* onsubmit="sendEmail(); reset(); return false;" action="https://formsubmit.co/el/piliwu" *@
-                <form onsubmit="sendEmail(); reset();  return false;">
-                    @* maxlength="256" name="name" data-name="Name" id="name" id="contact-form" *@
-                    <input id="name" type="text" class="form-field w-input" placeholder="Full Name *" required="">
-                    <input id="emailfield" class="form-field w-input" type="email" placeholder="Email Address *"
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024">
+                    <input id="name" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required="">
+                    <input id="emailfield" class="form-field w-input" name="email" type="email" placeholder="Email Address *"
                         required="">
-                    <input id="phone" class="form-field w-input" type="number" maxlength="256"
+                    <input id="phone" class="form-field w-input" name="phone" type="number" maxlength="256"
                         placeholder="Phone number (optional)">
-                    <textarea id="tellMore" maxlength="5000" type="text" placeholder="Tell us some more *" required=""
+                    <textarea id="tellMore" maxlength="5000" type="text" name="message" placeholder="Tell us some more *" required=""
                         class="form-field textarea w-input"></textarea>
                     <div class="button-box">
                         <button type="submit" class="main-cta w-button">Send</button>
                     </div>
                 </form>
-                @* <div class="success w-form-done" tabindex="-1" role="region" aria-label="Email Form success">
-                <img src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/62bf09698c2d68449b1c78ab_sent.svg"
-                loading="lazy" alt="" class="successimg">
-                <div class="successtext">Thank you! Your submission has been received!</div>
-                <a href="/" class="secondary-cta w-button">Go to homepage</a>
-                </div>
-                <div class="error w-form-fail w-form-done" tabindex="-1" role="region" aria-label="Email Form failure">
-                <img src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/62bf0c9ba0ee771a563cc26d_error.svg"
-                loading="lazy" alt="" class="errorimg">
-                <div class="errortext">Oops! Something went wrong while submitting the form.</div>
-                </div> *@
             </div>
             <div class="js-content">
-                <!-- Google Maps iframe -->
-
-
             </div>
-
         </div>
-
     </div>
-
 </div>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script type="text/javascript">
-
-    const recivers = ["fazemaj@itechsolutions.al", "frankoazemaj@gmail.com"];
-    const sender = "frankoazemaj@gmail.com";
-
-    function sendEmail() {
-
-        Email.send({
-            SecureToken: "07b23fc0-b21b-4b02-903e-d8d25247e28d",
-            To: recivers,
-            From: recivers[0],
-            Subject: "Email from the website contact form",
-            Body: "Name: " + document.getElementById('name').value
-                + "<br> Email: " + document.getElementById('emailfield').value
-                + "<br> Phone: " + document.getElementById('phone').value
-                + "<br> Message: " + document.getElementById('tellMore').value
-        }).then(
-            message => alert("Success" + message)
-        );
-
-        message => alert("Success, " + message);
-    }
-
-    @* Email.send({
-        Host: "smtp.elasticemail.com",
-        Username: "frankoazemaj@gmail.com",
-        Password: "8939AC82DB475F2C7D2311F63495B7960D73",
-        To: 'frankoazemaj@gmail.com',
-        From: document.getElementById('emailfield').value,
-        Subject: "Email from the website contact form",
-        Body: "Name: " + document.getElementById('name').value
-        + "<br> Email: " + document.getElementById('emailfield').value
-        + "<br> Phone: " + document.getElementById('phone').value
-        + "<br> Message: " + document.getElementById('tellMore').value
-        }).then(
-        message => alert(message)
-        );
-
-        message => alert(message); *@
-    @*Your security token is 07b23fc0-b21b-4b02-903e-d8d25247e28d *@
-
-    @* const message = await window.Email.send({
-        SecureToken: "8939AC82DB475F2C7D2311F63495B7960D73",
-        To: 'frankoazemaj@gmail.com',
-        From: document.getElementById('emailfield').value,
-        Subject: "This is the subject",
-        Body: "And this is the body"
-        });
-        if (message === "OK") {
-        message => alert(message)
-        } *@
-
-
-</script>
