@@ -353,17 +353,6 @@
     //     var file = document.getElementById("cvfield").files[0];
     //     var position = ".NET Developer";
 
-    const toBase64 = file => new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = reject;
-        });
-    }
-
-    var base64File = await toBase64(file);
-    console.log(base64File); *@
-
     async function sendEmail() {
 
         Email.send({

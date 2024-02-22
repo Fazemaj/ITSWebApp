@@ -331,10 +331,16 @@ to {opacity:1 ;}
         var navbar = document.getElementById("navcontainer");
         var sticky = navbar.offsetTop;
         var navbarchild = document.getElementById("navbar");
-        @* var imglogo = document.getElementById("logo-its");
-            const image = document.createElement('img'); *@
 
-
+            function myFunction() {
+        if (window.pageYOffset > sticky) {
+            navbar.classList.add("sticky");
+            navbarchild.classList.add("stickyBg");
+    } else {
+            navbar.classList.remove("sticky");
+            navbarchild.classList.remove("stickyBg");
+    }
+    }
             
     function dropfunction(){
         document.getElementById("dropServices").classList.toggle("show");
