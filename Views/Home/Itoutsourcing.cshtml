@@ -1,129 +1,206 @@
 <style>
-  .last-service {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 17px;
-  }
-
   .tech-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  .strategy {
-    width: 48%;
+  .strategy-container {
+    width: calc(50% - 20px);
+    /* Adjusted width to display 2 cards side by side with spacing */
     margin-bottom: 20px;
-    display: flex;
-    background: #141313;
-    border-radius: 16px;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 40px;
-    text-decoration: none;
-    opacity: 0.82226
+    box-sizing: border-box;
+    /* Include padding and border in the width calculation */
+  }
+
+  .strategy {
+    width: 100%;
+    height: auto;
+    perspective: 1000px;
+  }
+
+  .card-front {
+    width: 100%;
+    height: 200px;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    position: relative;
+  }
+
+  .card-back {
+    width: 100%;
+    height: 200px;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    position: absolute;
+  }
+
+  .card-front {
+    transform: rotateY(0deg);
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+  }
+
+  .strategy:hover .card-front {
+    transform: rotateY(-180deg);
+  }
+
+  .strategy:hover .card-back {
+    transform: rotateY(0deg);
   }
 
   .box-img {
     display: flex;
     align-items: center;
     gap: 20px;
+    padding: 20px;
+    width: 100%;
+    height: 200px;
+    background: #141313;
+    border-radius: 16px;
   }
 
   .st-content {
-    flex: 2;
-    padding-left: 20px;
+    padding: 5px;
+    background: #141313;
+    border-radius: 16px;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    height: 200px;
+    /* Ensure content fills the card */
   }
 
-  .last-service {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  .text-block {
+    align-items: center;
+    text-align: center;
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  .teartiary-title {
+    color: white;
   }
 </style>
+
+
+
 
 <div class="section" style="padding-top: 50px;">
   <div class="container">
     <main>
-      <h1 class="submain-title"> IT Outsourcing Services ​</h1>
-
+      <h1 class="submain-title">IT Outsourcing Services</h1>
       <p class="text-block">
         We tailor our services according to our client’s short-term and long-term needs. Whether you are seeking a new
-        IT solution, integrated solution to support existing technology components, or want to completely outsource your
+        IT solution, integrated solution to support existing technology components, or want to completely outsource
+        your
         IT environment, we provide exceptional value and innovation to achieve measurable reliability and performance
         results in a way that drives value. We work as an extension of your organization to manage an increasingly
-        complex environment of technology, processes, systems, and software.
-        SAP Manage Services
-        To ensure that your SAP solution always runs smoothly and remains fit for the future, it must be monitored,
-        carefully maintained, and further developed. </p>
+        complex environment of technology, processes, systems, and software. SAP Manage Services To ensure that your
+        SAP
+        solution always runs smoothly and remains fit for the future, it must be monitored, carefully maintained, and
+        further developed.
+      </p>
     </main>
   </div>
 </div>
+
 <div class="section">
   <div class="container">
     <div class="tech-wrapper">
-      <div class="strategy tech-wrapper">
-        <div class="box-img">
-          <img src="~/imgs/sap (1).png" alt="">
-          <h1 class="teartiary-title">SAP Manage Services </h1>
-        </div>
-        <div class="st-content">
-
-          <div class="text-block">
-            SAP Managed Services ensure the smooth and future-ready operation of SAP solutions, offering ongoing
-            monitoring, maintenance, user management, and a 24x7 service desk for prompt incident resolution. Clients
-            benefit from optimized operations and cost reductions, allowing them to focus on core business activities.
+      <div class="strategy-container">
+        <div class="strategy">
+          <div class="card-front">
+            <div class="box-img">
+              <img src="~/imgs/sap (1).png" alt="">
+              <h1 class="teartiary-title">SAP Manage Services</h1>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="st-content">
+              <div class="text-block">
+                SAP Managed Services ensure the smooth and future-ready operation of SAP solutions, offering ongoing
+                monitoring, maintenance, user management, and a 24x7 service desk for prompt incident resolution.
+                Clients
+                benefit from optimized operations and cost reductions, allowing them to focus on core business
+                activities.
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="strategy tech-wrapper">
-        <div class="box-img">
-          <img src="~/imgs/application.png" alt="">
-          <h1 class="teartiary-title">Application Development Services </h1>
-        </div>
-        <div class="st-content">
 
-          <div class="text-block">
-            We provide Application Development Services tailored to clients' unique needs, covering collaborative
-            design,
-            development with vendor relationships, iterative testing for quality assurance, and the implementation of
-            DevOps principles. Additionally, we offer ongoing operational management services.
+      <div class="strategy-container">
+        <div class="strategy">
+          <div class="card-front">
+            <div class="box-img">
+              <img src="~/imgs/application.png" alt="">
+              <h1 class="teartiary-title">Application Development Services</h1>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="st-content">
+              <div class="text-block">
+                We provide Application Development Services tailored to clients' unique needs, covering collaborative
+                design, development with vendor relationships, iterative testing for quality assurance, and the
+                implementation
+                of DevOps principles. Additionally, we offer ongoing operational management services.
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="tech-wrapper">
-      <div class="strategy tech-wrapper">
-        <div class="box-img">
-          <img src="~/imgs/IT Infrastructure.png" alt="">
-          <h1 class="teartiary-title">IT Infrastructure Management Services ​</h1>
-        </div>
-        <div class="st-content">
 
-          <div class="text-block">
-            Responsible for managing client technology infrastructure, our IT Infrastructure Management Services ensure
-            24/7 support, offering continuous monitoring, issue prevention, and troubleshooting. Services include IT
-            infrastructure administration, covering user management, workstation maintenance, software updates, network,
-            and cloud service management.
+      <div class="strategy-container">
+        <div class="strategy">
+          <div class="card-front">
+            <div class="box-img">
+              <img src="~/imgs/IT Infrastructure.png" alt="">
+              <h1 class="teartiary-title">IT Infrastructure Management Services</h1>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="st-content">
+              <div class="text-block">
+                Responsible for managing client technology infrastructure, our IT Infrastructure Management Services
+                ensure
+                24/7 support, offering continuous monitoring, issue prevention, and troubleshooting. Services include
+                IT
+                infrastructure administration, covering user management, workstation maintenance, software updates,
+                network,
+                and cloud service management.
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="strategy tech-wrapper">
-        <div class="box-img">
-          <img src="~/imgs/IT service desk.png" alt="">
-          <h1 class="teartiary-title">IT Service Desk ​</h1>
-        </div>
-        <div class="st-content">
 
-          <div class="text-block">
-            Delivering comprehensive IT help desk solutions, our services focus on resolving and preventing IT issues
-            for
-            employees and customers. Our scalable IT ServiceDesk covers incidents related to PCs, mobile devices, email,
-            VoIP, networks, servers, and Office Suite applications. We aim to enhance productivity by providing user
-            support for usage issues (Level 1) and technical support for complex incidents (Level 2) across diverse
-            operating systems and IT infrastructure.
+      <div class="strategy-container">
+        <div class="strategy">
+          <div class="card-front">
+            <div class="box-img">
+              <img src="~/imgs/IT service desk.png" alt="">
+              <h1 class="teartiary-title">IT Service Desk</h1>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="st-content">
+              <div class="text-block">
+                Delivering comprehensive IT help desk solutions, our services focus on resolving and preventing IT
+                issues
+                for employees and customers. Our scalable IT ServiceDesk covers incidents related to PCs, mobile
+                devices, email,
+                VoIP, networks, servers, and Office Suite applications. We aim to enhance productivity by providing
+                user
+                support for usage issues (Level 1) and technical support for complex incidents (Level 2) across
+                diverse
+                operating systems and IT infrastructure.
+              </div>
+            </div>
           </div>
         </div>
       </div>

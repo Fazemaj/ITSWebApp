@@ -28,6 +28,13 @@ namespace ITS_Web.Controllers
             return View();
         }
 
+        public IActionResult Itoutsourcing()
+        {
+            // ViewBag.ShowTopBar = false;
+            ViewBag.ShowTopBar = true;
+            return View();
+        }
+
         [HttpGet]
         public IActionResult About()
         {
