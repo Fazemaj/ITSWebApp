@@ -20,6 +20,10 @@ html {
   background-size: cover;
   background-attachment: scroll;
 }
+html,
+body {
+  overscroll-behavior: none;
+}
 
 body {
   /* color: #333; */

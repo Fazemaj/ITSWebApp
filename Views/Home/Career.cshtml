@@ -1,14 +1,10 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
 
 <style>
 
-    .offer-container-wrapper {
-    display: flex; 
-    justify-content: space-between;
-}
+
 
 
 .offer-container-wrapper {
@@ -37,7 +33,7 @@
         padding: 33px;
         border-radius: 16px;
         background: #141313;
-        opacity: 0.92226;
+        opacity: 0.82226;
 
     }
 
@@ -157,13 +153,43 @@
             </div>
         </div>
     </div>
+   <div class="slideshow-container">
 
+<div class="mySlides fade">
+  <img src="~/imgs/Laert.png" style="width:100%">
+ 
+</div>
+
+<div class="mySlides fade">
+  <img src="~/imgs/Armil.png" style="width:100%">
+  
+</div>
+
+<div class="mySlides fade">
+  <img src="~/imgs/Maksim.png" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+<div class="mySlides fade">
+  <img src="~/imgs/background.jpg" style="width:100%">
+</div>
+@* <a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a> *@
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
     <div class="section wf-section">
         <div class="container">
             <div class="main-title-wrapper">
                 <h1 class="main-title left">What we offer</h1>
             </div>
-           <div class="offers-container"  >
+          <div class="offers-container"  >
     <div class="offer-container-wrapper">
         <div class="offer-card" asp-action="MC" data-aos="fade-right" >
             <ul class="card-title">
@@ -192,6 +218,7 @@
             </div>
         </div>
     </div>
+ 
     <div class="section wf-section">
         <div class="container">
             <div class="main-title-wrapper">
@@ -318,9 +345,9 @@
     <div class="section wf-section">
         <div class="container">
             <div class="main-title-wrapper">
-                <h1 class="main-title left"> WANT TO BE PART OF ITS</h1>
+                <h1 class="main-title left"> Want to join our Team</h1>
                 <p>Looking for a new position? Ready to upgrade?</p>
-                <p>Looking for better support? ITS is here for you.</p>
+                <p style="font-size:20px; margin-top:20px; font-weight: 400">ITS is here for you.</p>
             </div>
             <div class="form-block w-form">
                 <form action="https://api.web3forms.com/submit" method="POST">
@@ -354,7 +381,55 @@
         </div>
     </div>
 </main>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
 
+// Automatic slideshow
+let slideInterval = setInterval(function() {
+  plusSlides(1);
+}, 1000); // Adjust the interval duration as needed (in milliseconds)
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+  clearInterval(slideInterval); // Clear the interval timer
+  slideInterval = setInterval(function() {
+    plusSlides(1);
+  }, 1000); // Restart the interval timer after manual navigation
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+  clearInterval(slideInterval); // Clear the interval timer
+  slideInterval = setInterval(function() {
+    plusSlides(1);
+  }, 1000); // Restart the interval timer after manual navigation
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init();
+</script>
+@* <script src="https://smtpjs.com/v3/smtp.js"></script> *@
+<script>
 @* <script src="https://smtpjs.com/v3/smtp.js"></script> *@
 <script>
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////

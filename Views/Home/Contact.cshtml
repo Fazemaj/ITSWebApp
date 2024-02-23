@@ -1,4 +1,5 @@
 @* @model EmailData; *@
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
 <style>
     .w-input,
@@ -15,7 +16,9 @@
         background-color: ;
     }
 
-
+.map{
+    margin-top: 20px; 
+}
 
     .form-wrapper {
         grid-column-gap: 32px;
@@ -135,11 +138,11 @@
                 <p><strong>Location:</strong> Tirana, Albania</p>
                 <p><strong>Street:</strong> Jordan Misja</p>
                 <p><strong>Email:</strong> info@itechsolutions.al</p>
-                <a class="phone" href="tel:+355 69 260 3591"><strong>Email:</strong> +355 69 260 3591</a>
-                <iframe
+                <p> <a class="phone" href="tel:+355 69 260 3591"><strong>Number:</strong> +355 69 260 3591</a> </p>
+              <div class="map">   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d748.9359400617928!2d19.811488!3d41.336185!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1708586448151!5m2!1sen!2sus"
                     width="70%" height="210" style="border:5;  border-radius: 20px; " allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
             </div>
             <div class="form-block w-form">
                 <form action="https://api.web3forms.com/submit" method="POST">

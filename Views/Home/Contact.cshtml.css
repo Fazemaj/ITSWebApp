@@ -24,10 +24,8 @@
   display: grid;
 }
 
-.phone{
-
+.phone {
   text-decoration: none;
-  margin-bottom: 10px;
 }
 
 .success {
@@ -52,7 +50,7 @@
 
 .contact-info p {
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .contact-info h2 {
