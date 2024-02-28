@@ -1,25 +1,20 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-</head>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
 <style>
     .main-cta {
         margin-top: 20px
     }
 
-    .offer-container-wrapper {
-        display: flex;
-        /* Use flexbox layout */
-        justify-content: space-between;
-        /* Distribute items evenly along the main axis */
-    }
+
 
     [data-aos^="fade"][data-aos^="fade"].aos-animate {
         opacity: 0.8;
         transform: translateZ(0);
     }
 
-    /* Apply styles to images within .carrer-container and .img-box2 */
     .carrer-container img {
         width: 251px;
         height: auto;
@@ -29,24 +24,14 @@
     }
 
     .img-box2 img {
-        width: 31.57%;
+        width: calc(20% - 20px);
+        /* Adjust the width as needed */
+        /* Adjust the margin as needed */
+        max-width: 100%;
+        /* Add a maximum width if necessary */
         height: auto;
-        margin-top: 40px;
     }
 
-    .form-block {
-        max-width: 580px;
-        min-width: 200px;
-    }
-
-    .w-form {
-        margin: 35px 0 15px;
-        padding: 33px;
-        border-radius: 16px;
-        background: #141313;
-        opacity: 0.82226;
-
-    }
 
 
     .form-field {
@@ -144,9 +129,35 @@
         opacity: 0.97226;
 
     }
+
+    @@media (min-width: 600.1px) and (max-width: 991.98px) {
+        .carrer-container img {
+            width: 200px;
+        }
+
+    }
+
+    @@media only screen and (max-width: 600px) {
+        .img-box2 {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .carrer-container img {
+            width: 100px;
+        }
+
+        .img-box2 img {
+            width: 49%;
+            /* Adjust the width as needed */
+            margin-bottom: -20px;
+            /* Adjust the margin as needed */
+        }
+    }
 </style>
 <main>
-    <div class="section wf-section">
+    <div class="section-first wf-section">
         <div class="container ">
             <div class="main-title-wrapper">
                 <h1 class="main-title left">Career in ITS</h1>
@@ -180,15 +191,24 @@
                 </div>
             </div>
             <div class="img-box2">
-                <img src="~/imgs/10.png" alt="career boost image">
-                <img src="~/imgs/1.png" alt="career boost image">
-                <img src="~/imgs/2.png" alt="career boost image">
-                <img src="~/imgs/3.png" alt="career boost image">
+                <div class="list-item">
+                    <div class="team-members"> <img src="~/imgs/10.png" alt="career boost image"></div>
+                </div>
+                <div class="list-item">
+                    <div class="team-members"> <img src="~/imgs/1.png" alt="career boost image"></div>
+                </div>
+                <div class="list-item">
+                    <div class="team-members"> <img src="~/imgs/2.png" alt="career boost image"></div>
+                </div>
+                <div class="list-item">
+                    <div class="team-members"> <img src="~/imgs/3.png" alt="career boost image"></div>
+                </div>
 
             </div>
 
         </div>
     </div>
+
     @* <div class="slideshow-container">
 
     <div class="mySlides fade">
@@ -219,7 +239,7 @@
                 <h1 class="main-title left" style="margin-top:70px;">What we offer</h1>
             </div>
             <div class="offers-container">
-                <div class="offer-container-wrapper">
+                <div class="offer-container-wrapper" style="overflow-x:hidden;">
                     <div class="offer-card" asp-action="MC" data-aos="fade-right">
                         <ul class="card-title">
                             <li>Innovative and collaborative work environment</li>
@@ -461,7 +481,6 @@ dots[slideIndex-1].className += " active";
 }
 
 </script> *@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
     // Initialize AOS
     AOS.init();

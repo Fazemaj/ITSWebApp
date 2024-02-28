@@ -11,6 +11,7 @@
     @* <link rel="stylesheet" href="~/ITS-Web.styles.scss" asp-append-version="true" /> *@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="~/js/scripts/sweetalert.js"></script>
+  
 
 </head>
 
@@ -105,6 +106,26 @@
         height: 45px;
     }
 
+.footer-its {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.logo-container img{
+    width: 10%;
+    opacity: 0.7;
+}
+.hr-horizontal {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #your-color;
+
+}
+
     .serviceItem{
         display: flex;
         flex-direction: row;
@@ -167,7 +188,8 @@ to {opacity:1 ;}
 
 @* //////////////////////////////////////////////////////////// *@
     
-    
+   
+ 
 </style>
 @if (ViewBag.ShowTopBar ?? false)
 {
@@ -257,9 +279,14 @@ to {opacity:1 ;}
     </div>
     @if (ViewBag.ShowTopBar ?? false)
     {
-        <div id="footer" class="section footer wf-section">
+       <div class="footer-its">
+    <div class="logo-container">
+        <img src="~/imgs/ITS01.png" alt="" >
+        <hr class="hr-horizontal">
+    </div>
+</div>
 
-            <hr> 
+           
         <div class="container links">
             <div class="footer-div">
                 <h5 class="footer-title">Get in Touch</h5>
@@ -308,7 +335,7 @@ to {opacity:1 ;}
 </div>
 </div>
 
-        </div>
+
         <div class="container footer">
                 <div class="container">
                     &copy; 2022 Integrated Tech Solutions – All Rights reserved
