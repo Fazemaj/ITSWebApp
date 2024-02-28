@@ -1,133 +1,7 @@
 @* @model EmailData; *@
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
-<style>
-    .w-input,
-    .w-select {
-        width: 100%;
-        height: 38px;
-        vertical-align: middle;
-        border: 1px solid #ccc;
-        margin-bottom: 10px;
-        padding: 8px 12px;
-        font-size: 14px;
-        line-height: 1.42857;
-        display: block;
-        background-color: ;
-    }
 
-.map{
-    margin-top: 20px; 
-}
-
-    .form-wrapper {
-        grid-column-gap: 32px;
-        grid-row-gap: 32px;
-        grid-template-rows: auto;
-        grid-template-columns: 1fr 1fr;
-        grid-auto-columns: 1fr;
-        align-items: center;
-        margin-top: 60px;
-        display: grid;
-        width: 100%;
-        border-radius: 20px;
-    }
-
-    .form-field {
-        background-color: white;
-        border: 0 solid #000;
-        border-top-color: #4d4d4d;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        margin-bottom: 20px;
-        font-size: 18px;
-        border-radius: 5px;
-    }
-
-    .w-input,
-    .w-select,
-    textarea {
-        width: 100%;
-        height: 38px;
-        vertical-align: middle;
-        border: 1px solid #ccc;
-        margin-bottom: 10px;
-        padding: 8px 12px;
-        font-size: 14px;
-        line-height: 1.42857;
-        display: block;
-        color: black;
-        font-weight: bold;
-    }
-
-    #name {
-
-        text-transform: capitalize;
-    }
-
-    .form-block {
-        max-width: 580px;
-        min-width: 200px;
-    }
-
-    .w-form {
-        margin: 0 0 15px;
-    }
-
-    @*.main-cta{color:#000;border:none;cursor:pointer;background:#5c2372c5;border-radius:5px;justify-content:center;margin-left:auto;margin-right:auto;padding:16px32px;font-family:GeneralSans,sans-serif;font-size:17px;font-weight:600;transition:all.3s;}.main-cta:active{transform:scale(.98);}.main-cta:hover{background-color:#5c2372;}*@.w-form-done {
-        text-align: center;
-        background-color: #ddd;
-        padding: 20px;
-        display: none;
-    }
-
-    .js-content {
-        justify-self: center;
-    }
-
-    .textarea {
-        max-width: 580px;
-        min-height: 150px;
-        min-width: 200px;
-    }
-
-    .section {
-        padding-top: 120px;
-        padding-bottom: 120px;
-        display: block;
-    }
-
-    .breadcrumb {
-        color: #cbd5e1;
-        font-size: 21px;
-    }
-
-    .main-title-wrapper {
-        max-width: 1170px;
-    }
-
-
-
-
-    .success {
-        color: #4ade80;
-        background-color: rgba(255, 255, 255, 0);
-        justify-content: center;
-        align-items: center;
-        font-size: 16px;
-        font-weight: 500;
-    }
-
-    .error {
-        background-color: rgba(255, 255, 255, 0);
-    }
-
-    .w-form-fail {
-        background-color: #ffdede;
-        margin-top: 10px;
-        padding: 10px;
-        display: none;
-    }
-</style>
 <div class="section wf-section">
     <div class="container">
 
@@ -139,14 +13,15 @@
                 <p><strong>Street:</strong> Jordan Misja</p>
                 <p><strong>Email:</strong> info@itechsolutions.al</p>
                 <p> <a class="phone" href="tel:+355 69 260 3591"><strong>Number:</strong> +355 69 260 3591</a> </p>
-              <div class="map">   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d748.9359400617928!2d19.811488!3d41.336185!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1708586448151!5m2!1sen!2sus"
-                    width="70%" height="210" style="border:5;  border-radius: 20px; " allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
+              <div class="map">   
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d587.1002330047062!2d19.81172205922657!3d41.33619914349722!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135031005667052d%3A0x9b8527e4666b43f2!2sIntegrated%20Tech%20Solutions!5e0!3m2!1sen!2s!4v1709032884240!5m2!1sen!2s" width="70%" height="210" style="border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
             </div>
             <div class="form-block w-form">
+                 <h2> Partner with us: </h2>
                 <form action="https://api.web3forms.com/submit" method="POST">
-                <p> Partner with us: </p>
+               
                     <input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024">
                     <input id="name" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required="">
                     <input id="emailfield" class="form-field w-input" name="email" type="email" placeholder="Email Address *"

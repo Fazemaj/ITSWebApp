@@ -17,7 +17,7 @@
 
 .img-container {
   width: 200px;
-  height: 80px;
+  height: 80px; 
   display: flex;
   flex-direction: row;
 }
@@ -72,10 +72,6 @@
   background: #2641ed;
 }
 
-.section {
-  padding-bottom: 0;
-}
-
 .img-container {
   width: 200px;
   height: 80px;
@@ -96,11 +92,6 @@
   font-size: 19px;
   font-weight: 600;
   line-height: 25px;
-}
-
-.team-member p:first-child {
-  font-size: 14px;
-  font-weight: 600;
 }
 
 .secondary-title {
@@ -133,36 +124,59 @@
 /* .test{
   test
 } */
-.team-imgs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 
 .team-member {
-  width: 49%;
-  margin-bottom: 80px;
-  display: flex;
-  align-items: center;
+  background-color: transparent;
+  width: 300px;
+  height: 323px;
+  perspective: 1000px;
+  margin-right: 2%;
 }
 
-.team-member img {
-  width: 50%;
-  height: auto;
-  border-radius: 8px;
-  margin-right: 10px;
+.member-info {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.team-member:hover .member-info {
+  transform: rotateY(180deg);
+}
+
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.member-description {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 
 .member-description {
-  width: 50%;
+  background-color: #052b7d;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  text-align: left; /* Center the text horizontally */
+}
+
+.team-member:hover img {
+  transform: rotateY(180deg);
 }
 
 .member-description p {
-  margin-top: 0;
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 0.9375rem;
+  line-height: 1.2;
 }
 
-.left {
-  text-align: left;
+.section {
+  padding-bottom: 100px;
 }

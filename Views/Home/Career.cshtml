@@ -3,29 +3,36 @@
 </head>
 
 <style>
+    .main-cta {
+        margin-top: 20px
+    }
 
-.main-cta{
- margin-top:20px
-}
+    .offer-container-wrapper {
+        display: flex;
+        /* Use flexbox layout */
+        justify-content: space-between;
+        /* Distribute items evenly along the main axis */
+    }
 
-.offer-container-wrapper {
-    display: flex; /* Use flexbox layout */
-    justify-content: space-between; /* Distribute items evenly along the main axis */
-}
+    [data-aos^="fade"][data-aos^="fade"].aos-animate {
+        opacity: 0.8;
+        transform: translateZ(0);
+    }
 
-[data-aos^="fade"][data-aos^="fade"].aos-animate {
-  opacity: 0.8;
-  transform: translateZ(0);
-}
-     
-   /* Apply styles to images within .carrer-container and .img-box2 */
-.carrer-container img,
-.img-box2 img {
-    width: 260px;
-    height: 260px;
-}
+    /* Apply styles to images within .carrer-container and .img-box2 */
+    .carrer-container img {
+        width: 251px;
+        height: auto;
+        margin-top: 70px;
+        margin-left: 40px;
+        border-radius: 10px
+    }
 
-    
+    .img-box2 img {
+        width: 31.57%;
+        height: auto;
+        margin-top: 40px;
+    }
 
     .form-block {
         max-width: 580px;
@@ -41,6 +48,7 @@
 
     }
 
+
     .form-field {
         background-color: rgba(255, 255, 255, 0);
         border: 0 solid #000;
@@ -51,11 +59,11 @@
         border-radius: 5px;
     }
 
-.form-field:focus {
-    outline: none; 
-    border-color: #ccc; 
+    .form-field:focus {
+        outline: none;
+        border-color: #ccc;
 
-}
+    }
 
 
     .w-input,
@@ -130,13 +138,12 @@
     }
 
 
-.swal2-container.swal2-center>.swal2-popup {
- border-radius:20px;
-    background: #141313;
+    .swal2-container.swal2-center>.swal2-popup {
+        border-radius: 20px;
+        background: #141313;
         opacity: 0.97226;
 
-}
-
+    }
 </style>
 <main>
     <div class="section wf-section">
@@ -168,117 +175,122 @@
                     to join us on our journey.
                 </div>
                 <div class="img-box">
-                    <img src="~/imgs/career2.png" alt="career boost image">
-                     <img src="~/imgs/career2.png" alt="career boost image">
+                    <img src="~/imgs/7.png" alt="career boost image">
+
                 </div>
             </div>
-            <div class="img-box2"> 
-                     <img src="~/imgs/career2.png" alt="career boost image">
-                     <img src="~/imgs/career2.png" alt="career boost image">
-                     <img src="~/imgs/career2.png" alt="career boost image">
-</div>
+            <div class="img-box2">
+                <img src="~/imgs/10.png" alt="career boost image">
+                <img src="~/imgs/1.png" alt="career boost image">
+                <img src="~/imgs/2.png" alt="career boost image">
+                <img src="~/imgs/3.png" alt="career boost image">
+
+            </div>
 
         </div>
     </div>
-   @* <div class="slideshow-container">
+    @* <div class="slideshow-container">
 
-<div class="mySlides fade">
-  <img src="~/imgs/Laert.png" style="width:100%">
- 
-</div>
+    <div class="mySlides fade">
+    <img src="~/imgs/Laert.png" style="width:100%">
 
-<div class="mySlides fade">
-  <img src="~/imgs/Armil.png" style="width:100%">
-  
-</div>
+    </div>
 
+    <div class="mySlides fade">
+    <img src="~/imgs/Armil.png" style="width:100%">
 
+    </div>
 
 
 
-</div>
-<br>
 
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div> *@
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    </div> *@
     <div class="section wf-section">
         <div class="container">
             <div class="main-title-wrapper">
-                <h1 class="main-title left" style="margin-top:10px;">What we offer</h1>
+                <h1 class="main-title left" style="margin-top:70px;">What we offer</h1>
             </div>
-          <div class="offers-container"  >
-    <div class="offer-container-wrapper">
-        <div class="offer-card" asp-action="MC" data-aos="fade-right" >
-            <ul class="card-title">
-                <li>Guidance during your work performance</li>
-                <br>
-                <li>Annual promotions and reward</li>
-                <br>
-                <li>Possibility to grow professionally</li>
-                <br>
-                <li>Enhancement of employee’s experience through staff perks</li>
-            </ul>
-        </div>
-        <div class="offer-card" asp-action="MC" data-aos="fade-left" >
-            <ul class="card-title">
-                <li>Innovative and collaborative work environment</li>
-                <br>
-                <li>Periodic Team Building activities (Retreats, Happy hours, Sport
-                    Activities, Gathering, Celebrations, etc.)</li>
-                <br>
-                <li>Technical Training through on-the-job experience and structured learning for recent
-                    graduates</li>
-            </ul>
+            <div class="offers-container">
+                <div class="offer-container-wrapper">
+                    <div class="offer-card" asp-action="MC" data-aos="fade-right">
+                        <ul class="card-title">
+                            <li>Innovative and collaborative work environment</li>
+                            <br>
+                            <li>Possibility to grow professionally</li>
+                            <br>
+                            <li>Guidance during your work performance</li>
+                            <br>
+                            <li>Technical Training through on-the-job experience and structured learning for recent
+                                graduates</li>
+
+                        </ul>
+                    </div>
+                    <div class="offer-card" asp-action="MC" data-aos="fade-left">
+                        <ul class="card-title">
+                            <li>Annual promotions and reward</li>
+                            <br>
+                            <li>Periodic Team Building activities (Retreats, Happy hours, Sport
+                                Activities, Gathering, Celebrations, etc.)</li>
+                            <br>
+                            <li>Enhancement of employee’s experience through staff perks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-            </div>
-        </div>
     </div>
- 
+
     <div class="section wf-section">
         <div class="container">
             <div class="main-title-wrapper">
-                <h1 class="main-title left" style="margin-top:10px">JOB OPPORTUNITIES</h1>
+                <h1 class="main-title left" style="margin-top:70px">Job Opportunities</h1>
             </div>
             <div class="jobs-container">
                 <div class="job-container">
                     <a type="button" class="collapsible">
-                        <div class="job-title">SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)</div>
-                        <button onclick="showModal('SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)')" class="apply-cta">Apply Now</button>
+                        <div class="job-title">Supply Chain Management Consultant (German Speaker)</div>
+                        <button onclick="showModal('Supply Chain Management Consultant (German Speaker)')"
+                            class="apply-cta">Apply Now</button>
                     </a>
                     <div class="content">
                         <div class="sub-content">
-                            <h4 style="color: #;">Duties & Responsibilities</h4>
+                            <h4>Duties & Responsibilities</h4>
                             <ul>
-                                <li>Manage the ERP System of the international clients for the optimization of their
+                                <li>• Manage the ERP System of the international clients for the optimization of their
                                     work process;</li>
-                                <li>Ensure smooth running of the automation industry logistics process through the
+                                <li>• Ensure smooth running of the automation industry logistics process through the
                                     customized ERP system used by the client</li>
-                                <li>Consulting, monitoring, and supervision of deliveries through international postal
+                                <li>• Consulting, monitoring, and supervision of deliveries through international postal
                                     agencies;</li>
-                                <li>Training and instructing suppliers on the correct use of the ERP system for a normal
+                                <li>• Training and instructing suppliers on the correct use of the ERP system for a
+                                    normal
                                     work process</li>
-                                <li> Help clients transform their value chains into competitive advantages by driving
+                                <li>• Help clients transform their value chains into competitive advantages by driving
                                     proactive insights and decision making, and
                                     you’ll tackle our clients’ complex business issues. </li>
                             </ul>
                         </div>
                         <div class="sub-content">
-                            <h4 style="color: #;">Candidate’s qualifications</h4>
+                            <h4>Candidate’s qualifications</h4>
                             <ul>
-                                <li>Graduated in Computer Science, Engineering, Business Informatics, Finance, or
+                                <li>• Graduated in Computer Science, Engineering, Business Informatics, Finance, or
                                     similar
                                     fields</li>
-                                <li>Previews work experience in the field will be considered an advantage- ;</li>
-                                <li>Possess solid analytical, interpersonal, and communication skill</li>
-                                <li>Fluent in German, very good knowledge of English</li>
-                                <li>Proficiency with the Microsoft Office applications</li>
-                                <li>Detail-oriented and enjoy working with software’s</li>
-                                <li>Possess solid analytical, interpersonal, and communication skill</li>
+                                <li>• Previews work experience in the field will be considered an advantage- ;</li>
+                                <li>• Possess solid analytical, interpersonal, and communication skill</li>
+                                <li>• Fluent in German, very good knowledge of English</li>
+                                <li>• Proficiency with the Microsoft Office applications</li>
+                                <li>• Detail-oriented and enjoy working with software’s</li>
+                                <li>• Possess solid analytical, interpersonal, and communication skill</li>
                             </ul>
                         </div>
                     </div>
@@ -286,21 +298,23 @@
                 <div class="job-container">
                     <a type="button" class="collapsible">
                         <div class="job-title">SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)</div>
-                        <button onclick="showModal('SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)')" class="apply-cta">Apply Now</button>
+                        <button onclick="showModal('SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)')"
+                            class="apply-cta">Apply Now</button>
                     </a>
                     <div class="content">
                         <div class="sub-content">
                             <h4 style="color: #;">Duties & Responsibilities</h4>
                             <ul>
-                                <li>Manage the ERP System of the international clients for the optimization of their
+                                <li>• Manage the ERP System of the international clients for the optimization of their
                                     work process;</li>
-                                <li>Ensure smooth running of the automation industry logistics process through the
+                                <li>• Ensure smooth running of the automation industry logistics process through the
                                     customized ERP system used by the client</li>
-                                <li>Consulting, monitoring, and supervision of deliveries through international postal
+                                <li>• Consulting, monitoring, and supervision of deliveries through international postal
                                     agencies;</li>
-                                <li>Training and instructing suppliers on the correct use of the ERP system for a normal
+                                <li>• Training and instructing suppliers on the correct use of the ERP system for a
+                                    normal
                                     work process</li>
-                                <li> Help clients transform their value chains into competitive advantages by driving
+                                <li>• Help clients transform their value chains into competitive advantages by driving
                                     proactive insights and decision making, and
                                     you’ll tackle our clients’ complex business issues. </li>
                             </ul>
@@ -308,15 +322,15 @@
                         <div class="sub-content">
                             <h4 style="color: #;">Candidate’s qualifications</h4>
                             <ul>
-                                <li>Graduated in Computer Science, Engineering, Business Informatics, Finance, or
+                                <li>• Graduated in Computer Science, Engineering, Business Informatics, Finance, or
                                     similar
                                     fields</li>
-                                <li>Previews work experience in the field will be considered an advantage- ;</li>
-                                <li>Possess solid analytical, interpersonal, and communication skill</li>
-                                <li>Fluent in German, very good knowledge of English</li>
-                                <li>Proficiency with the Microsoft Office applications</li>
-                                <li>Detail-oriented and enjoy working with software’s</li>
-                                <li>Possess solid analytical, interpersonal, and communication skill</li>
+                                <li>• Previews work experience in the field will be considered an advantage- ;</li>
+                                <li>• Possess solid analytical, interpersonal, and communication skill</li>
+                                <li>• Fluent in German, very good knowledge of English</li>
+                                <li>• Proficiency with the Microsoft Office applications</li>
+                                <li>• Detail-oriented and enjoy working with software’s</li>
+                                <li>• Possess solid analytical, interpersonal, and communication skill</li>
                             </ul>
                         </div>
                     </div>
@@ -324,21 +338,23 @@
                 <div class="job-container">
                     <a type="button" class="collapsible">
                         <div class="job-title">SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)</div>
-                        <button onclick="showModal('SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)')" class="apply-cta">Apply Now</button>
+                        <button onclick="showModal('SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)')"
+                            class="apply-cta">Apply Now</button>
                     </a>
                     <div class="content">
                         <div class="sub-content">
                             <h4 style="color: #;">Duties & Responsibilities</h4>
                             <ul>
-                                <li>Manage the ERP System of the international clients for the optimization of their
+                                <li>• Manage the ERP System of the international clients for the optimization of their
                                     work process;</li>
-                                <li>Ensure smooth running of the automation industry logistics process through the
+                                <li>• Ensure smooth running of the automation industry logistics process through the
                                     customized ERP system used by the client</li>
-                                <li>Consulting, monitoring, and supervision of deliveries through international postal
+                                <li>• Consulting, monitoring, and supervision of deliveries through international postal
                                     agencies;</li>
-                                <li>Training and instructing suppliers on the correct use of the ERP system for a normal
+                                <li>• Training and instructing suppliers on the correct use of the ERP system for a
+                                    normal
                                     work process</li>
-                                <li> Help clients transform their value chains into competitive advantages by driving
+                                <li>• Help clients transform their value chains into competitive advantages by driving
                                     proactive insights and decision making, and
                                     you’ll tackle our clients’ complex business issues. </li>
                             </ul>
@@ -346,15 +362,15 @@
                         <div class="sub-content">
                             <h4 style="color: #;">Candidate’s qualifications</h4>
                             <ul>
-                                <li>Graduated in Computer Science, Engineering, Business Informatics, Finance, or
+                                <li>• Graduated in Computer Science, Engineering, Business Informatics, Finance, or
                                     similar
                                     fields</li>
-                                <li>Previews work experience in the field will be considered an advantage- ;</li>
-                                <li>Possess solid analytical, interpersonal, and communication skill</li>
-                                <li>Fluent in German, very good knowledge of English</li>
-                                <li>Proficiency with the Microsoft Office applications</li>
-                                <li>Detail-oriented and enjoy working with software’s</li> 
-                                <li>Possess solid analytical, interpersonal, and communication skill</li>
+                                <li>• Previews work experience in the field will be considered an advantage- ;</li>
+                                <li>• Possess solid analytical, interpersonal, and communication skill</li>
+                                <li>• Fluent in German, very good knowledge of English</li>
+                                <li>• Proficiency with the Microsoft Office applications</li>
+                                <li>• Detail-oriented and enjoy working with software’s</li>
+                                <li>• Possess solid analytical, interpersonal, and communication skill</li>
                             </ul>
                         </div>
                     </div>
@@ -365,37 +381,39 @@
     <div class="section wf-section">
         <div class="container">
             <div class="main-title-wrapper">
-                <h1 class="main-title left" style="margin-top:10px"> Want to join our Team</h1>
-                <p style="margin-top:10px;">Looking for a new position? Ready to upgrade?</p>
-                <p style="font-size:20px; margin-top:20px; font-weight: 400">ITS is here for you.</p>
+                <h1 class="main-title left" style="margin-top:70px"> Want to join our team!</h1>
+                <p style="margin-top:10px;">If you haven't found a suitable position, you can still send us your
+                    application! </p>
+
             </div>
             <div class="form-block w-form">
                 <form action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024">
-                    <input id="namefield" type="text" class="form-field w-input" name="Name" placeholder="Full Name *" required="">
-                    <input id="emailfield" class="form-field w-input" name="Email" type="email" placeholder="Email Address *"
+                    <input id="namefield" type="text" class="form-field w-input" name="Name" placeholder="Full Name *"
                         required="">
+                    <input id="emailfield" class="form-field w-input" name="Email" type="email"
+                        placeholder="Email Address *" required="">
                     <input id="phonefield" class="form-field w-input" name="Phone" type="number"
                         placeholder="Phone number(Optional)">
                     <div class="resume">
                         <label for="inputfile">CV ( resume )</label>
                         <div data-fileupload="true" style="dispaly:none">
-                        
-                        @* <span class="help-block">Upload your resume</span> *@
-                    </div>
-                    <div class="Positions">
-                        <select id="selectposition" name="Open Position" required="">
-                            <option value="">Please select a position:</option>
-                            <option value=".NET Developer">.NET Developer</option>
-                            <option value="Al Developer">Al Developer</option>
-                            <option value="BC Consultant">BC Consultant</option>
-                            <option value="SUPPLY CHAIN MANAGEMENT CONSULTANT">SUPPLY CHAIN MANAGEMENT CONSULTANT
-                            </option>
-                        </select>
-                    </div>
-                    <div class="button-box">
-                        <button type="submit" class="main-cta w-button">Apply</button>
-                    </div>
+
+                            @* <span class="help-block">Upload your resume</span> *@
+                        </div>
+                        <div class="Positions">
+                            <select id="selectposition" name="Open Position" required="">
+                                <option value="">Please select a position:</option>
+                                <option value=".NET Developer">.NET Developer</option>
+                                <option value="Al Developer">Al Developer</option>
+                                <option value="BC Consultant">BC Consultant</option>
+                                <option value="SUPPLY CHAIN MANAGEMENT CONSULTANT">SUPPLY CHAIN MANAGEMENT CONSULTANT
+                                </option>
+                            </select>
+                        </div>
+                        <div class="button-box">
+                            <button type="submit" class="main-cta w-button">Apply</button>
+                        </div>
                 </form>
             </div>
         </div>
@@ -407,39 +425,39 @@ showSlides(slideIndex);
 
 // Automatic slideshow
 let slideInterval = setInterval(function() {
-  plusSlides(1);
+plusSlides(1);
 }, 1000); // Adjust the interval duration as needed (in milliseconds)
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
-  clearInterval(slideInterval); // Clear the interval timer
-  slideInterval = setInterval(function() {
-    plusSlides(1);
-  }, 1000); // Restart the interval timer after manual navigation
+showSlides(slideIndex += n);
+clearInterval(slideInterval); // Clear the interval timer
+slideInterval = setInterval(function() {
+plusSlides(1);
+}, 1000); // Restart the interval timer after manual navigation
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
-  clearInterval(slideInterval); // Clear the interval timer
-  slideInterval = setInterval(function() {
-    plusSlides(1);
-  }, 1000); // Restart the interval timer after manual navigation
+showSlides(slideIndex = n);
+clearInterval(slideInterval); // Clear the interval timer
+slideInterval = setInterval(function() {
+plusSlides(1);
+}, 1000); // Restart the interval timer after manual navigation
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+let i;
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+if (n > slides.length) {slideIndex = 1}
+if (n < 1) {slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
+}
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
 }
 
 </script> *@
@@ -546,8 +564,8 @@ function showSlides(n) {
         var position = title;
         swalWithBootstrapButtons.fire(
             {
-                title: "Confirm" ,
-                html: '    <div class="form-block w-form"><form action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024"><input class="form-field w-input" value="'+ position +'"" name="position" readonly><input id="fname" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required=""><input id="efield" name="email" class="form-field w-input" type="email" placeholder="Email Address *" required=""><input id="pfield" name="phone" class="form-field w-input" type="number" placeholder="Phone number(Optional)"><div class="resume"><input data-fileupload="true" type="file"><\/div><div class="button-box"><button type="submit" class="main-cta w-button">Apply<\/button><\/div><\/form><\/div>'                    
+                title: "Confirm",
+                html: '    <div class="form-block w-form"><form action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024"><input class="form-field w-input" value="' + position + '"" name="position" readonly><input id="fname" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required=""><input id="efield" name="email" class="form-field w-input" type="email" placeholder="Email Address *" required=""><input id="pfield" name="phone" class="form-field w-input" type="number" placeholder="Phone number(Optional)"><div class="resume"><input data-fileupload="true" type="file"><\/div><div class="button-box"><button type="submit" class="main-cta w-button">Apply<\/button><\/div><\/form><\/div>'
                 , showConfirmButton: !1
             }
         )

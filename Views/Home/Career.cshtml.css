@@ -77,6 +77,7 @@
 .job-title {
   margin-top: auto;
   margin-bottom: auto;
+  font-weight: 400;
 }
 
 .apply-cta {
@@ -133,7 +134,6 @@
 }
 
 .content h4 {
-  color: #5c2372;
   font-size: 22px;
   margin: 10px 0px;
 }
@@ -169,4 +169,8 @@
 
 .resume label {
   margin-bottom: 10px;
+}
+
+li {
+  font-weight: 400;
 }
