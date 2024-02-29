@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   color: rgb(255, 255, 255);
-  /* color: white; */
   box-sizing: border-box;
   font-family: "Open Sans";
   font-style: normal;
@@ -20,23 +19,13 @@ html {
   background-size: cover;
   background-attachment: scroll;
 }
-html,
-body {
-  overscroll-behavior: none;
-}
 
 body {
-  /* color: #333; */
-  /* color: rgb(16, 24, 38); */
-  /* background: #2a2f38; */
   background: linear-gradient(to bottom, #532284, #4539ae, #512d99, #3546c7);
   font-size: 17px;
-  /* background: linear-gradient(307deg, rgba(18,31,69,1) 18%, rgba(25,25,25,1) 63%, rgba(25,25,25,1) 89%); */
-  /* background: #ffffff; */
-  /* font-family:'Open Sans'; */
   font-size: 17px;
   line-height: 20px;
-  /* min-height: 1000px; */
+  overflow-x: hidden;
 }
 
 @media (min-width: 768px) {
@@ -66,7 +55,7 @@ body {
 }
 
 .section {
-  padding-bottom: 20px;
+  padding-bottom: 80px;
   display: block;
 }
 
@@ -314,7 +303,7 @@ table p {
   }
 }
 
-@media screen and (max-width: 991px) {
+@media (min-width: 576px) and (max-width: 991px) {
   .section {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -339,7 +328,7 @@ table p {
   }
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 575.98px) {
   .container {
     max-width: 345px;
     margin-left: auto;

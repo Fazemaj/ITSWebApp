@@ -20,18 +20,12 @@
         height: auto;
         margin-top: 70px;
         margin-left: 40px;
-        border-radius: 10px
     }
 
-    .img-box2 img {
-        width: calc(20% - 20px);
-        /* Adjust the width as needed */
-        /* Adjust the margin as needed */
-        max-width: 100%;
-        /* Add a maximum width if necessary */
-        height: auto;
-    }
-
+ .list-item img {
+  width: 100%; /* Make sure the image takes up the full width of its container */
+  height: auto; /* Maintain aspect ratio */
+}
 
 
     .form-field {
@@ -130,30 +124,12 @@
 
     }
 
-    @@media (min-width: 600.1px) and (max-width: 991.98px) {
+    @@media (min-width: 575.98px) and (max-width: 991.98px) {
         .carrer-container img {
             width: 200px;
         }
+        
 
-    }
-
-    @@media only screen and (max-width: 600px) {
-        .img-box2 {
-            display: flex;
-            flex-wrap: wrap;
-
-        }
-
-        .carrer-container img {
-            width: 100px;
-        }
-
-        .img-box2 img {
-            width: 49%;
-            /* Adjust the width as needed */
-            margin-bottom: -20px;
-            /* Adjust the margin as needed */
-        }
     }
 </style>
 <main>
@@ -190,7 +166,11 @@
 
                 </div>
             </div>
-            <div class="img-box2">
+          
+
+        </div>
+    </div>
+  <div class="img-box2">
                 <div class="list-item">
                     <div class="team-members"> <img src="~/imgs/10.png" alt="career boost image"></div>
                 </div>
@@ -205,10 +185,6 @@
                 </div>
 
             </div>
-
-        </div>
-    </div>
-
     @* <div class="slideshow-container">
 
     <div class="mySlides fade">
@@ -317,7 +293,7 @@
                 </div>
                 <div class="job-container">
                     <a type="button" class="collapsible">
-                        <div class="job-title">SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)</div>
+                        <div class="job-title">Supply Chain Management Consultant (German Speaker)</div>
                         <button onclick="showModal('SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)')"
                             class="apply-cta">Apply Now</button>
                     </a>
@@ -357,7 +333,7 @@
                 </div>
                 <div class="job-container">
                     <a type="button" class="collapsible">
-                        <div class="job-title">SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)</div>
+                        <div class="job-title">Supply Chain Management Consultant (German Speaker)</div>
                         <button onclick="showModal('SUPPLY CHAIN MANAGEMENT CONSULTANT (GERMAN SPEAKER)')"
                             class="apply-cta">Apply Now</button>
                     </a>
@@ -401,7 +377,7 @@
     <div class="section wf-section">
         <div class="container">
             <div class="main-title-wrapper">
-                <h1 class="main-title left" style="margin-top:70px"> Want to join our team!</h1>
+                <h1 class="main-title left" style="margin-top:70px"> Want to join our team?</h1>
                 <p style="margin-top:10px;">If you haven't found a suitable position, you can still send us your
                     application! </p>
 
