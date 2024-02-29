@@ -1,6 +1,41 @@
-@* @model EmailData; *@
+@model Contact; 
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+<style>
+    .form-field {
+        background-color: white;
+        border: 0 solid #000;
+        border-top-color: #4d4d4d;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        margin-bottom: 20px;
+        font-size: 18px;
+        border-radius: 5px;
+    }
 
+
+    .form-block {
+        max-width: 580px;
+        min-width: 200px;
+    }
+
+    .w-form {
+        margin: 0 0 15px;
+    }
+
+    .w-input,
+    .w-select {
+        width: 100%;
+        height: 38px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        font-size: 14px;
+        line-height: 1.42857;
+        display: block;
+    }
+
+
+
+</style>
 
 <div class="section wf-section">
     <div class="container">
@@ -22,15 +57,13 @@
             
             <div class="form-block w-form">
                  <h2> Partner with us: </h2>
-                <form action="https://api.web3forms.com/submit" method="POST">
-               
-                    <input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024">
-                    <input id="name" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required="">
-                    <input id="emailfield" class="form-field w-input" name="email" type="email" placeholder="Email Address *"
+                <form asp-action="ContactEmail" method="POST">
+                    <input id="name" type="text" asp-for="Name" name="Name" class="form-field w-input" placeholder="Full Name *" required="">
+                    <input id="emailfield" class="form-field w-input" asp-for="Email" name="Email" type="email" placeholder="Email Address *"
                         required="">
-                    <input id="phone" class="form-field w-input" name="phone" type="number" maxlength="256"
+                    <input id="phone" class="form-field w-input" asp-for="Phone" name="Phone" type="number" maxlength="256"
                         placeholder="Phone number (optional)">
-                    <textarea id="tellMore" maxlength="5000" type="text" name="message" placeholder="Tell us some more *" required=""
+                    <textarea id="tellMore" maxlength="5000" type="text" name="Message" asp-for="Message" placeholder="Tell us some more *" required=""
                         class="form-field textarea w-input"></textarea>
                     <div class="button-box">
                         <button type="submit" class="main-cta w-button">Send</button>

@@ -1,8 +1,10 @@
-using ITS_Web.Models;
-using MimeKit;
 using Microsoft.Extensions.Options;
-// using MailKit.Net.Smtp.SmtpClient
-using MailKit.Net.Smtp;
+using System.Net.Mail;
+using System.Net;
+using System.Xml.Linq;
+using Microsoft.AspNetCore.Hosting.Server;
+using ITS_Web.Models;
+using System.IO;
 
 namespace ITS_Web.Configuration
 {
@@ -14,37 +16,106 @@ namespace ITS_Web.Configuration
             _emailSettings = options.Value;
         }
 
-        public bool SendEmail(EmailData emailData)
+        public Task SendEmailAsync(JobApply data)
         {
+
+            //created object of SmtpClient details and provides server details
+            SmtpClient MyServer = new SmtpClient("smtp-mail.outlook.com");
+            MyServer.UseDefaultCredentials = false;
+            MyServer.EnableSsl = true;
+            //Server Credentials
+            NetworkCredential NC = new NetworkCredential();
+            NC.UserName = "fazemaj@itechsolutions.al";
+            NC.Password = "Fazm0892";
+            //assigned credetial details to server
+            MyServer.Credentials = NC;
+
+            //create sender address
+            MailAddress from = new MailAddress("fazemaj@itechsolutions.al", "Name want to display");
+
+            //create receiver address
+            MailAddress to = new MailAddress("fazemaj@itechsolutions.al", "Name want to display");
+
+            MailMessage Mymessage = new MailMessage(from, to);
+            Mymessage.Subject = "Job application";
+            Mymessage.Body =$"Name: {data.Name} " + Environment.NewLine + 
+                            $"Email: {data.Email}" + Environment.NewLine +
+                            $"Phone: {data.Phone} " + Environment.NewLine +
+                            $"Position: {data.Position}";
+
+            Mymessage.IsBodyHtml = false;
+
             try
             {
-                MimeMessage emailMessage = new MimeMessage();
+                string fileName = Path.GetFileName(data.CvFile.FileName);
 
-                MailboxAddress emailFrom = new MailboxAddress(_emailSettings.Name, _emailSettings.EmailId);
-                emailMessage.From.Add(emailFrom);
+                Mymessage.Attachments.Add(new Attachment(data.CvFile.OpenReadStream(), fileName));
 
-                MailboxAddress emailTo = new MailboxAddress(emailData.EmailToName, emailData.EmailToId);
-                emailMessage.To.Add(emailTo);
+                //if (data.CvFile != null)
+                //{
+                //    long fileSize = data.CvFile.Length;
+                //    string fileType = data.CvFile.ContentType;
+                //    if (fileSize > 0)
+                //    {
+                //        using (var stream = new MemoryStream())
+                //        {
+                //            data.CvFile.CopyTo(stream);
+                //            var bytes = stream.ToArray();
+                //            Mymessage.Attachments.Add(new Attachment(stream, data.CvFile.FileName));
+                //            MyServer.Send(Mymessage);
+                //            return Task.CompletedTask;
+                //        }
+                //    }
+                //}
 
-                emailMessage.Subject = emailData.EmailSubject;
 
-                BodyBuilder emailBodyBuilder = new BodyBuilder();
-                emailBodyBuilder.TextBody = emailData.EmailBody;
-                emailMessage.Body = emailBodyBuilder.ToMessageBody();
+                MyServer.Send(Mymessage);
+                return Task.CompletedTask;
 
-                SmtpClient emailClient = new SmtpClient();
-                emailClient.Connect(_emailSettings.Host, _emailSettings.Port, _emailSettings.UseSSL);
-                emailClient.Authenticate(_emailSettings.EmailId, _emailSettings.Password);
-                emailClient.Send(emailMessage);
-                emailClient.Disconnect(true);
-                emailClient.Dispose();
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+        }
 
-                return true;
+        public Task ContactEmailAsync(Contact data)
+        {
+
+            //created object of SmtpClient details and provides server details
+            SmtpClient MyServer = new SmtpClient("smtp-mail.outlook.com");
+            MyServer.UseDefaultCredentials = false;
+            MyServer.EnableSsl = true;
+            //Server Credentials
+            NetworkCredential NC = new NetworkCredential();
+            NC.UserName = "fazemaj@itechsolutions.al";
+            NC.Password = "Fazm0892";
+            //assigned credetial details to server
+            MyServer.Credentials = NC;
+
+            //create sender address
+            MailAddress from = new MailAddress("fazemaj@itechsolutions.al", "Name want to display");
+
+            //create receiver address
+            MailAddress to = new MailAddress("fazemaj@itechsolutions.al", "Name want to display");
+
+            MailMessage Mymessage = new MailMessage(from, to);
+            Mymessage.Subject = "Contact from website";
+            Mymessage.Body = $"Name: {data.Name} " + Environment.NewLine +
+                            $"Email: {data.Email}" + Environment.NewLine +
+                            $"Phone: {data.Phone} " + Environment.NewLine +
+                            $"Position: {data.Message}";
+
+            Mymessage.IsBodyHtml = false;
+
+            try
+            {
+                MyServer.Send(Mymessage);
+                return Task.CompletedTask;
             }
             catch (Exception ex)
             {
-                //Log Exception Details
-                return false;
+                throw;
             }
         }
     }
