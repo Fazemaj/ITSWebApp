@@ -61,15 +61,12 @@
 }
 
 .secondary-title {
-  /* color: #000000; */
-  /* color: #fff; */
-  text-align: center;
-  display: flex;
-  /* font-family: General Sans, sans-serif; */
+  text-align: left;
   font-size: 51px;
   font-weight: 600;
   line-height: 61px;
   margin-bottom: 10px;
+  transition: all 0.3s ease;
 }
 
 .cards-div {
@@ -140,66 +137,88 @@
   line-height: 25px;
   text-decoration: none;
 }
-
+@keyframes mymove {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 200px;
+  }
+  75% {
+    top: 50px;
+  }
+  100% {
+    top: 100px;
+  }
+}
+@keyframes slideAndFade {
+  0% {
+    opacity: 0;
+    transform: translate(
+      -50%,
+      -60%
+    ); /* Start slightly above the final position */
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%); /* Final position */
+  }
+}
 .main-title {
-  font-size: 40px; /* Adjust the font size as needed */
+  font-size: 40px;
   font-weight: 600;
-  line-height: 40px; /* Set the line height to match the font size for one line */
+  line-height: 49px;
   color: #ffffff;
-  text-align: center; /* Center the text horizontally */
+  text-align: center;
+  align-items: center;
   position: absolute;
   top: 33%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* Adjust text color as needed */
+
+  opacity: 0; /* Initially set opacity to 0 */
+  animation: slideAndFade 1.4s ease forwards; /* Apply animation */
 }
-
-@media screen and (max-width: 990px) {
-  .main-title {
-    font-size: 35px;
-    font-weight: 600;
-    line-height: 40px;
-  }
-
-  .secondary-title {
-    font-size: 40px;
-    line-height: 40px;
-  }
-
+@media (min-width: 768px) and (max-width: 991.98px) {
   .cards-div {
-    max-width: 620px;
-    grid-row-gap: 32px;
-    grid-template-rows: auto auto auto auto auto auto;
-    grid-template-columns: 1fr;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-}
-
-@media screen and (max-width: 767px) {
-  .main-title {
-    font-size: 40px;
-    line-height: 48px;
-  }
-
   .secondary-title {
-    font-size: 32px;
-    line-height: 31px;
+    text-align: center;
+    font-size: 44px;
   }
 }
-
-@media screen and (max-width: 479px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
   .cards-div {
-    grid-row-gap: 32px;
-    max-height: 2700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-
   .secondary-title {
-    font-size: 32px;
-    line-height: 31px;
+    text-align: center;
+    font-size: 44px;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .cards-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .secondary-title {
+    text-align: center;
+    font-size: 30px;
   }
 
-  .card {
-    min-height: 430px;
+  .main-title {
+    font-size: 15px;
+    line-height: 20px;
+    top: 0;
+  }
+  .section-header {
+    padding-bottom: 40px;
   }
 }
