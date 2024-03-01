@@ -89,7 +89,7 @@ namespace ITS_Web.Configuration
             //Server Credentials
             NetworkCredential NC = new NetworkCredential();
             NC.UserName = "fazemaj@itechsolutions.al";
-            NC.Password = "Fazm0892";
+            NC.Password = "******";
             //assigned credetial details to server
             MyServer.Credentials = NC;
 
@@ -97,7 +97,7 @@ namespace ITS_Web.Configuration
             MailAddress from = new MailAddress("fazemaj@itechsolutions.al", "Name want to display");
 
             //create receiver address
-            MailAddress to = new MailAddress("fazemaj@itechsolutions.al", "Name want to display");
+            MailAddress to = new MailAddress("udalipi@americancapital.al", "Name want to display");
 
             MailMessage Mymessage = new MailMessage(from, to);
             Mymessage.Subject = "Contact from website";

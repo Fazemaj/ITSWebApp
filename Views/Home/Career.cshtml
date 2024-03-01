@@ -468,8 +468,6 @@
     </div>
 </main>
 
-
-
 <script>
     // Initialize AOS
     AOS.init();
@@ -573,7 +571,7 @@
         swalWithBootstrapButtons.fire(
             {
                 title: "Confirm",
-                html: '    <div class="form-block w-form"><div id="myform"><input id="fposition" class="form-field w-input" value="' + position + '"" name="position" readonly><input id="fname" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required=""><input id="femail" name="email" class="form-field w-input" type="email" placeholder="Email Address *" required=""><input id="fphone" name="phone" class="form-field w-input" type="number" placeholder="Phone number(Optional)"><div class="resume"><input id="cvfield" type="file"><\/div><div class="button-box"><button id="btn" type="submit" class="main-cta w-button">Apply<\/button><\/div><\/div><\/div>'
+                html: '    <div class="form-block w-form"><form id="myform" method="Post"><input id="fposition" class="form-field w-input" value="' + position + '"" name="position" readonly><input id="fname" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required=""><input id="femail" name="email" class="form-field w-input" type="email" placeholder="Email Address *" required=""><input id="fphone" name="phone" class="form-field w-input" type="number" placeholder="Phone number(Optional)"><div class="resume"><input id="cvfield" type="file"><\/div><div class="button-box"><button id="btn" type="submit" class="main-cta w-button">Apply<\/button><\/div><\/form><\/div>'
                 , showConfirmButton: !1
             }
         )
