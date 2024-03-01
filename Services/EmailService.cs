@@ -89,7 +89,7 @@ namespace ITS_Web.Configuration
             //Server Credentials
             NetworkCredential NC = new NetworkCredential();
             NC.UserName = "fazemaj@itechsolutions.al";
-            NC.Password = "******";
+            NC.Password = "*********";
             //assigned credetial details to server
             MyServer.Credentials = NC;
 
