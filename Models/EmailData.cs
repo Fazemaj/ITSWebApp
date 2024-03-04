@@ -22,4 +22,13 @@ namespace ITS_Web.Models
         public string Phone { get; set; }
         public string Message { get; set; }
     }
+
+    public class SendForm
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Position { get; set; }
+        public IFormFile CvFile { get; set; }
+    }
 }

@@ -1,10 +1,5 @@
 @model JobApply;
 
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-</head>
 
 <style>
     .main-cta {
@@ -484,7 +479,7 @@
                 content.style.maxHeight = null;
                 content.style.margin = "0px 25px";
             } else {
-                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.maxHeight = "370" + "px";
                 content.style.margin = "0px 25px 15px";
             }
         });
@@ -566,42 +561,72 @@
 </script>
 
 <script>
+
     function showModal(title) {
         var position = title;
         swalWithBootstrapButtons.fire(
             {
                 title: "Confirm",
-                html: '    <div class="form-block w-form"><form id="myform" method="Post"><input id="fposition" class="form-field w-input" value="' + position + '"" name="position" readonly><input id="fname" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required=""><input id="femail" name="email" class="form-field w-input" type="email" placeholder="Email Address *" required=""><input id="fphone" name="phone" class="form-field w-input" type="number" placeholder="Phone number(Optional)"><div class="resume"><input id="cvfield" type="file"><\/div><div class="button-box"><button id="btn" type="submit" class="main-cta w-button">Apply<\/button><\/div><\/form><\/div>'
+                html: '    <div class="form-block w-form"><div id="myform" method="Post"><input id="fposition" class="form-field w-input" value="' + position + '"" name="position" readonly><input id="fname" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required=""><input id="femail" name="email" class="form-field w-input" type="email" placeholder="Email Address *" required=""><input id="fphone" name="phone" class="form-field w-input" type="number" placeholder="Phone number(Optional)"><div class="resume"><input id="cvfield" type="file"><\/div><div class="button-box"><button onclick="SendMail()" type="submit" class="main-cta w-button">Apply<\/button><\/div><\/div><\/div>'
                 , showConfirmButton: !1
             }
         )
     }
+
+    @* <script>function SendMail() { var formData = new FormData(); formData.append('file', $('#cvfield')[0].files[0]); var _url = '@Url.Action("SendMail", "Home")'; $.ajax({ url: _url, type: 'POST', data: formData, processData: false, contentType: false, success: function (response) { } }); } </script>*@
+    
     const swalWithBootstrapButtons = Swal.mixin({ buttonsStyling: !1 });
-</script>
 
-<script>
-    $(document).ready(function () {
+    function SendMail() {
 
-        //get button by ID
-        $('#btn1').submit(function () {
+        var fname = $("#fname").val();
+        var femail = $("#femail").val();
+        var fphone = $("#fphone").val();
+        var fposition = $("#fposition").val();
+        // var cvfield = $("#cvfield").val();
 
-            //call a function with parameters
-            $.ajax({
-                url: 'Home/SendEmail',  //(rec)= Controller's-name
-                //(recieveData) = Action's method name
-                type: 'POST',
-                timeout: '12000',
-                datatype: 'text',
-                data: {
-                    //Get the input from Document Object Model
-                    //by their ID
-                    Name: myorm.fname.value,
-                    Email: myform.femail.value,
-                    Phone: myform.fphone.value,
-                    Position: myform.fposition.value,
-                    CvFile: myform.cvfield.value,
-                }
-            });
+        var files = $("#cvfield").get(0).files;
+
+        // Add the uploaded image content to the form data collection
+        var formData = new FormData();
+        formData.append("Name", fname);
+        formData.append("Email", femail);
+        formData.append("Phone", fphone);
+        formData.append("Position", fposition);
+
+        if (files.length > 0) {
+            formData.append("cvfile", files[0]);
+        }
+
+        // var data = {
+        //     Name: fname,
+        //     Email: femail,
+        //     Phone: fphone,
+        //     Position: fposition,
+        //     CvFile: formData
+        // };
+
+        var _url = '@Url.Action("SendEmail", "Home")';
+
+        $.ajax({
+
+            url: _url,
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                // window.location.href = response.redirectToUrl;
+            },
+            error: function (jqXHR) {
+            },
+            complete: function (jqXHR, status) {
+            }
         });
-    });
+
+        swalWithBootstrapButtons.close();
+    }
+
+    
 </script>
+
