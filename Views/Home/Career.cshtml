@@ -598,14 +598,6 @@
             formData.append("cvfile", files[0]);
         }
 
-        // var data = {
-        //     Name: fname,
-        //     Email: femail,
-        //     Phone: fphone,
-        //     Position: fposition,
-        //     CvFile: formData
-        // };
-
         var _url = '@Url.Action("SendEmail", "Home")';
 
         $.ajax({
@@ -617,16 +609,17 @@
             contentType: false,
             success: function (response) {
                 // window.location.href = response.redirectToUrl;
+                if (response == true)
+                    alert("Success");
+                else
+                    alert("Email did not sent");
             },
             error: function (jqXHR) {
             },
             complete: function (jqXHR, status) {
             }
         });
-
         swalWithBootstrapButtons.close();
     }
-
-    
 </script>
 

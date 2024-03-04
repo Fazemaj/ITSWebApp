@@ -32,30 +32,24 @@ namespace ITS_Web.Controllers
         }
 
         [HttpPost]
-        //[Route("SendEmail/{name}")]
         public  IActionResult SendEmail(JobApply data)
         {
-            _emailService.SendEmailAsync(data);
+            var response = _emailService.SendEmailAsync(data);
 
             ViewBag.ShowTopBar = true;
-            return RedirectToAction("Career");
+
+            return Json(response);
         }
 
         [HttpPost]
-        //[Route("SendEmail/{name}")]
         public IActionResult ContactEmail(Contact data)
         {
             _emailService.ContactEmailAsync(data);
 
             ViewBag.ShowTopBar = true;
-            return RedirectToAction("Contact");
+            return Json(new { redirectToUrl = Url.Action("Index", "Home") });
         }
 
-        public IActionResult UnderConstruction()
-        {
-            // ViewBag.ShowTopBar = false;
-            return View();
-        }
 
         public IActionResult Itoutsourcing()
         {

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var viewModel = (Layout)ViewBag.Layout;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -190,6 +194,27 @@ to {opacity:1 ;}
    
  
 </style>
+
+@if (viewModel !=null && viewModel.IsSucces == false)
+    {
+        <div id="bar-notification-error" class="bar-notification-container" data-close="Close" style=display:none>
+            <div class="bar-notification error" style=display:block>
+                <p id="errorMessage" class="content">Failure: Email did not send , try again</p>
+                <span class="close" title="Close"></span>
+            </div>
+        </div>
+    }
+
+@if (viewModel !=null && viewModel.IsSucces == true)
+{
+    <div id="bar-notification-success" class="bar-notification-container" data-close="Close" style=display:none>
+        <div class="bar-notification success" style=display:block>
+            <p id="succesMessage" class="content">Succes, We reached ypur eamil!</p>
+            <span class="close" title="Close"></span>
+        </div>
+    </div>
+}
+
 @if (ViewBag.ShowTopBar ?? false)
 {
    <div id="navcontainer" class="container sticky">
@@ -354,21 +379,36 @@ to {opacity:1 ;}
             }
         }
 
-        @* window.onscroll = function () { myFunction() };
+       $(document).ready(
+            function () 
+            {   
+                $(".login").hide();
 
-        var navbar = document.getElementById("navcontainer");
-        var sticky = navbar.offsetTop;
-        var navbarchild = document.getElementById("navbar");
+                var error = document.getElementById("bar-notification-error");
 
-            function myFunction() {
-        if (window.pageYOffset > sticky) {
-            navbar.classList.add("sticky");
-            navbarchild.classList.add("stickyBg");
-    } else {
-            navbar.classList.remove("sticky");
-            navbarchild.classList.remove("stickyBg");
-    }
-    } *@
+                if (error != null) {
+
+                    $('#bar-notification-error').show();
+                    // $('#errorMessage').text('Out of stock');
+
+                    setTimeout(function () {
+                        $('#bar-notification-error').hide();
+                    }, 3000);
+                }
+
+                var success = document.getElementById("bar-notification-success");
+
+                if (success != null) {
+
+                    $('#bar-notification-success').show();
+                    // $('#errorMessage').text('Out of stock');
+
+                    setTimeout(function () {
+                        $('#bar-notification-success').hide();
+                    }, 3000);
+                }
+            }
+        )
             
     function dropfunction(){
         document.getElementById("dropServices").classList.toggle("show");
