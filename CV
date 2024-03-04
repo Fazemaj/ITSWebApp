@@ -1,0 +1,25 @@
+<GetPaymentOrderRequest Id="Request" Version="1"
+	xmlns="https://Einvoice.tatime.gov.al/EinvoiceBankService/schema">
+	<Header UUID="1985dab2-b5c4-44bc-9aea-94656b423026" SendDateTime="2024-02-02T16:25:23+01:00" />
+	<Signature
+		xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<SignedInfo>
+			<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+			<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+			<Reference URI="#Request">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+				<DigestValue>976HAro4w4eEnohuyPO6rqvSvHrhPG1WVaYoUNgVFpo=</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>1m4tNWra7EcWZw4UP9p1/aXtVNGirHXjNowQxQDp9thMp6XKiYxUHYDjYbFK1mkdzWcSkKfrw0xUGR9grSpJDN3GxLysl7T4aJReIkF1xtOyYxg5w22SgioeP1hVuWVvQhGUQsQHPAy+s69/PAvdCqpJfV5puGxiF3JK/a97HT+fSr2A+sSQKXI2F7+5arXY81VEQ5r5m31G1B3rjpiNqKf8v8ID9oKgi8o35xbklWBEFyhJloolokqr5m5MHhGJ0kBfiv09Lu1YiQd9Sjpf/6gFCjvCDjeAKjeGM76NAiJxmS/KCcwGGytrY/pY+Pr4Q8mxcU10hHCAMn6meiL04Q==</SignatureValue>
+		<KeyInfo>
+			<X509Data>
+				<X509Certificate>MIIFQzCCBCugAwIBAgIMQwUJEf1U94MQVaBMMA0GCSqGSIb3DQEBCwUAMEsxCzAJBgNVBAYTAkFMMQ0wCwYDVQQKEwROQUlTMS0wKwYDVQQDEyROQUlTIENsYXNzIDMgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkwHhcNMjQwMTEyMDkwNTEzWhcNMjUwMTEyMDkwNTEzWjCBnTEPMA0GA1UEBxMGVGlyYW5hMSIwIAYDVQQKExlJTlRFR1JBVEVEIFRFQ0ggU09MVVRJT05TMQswCQYDVQQLEwJJVDENMAsGA1UEDBMEVGVzdDElMCMGA1UEAxMcSU5URUdSQVRFRCBURUNIIFNPTFVUSU9OUyAgIDEOMAwGA1UEBRMFTUlUUzIxEzARBgNVBAQTCk0xMTYxNDAwNUYwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDckc9wL7P0ws4JWnY51PX8400xX6Q66SZddjYv6eneq8zzIGTaDlTVQHcagRlULE0C6HcRLoRiRQoAKlgjz5FHfD6ujStOg3hcSxW9bPkwHPUfmk9yhnCAqcPq+LyuM4xRqtiyIK9YyyIptrydDhEg7RNmDLLdVJ7Szi7eqHODIRs3AxemoJwUtWFqLRhVS2jd/EiL0gYfxYpVz1cCoc40W0jT13u3b9xG9m3SbxXOcfC2yhHByjEjULJnizIXVoCzEd/eTEcGAWvkYKFsegxIv7HEKriVpzMSAYUaDgv2aDoLgFSkm5KLo9cV9rkVngsFciq3hxi1pIdf454b38RBAgMBAAGjggHSMIIBzjBmBggrBgEFBQcBAQRaMFgwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmFrc2hpLmdvdi5hbDAwBggrBgEFBQcwAoYkaHR0cDovL2NlcnRzLmFrc2hpLmdvdi5hbC9jbGFzczMuY3J0MA4GA1UdDwEB/wQEAwIE8DAfBgNVHSMEGDAWgBSHJqj72ytRmznQmNb0xjNWR1zYBTAdBgNVHQ4EFgQULYxmYa206STcwlSBclCPHJ78SC8wSwYDVR0gBEQwQjBABgwrBgEEAYKxbAoBAQMwMDAuBggrBgEFBQcCARYiaHR0cDovL3d3dy5ha3NoaS5nb3YuYWwvcmVwb3NpdG9yeTCBpwYDVR0fBIGfMIGcMIGZoIGWoIGThiJodHRwOi8vY3JsLmFrc2hpLmdvdi5hbC9jbGFzczMuY3Jshm1sZGFwOi8vbGRhcC5ha3NoaS5nb3YuYWwvQ049TkFJUyBDbGFzcyAzIENlcnRpZmljYXRpb24gQXV0aG9yaXR5LE89TkFJUyxDPUFMP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3Q7YmluYXJ5MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDBDANBgkqhkiG9w0BAQsFAAOCAQEAUIl6cRurH+yVYlbYyBn5chT0gW5Bad4aWRd+4agLYKG0ao5QeD4jpErwhQ5F2oWscHwDhoU7sb8iSHrx0OuRb6UUTSph9KgtmXCgAbR3KE84Ov3Edjs0fpGQyCKwg9L2lV3ao+cbSOwcHkZoLL2JNpL2B5qOnsMKn5Sq0y19M7Og4RKE1lDHKc7HulO2Wg5oOADs57zeppRWz3kkJBqOhLfa+HcsEdCxeAdqETy4gYhLXP2/jGrVTdjdmFojFz/eABduNLy4zFRO++S1cf0IOJYNCdCruHFALf10hBy4wmf46MRXSWMSRCTGtsq6E9mBKxTNrTuannoICBAyLnaIKw==</X509Certificate>
+			</X509Data>
+		</KeyInfo>
+	</Signature>
+</GetPaymentOrderRequest>

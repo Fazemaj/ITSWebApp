@@ -4,6 +4,7 @@ namespace ITS_Web.Configuration
 {
     public interface IEmailService
     {
-        bool SendEmail(EmailData emailData);
+        public Task SendEmailAsync(JobApply data);
+        public Task ContactEmailAsync(Contact data);
     }
 }

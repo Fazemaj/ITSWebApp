@@ -1,10 +1,25 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace ITS_Web.Models
 {
-    public class EmailData
+    public class JobApply
     {
-        public string EmailToId { get; set; }
-        public string EmailToName { get; set; }
-        public string EmailSubject { get; set; }
-        public string EmailBody { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Position { get; set; }
+
+        [Required(ErrorMessage = "The {0} field is required")]
+        [Display(Name = "CV")]
+        [DataType(DataType.Upload)]
+        public IFormFile CvFile { get; set; }
+    }
+
+    public class Contact
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Message { get; set; }
     }
 }

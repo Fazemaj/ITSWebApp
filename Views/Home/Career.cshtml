@@ -1,14 +1,15 @@
+@model JobApply;
+
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
+
 <style>
     .main-cta {
         margin-top: 20px
     }
-
-
 
     [data-aos^="fade"][data-aos^="fade"].aos-animate {
         opacity: 0.8;
@@ -383,8 +384,60 @@
 
             </div>
             <div class="form-block w-form">
-                <form action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024">
+
+               @*  @using (@Html.BeginForm("SendEmail", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-field w-input", @placeholder = "Full Name *", @required = "" })
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-field w-input", @placeholder = "Email Address *", @required = "" })
+                    @Html.TextBoxFor(x => x.Number, new { @class = "form-field w-input", @placeholder = "Phone number(Optional)", @required = "" })
+
+                    <input asp-for="file" name="CV" type="file" />
+
+                    <div class="Positions">
+                        <select asp-for="Position" name="Open Position" required="">
+                            <option value="">Please select a position:</option>
+                            <option value=".NET Developer">.NET Developer</option>
+                            <option value="Al Developer">Al Developer</option>
+                            <option value="BC Consultant">BC Consultant</option>
+                            <option value="SUPPLY CHAIN MANAGEMENT CONSULTANT">
+                                SUPPLY CHAIN MANAGEMENT CONSULTANT
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-md-offset-4 col-md-8">
+                        <input type="submit" class="btn btn-info btn-block col-md-12" />
+                    </div>
+                } *@
+
+                <form id="myform" asp-action="SendEmail" method="POST" enctype="multipart/form-data">
+                    <input  asp-for="Name" type="text" class="form-field w-input" name="Name" placeholder="Full Name *"
+                        required="">
+                    <input id="emailfield" class="form-field w-input" asp-for="Email" name="Email" type="email"
+                        placeholder="Email Address *" required="">
+
+                    <input class="form-field w-input" asp-for="Phone" name="Phone" type="tel"
+                           placeholder="Phone number(Optional)">
+
+                        <label for="inputfile">CV ( resume )</label>
+                    <input asp-for="CvFile" name="CvFile" type="file" required="" />
+
+                        <div class="Positions">
+                        <select id="selectposition" asp-for="Position" name="Position" required="">
+                                <option value="">Please select a position:</option>
+                                <option value=".NET Developer">.NET Developer</option>
+                                <option value="Al Developer">Al Developer</option>
+                                <option value="BC Consultant">BC Consultant</option>
+                                <option value="SUPPLY CHAIN MANAGEMENT CONSULTANT">SUPPLY CHAIN MANAGEMENT CONSULTANT
+                                </option>
+                            </select>
+                        </div>
+                        <div class="button-box">
+                            <input type="submit" value="Apply" class="main-cta w-button"/>
+                        </div>
+                </form>
+
+                @* <input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024"> *@
+                @* <form id="myform" action="Home/SendEmail" method="POST">
                     <input id="namefield" type="text" class="form-field w-input" name="Name" placeholder="Full Name *"
                         required="">
                     <input id="emailfield" class="form-field w-input" name="Email" type="email"
@@ -395,7 +448,6 @@
                         <label for="inputfile">CV ( resume )</label>
                         <div data-fileupload="true" style="dispaly:none">
 
-                            @* <span class="help-block">Upload your resume</span> *@
                         </div>
                         <div class="Positions">
                             <select id="selectposition" name="Open Position" required="">
@@ -408,55 +460,14 @@
                             </select>
                         </div>
                         <div class="button-box">
-                            <button type="submit" class="main-cta w-button">Apply</button>
+                            <input type="submit" id="btn1" value="Apply" class="main-cta w-button"/>
                         </div>
-                </form>
+                </form> *@
             </div>
         </div>
     </div>
 </main>
-@* <script>
-let slideIndex = 1;
-showSlides(slideIndex);
 
-// Automatic slideshow
-let slideInterval = setInterval(function() {
-plusSlides(1);
-}, 1000); // Adjust the interval duration as needed (in milliseconds)
-
-function plusSlides(n) {
-showSlides(slideIndex += n);
-clearInterval(slideInterval); // Clear the interval timer
-slideInterval = setInterval(function() {
-plusSlides(1);
-}, 1000); // Restart the interval timer after manual navigation
-}
-
-function currentSlide(n) {
-showSlides(slideIndex = n);
-clearInterval(slideInterval); // Clear the interval timer
-slideInterval = setInterval(function() {
-plusSlides(1);
-}, 1000); // Restart the interval timer after manual navigation
-}
-
-function showSlides(n) {
-let i;
-let slides = document.getElementsByClassName("mySlides");
-let dots = document.getElementsByClassName("dot");
-if (n > slides.length) {slideIndex = 1}
-if (n < 1) {slideIndex = slides.length}
-for (i = 0; i < slides.length; i++) {
-slides[i].style.display = "none";
-}
-for (i = 0; i < dots.length; i++) {
-dots[i].className = dots[i].className.replace(" active", "");
-}
-slides[slideIndex-1].style.display = "block";
-dots[slideIndex-1].className += " active";
-}
-
-</script> *@
 <script>
     // Initialize AOS
     AOS.init();
@@ -560,7 +571,7 @@ dots[slideIndex-1].className += " active";
         swalWithBootstrapButtons.fire(
             {
                 title: "Confirm",
-                html: '    <div class="form-block w-form"><form action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024"><input class="form-field w-input" value="' + position + '"" name="position" readonly><input id="fname" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required=""><input id="efield" name="email" class="form-field w-input" type="email" placeholder="Email Address *" required=""><input id="pfield" name="phone" class="form-field w-input" type="number" placeholder="Phone number(Optional)"><div class="resume"><input data-fileupload="true" type="file"><\/div><div class="button-box"><button type="submit" class="main-cta w-button">Apply<\/button><\/div><\/form><\/div>'
+                html: '    <div class="form-block w-form"><form id="myform" method="Post"><input id="fposition" class="form-field w-input" value="' + position + '"" name="position" readonly><input id="fname" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required=""><input id="femail" name="email" class="form-field w-input" type="email" placeholder="Email Address *" required=""><input id="fphone" name="phone" class="form-field w-input" type="number" placeholder="Phone number(Optional)"><div class="resume"><input id="cvfield" type="file"><\/div><div class="button-box"><button id="btn" type="submit" class="main-cta w-button">Apply<\/button><\/div><\/form><\/div>'
                 , showConfirmButton: !1
             }
         )
@@ -568,4 +579,29 @@ dots[slideIndex-1].className += " active";
     const swalWithBootstrapButtons = Swal.mixin({ buttonsStyling: !1 });
 </script>
 
-<script src="https://web3forms.com/client/script.js" async defer></script>
+<script>
+    $(document).ready(function () {
+
+        //get button by ID
+        $('#btn1').submit(function () {
+
+            //call a function with parameters
+            $.ajax({
+                url: 'Home/SendEmail',  //(rec)= Controller's-name
+                //(recieveData) = Action's method name
+                type: 'POST',
+                timeout: '12000',
+                datatype: 'text',
+                data: {
+                    //Get the input from Document Object Model
+                    //by their ID
+                    Name: myorm.fname.value,
+                    Email: myform.femail.value,
+                    Phone: myform.fphone.value,
+                    Position: myform.fposition.value,
+                    CvFile: myform.cvfield.value,
+                }
+            });
+        });
+    });
+</script>
