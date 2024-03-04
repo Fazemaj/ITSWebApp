@@ -25,16 +25,16 @@ namespace ITS_Web.Configuration
             MyServer.EnableSsl = true;
             //Server Credentials
             NetworkCredential NC = new NetworkCredential();
-            NC.UserName = "fazemaj@itechsolutions.al";
-            NC.Password = "Fazm0892";
+            NC.UserName = "testweb202323@hotmail.com";
+            NC.Password = "ivKCyN88ViuBP@f";
             //assigned credetial details to server
             MyServer.Credentials = NC;
 
             //create sender address
-            MailAddress from = new MailAddress("fazemaj@itechsolutions.al", "Name want to display");
+            MailAddress from = new MailAddress("testweb202323@hotmail.com", "Website");
 
             //create receiver address
-            MailAddress to = new MailAddress("fazemaj@itechsolutions.al", "Name want to display");
+            MailAddress to = new MailAddress("udalipi@americancapital.al", "Customer");
 
             MailMessage Mymessage = new MailMessage(from, to);
             Mymessage.Subject = "Job application";
@@ -68,7 +68,6 @@ namespace ITS_Web.Configuration
                 //    }
                 //}
 
-
                 MyServer.Send(Mymessage);
                 return Task.CompletedTask;
 
@@ -88,13 +87,13 @@ namespace ITS_Web.Configuration
             MyServer.EnableSsl = true;
             //Server Credentials
             NetworkCredential NC = new NetworkCredential();
-            NC.UserName = "fazemaj@itechsolutions.al";
-            NC.Password = "*********";
+            NC.UserName = "testweb202323@hotmail.com";
+            NC.Password = "ivKCyN88ViuBP@f";
             //assigned credetial details to server
             MyServer.Credentials = NC;
 
             //create sender address
-            MailAddress from = new MailAddress("fazemaj@itechsolutions.al", "Name want to display");
+            MailAddress from = new MailAddress("testweb202323@hotmail.com", "Name want to display");
 
             //create receiver address
             MailAddress to = new MailAddress("udalipi@americancapital.al", "Name want to display");
@@ -114,7 +113,7 @@ namespace ITS_Web.Configuration
                 return Task.CompletedTask;
             }
             catch (Exception ex)
-            {
+            {         
                 throw;
             }
         }
