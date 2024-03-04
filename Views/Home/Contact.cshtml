@@ -1,4 +1,4 @@
-@model Contact; 
+@model Contact;
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 <style>
     .form-field {
@@ -11,6 +11,10 @@
         border-radius: 5px;
     }
 
+    .textarea {
+        min-height: 150px;
+        min-width: 200px;
+    }
 
     .form-block {
         max-width: 580px;
@@ -18,7 +22,7 @@
     }
 
     .w-form {
-        margin: 0 0 15px;
+        margin-bottom: 17px;
     }
 
     .w-input,
@@ -32,39 +36,40 @@
         line-height: 1.42857;
         display: block;
     }
-
-
-
 </style>
 
 <div class="section wf-section">
     <div class="container">
 
 
-        <div class="form-wrapper" style="background: #141313; opacity: 0.82226; padding: 30px ">
+        <div class="form-wrapper" style="background: #1e0d40;; opacity: 0.82226; padding: 30px ">
             <div class="contact-info">
                 <h2>Contact Information</h2>
                 <p><strong>Location:</strong> Tirana, Albania</p>
-                <p><strong>Street:</strong> Jordan Misja</p>
+                <p><strong>Street:</strong> Jordan Misja, Panorama Building, 1st floor, Units 10-13</p>
                 <p><strong>Email:</strong> info@itechsolutions.al</p>
                 <p> <a class="phone" href="tel:+355 69 260 3591"><strong>Number:</strong> +355 69 260 3591</a> </p>
-              <div class="map">   
-                    
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d587.1002330047062!2d19.81172205922657!3d41.33619914349722!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135031005667052d%3A0x9b8527e4666b43f2!2sIntegrated%20Tech%20Solutions!5e0!3m2!1sen!2s!4v1709032884240!5m2!1sen!2s" width="70%" height="210" style="border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                <div class="map">
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d587.1002330047062!2d19.81172205922657!3d41.33619914349722!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135031005667052d%3A0x9b8527e4666b43f2!2sIntegrated%20Tech%20Solutions!5e0!3m2!1sen!2s!4v1709032884240!5m2!1sen!2s"
+                        width="70%" height="210" style="border-radius: 20px;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
 
-            
+
             <div class="form-block w-form">
-                 <h2> Partner with us: </h2>
+                <h2> Partner with us: </h2>
                 <form asp-action="ContactEmail" method="POST">
-                    <input id="name" type="text" asp-for="Name" name="Name" class="form-field w-input" placeholder="Full Name *" required="">
-                    <input id="emailfield" class="form-field w-input" asp-for="Email" name="Email" type="email" placeholder="Email Address *"
-                        required="">
-                    <input id="phone" class="form-field w-input" asp-for="Phone" name="Phone" type="number" maxlength="256"
-                        placeholder="Phone number (optional)">
-                    <textarea id="tellMore" maxlength="5000" type="text" name="Message" asp-for="Message" placeholder="Tell us some more *" required=""
-                        class="form-field textarea w-input"></textarea>
+                    <input id="name" type="text" asp-for="Name" name="Name" class="form-field w-input"
+                        placeholder="Full Name *" required="">
+                    <input id="emailfield" class="form-field w-input" asp-for="Email" name="Email" type="email"
+                        placeholder="Email Address *" required="">
+                    <input id="phone" class="form-field w-input" asp-for="Phone" name="Phone" type="number"
+                        maxlength="256" placeholder="Phone number (optional)">
+                    <textarea id="tellMore" maxlength="5000" type="text" name="Message" asp-for="Message"
+                        placeholder="Tell us some more *" required="" class="form-field textarea w-input"></textarea>
                     <div class="button-box">
                         <button type="submit" class="main-cta w-button">Send</button>
                     </div>
