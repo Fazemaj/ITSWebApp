@@ -7,13 +7,6 @@
   font-weight: 530;
 }
 
-.last-service {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 17px;
-}
-
 .tech-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -52,7 +45,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
@@ -101,7 +93,7 @@
     font-size: 34px;
   }
   .text-block {
-    font-weight: 280;
+    font-weight: 400;
     font-size: 15px;
   }
   .teartiary-title {

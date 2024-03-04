@@ -51,7 +51,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
 }
 @media (min-width: 576px) and (max-width: 991.98px) {
   .tech-wrapper {
@@ -99,7 +98,7 @@
     font-size: 34px;
   }
   .text-block {
-    font-weight: 280;
+    font-weight: 400;
     font-size: 15px;
   }
   .teartiary-title {
