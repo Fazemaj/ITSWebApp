@@ -45,9 +45,9 @@ namespace ITS_Web.Controllers
         //[Route("SendEmail/{name}")]
         public IActionResult ContactEmail(Contact data)
         {
-
             _emailService.ContactEmailAsync(data);
 
+            ViewBag.ShowTopBar = true;
             return RedirectToAction("Contact");
         }
 
