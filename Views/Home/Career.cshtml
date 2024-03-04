@@ -18,10 +18,12 @@
         margin-left: 40px;
     }
 
- .list-item img {
-  width: 100%; /* Make sure the image takes up the full width of its container */
-  height: auto; /* Maintain aspect ratio */
-}
+    .list-item img {
+        width: 100%;
+        /* Make sure the image takes up the full width of its container */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
 
 
     .form-field {
@@ -124,7 +126,7 @@
         .carrer-container img {
             width: 200px;
         }
-        
+
 
     }
 </style>
@@ -162,25 +164,25 @@
 
                 </div>
             </div>
-          
+
 
         </div>
     </div>
-  <div class="img-box2">
-                <div class="list-item">
-                    <div class="team-members"> <img src="~/imgs/10.png" alt="career boost image"></div>
-                </div>
-                <div class="list-item">
-                    <div class="team-members"> <img src="~/imgs/1.png" alt="career boost image"></div>
-                </div>
-                <div class="list-item">
-                    <div class="team-members"> <img src="~/imgs/2.png" alt="career boost image"></div>
-                </div>
-                <div class="list-item">
-                    <div class="team-members"> <img src="~/imgs/3.png" alt="career boost image"></div>
-                </div>
+    <div class="img-box2">
+        <div class="list-item">
+            <div class="team-members"> <img src="~/imgs/10.png" alt="career boost image"></div>
+        </div>
+        <div class="list-item">
+            <div class="team-members"> <img src="~/imgs/1.png" alt="career boost image"></div>
+        </div>
+        <div class="list-item">
+            <div class="team-members"> <img src="~/imgs/2.png" alt="career boost image"></div>
+        </div>
+        <div class="list-item">
+            <div class="team-members"> <img src="~/imgs/3.png" alt="career boost image"></div>
+        </div>
 
-            </div>
+    </div>
     @* <div class="slideshow-container">
 
     <div class="mySlides fade">
@@ -249,7 +251,7 @@
             <div class="jobs-container">
                 <div class="job-container">
                     <a type="button" class="collapsible">
-                        <div class="job-title">Supply Chain Management Consultant (German Speaker)</div>
+                        <div class="job-title">Supply Chain Shortages Management Consultant (German Speaker)</div>
                         <button onclick="showModal('Supply Chain Management Consultant (German Speaker)')"
                             class="apply-cta">Apply Now</button>
                     </a>
@@ -314,15 +316,13 @@
                         <div class="sub-content">
                             <h4 style="color: #;">Candidate’s qualifications</h4>
                             <ul>
-                                <li>• Graduated in Computer Science, Engineering, Business Informatics, Finance, or
-                                    similar
-                                    fields</li>
-                                <li>• Previews work experience in the field will be considered an advantage- ;</li>
-                                <li>• Possess solid analytical, interpersonal, and communication skill</li>
-                                <li>• Fluent in German, very good knowledge of English</li>
-                                <li>• Proficiency with the Microsoft Office applications</li>
-                                <li>• Detail-oriented and enjoy working with software’s</li>
-                                <li>• Possess solid analytical, interpersonal, and communication skill</li>
+                                <li>• Bachelor’s or master’s degree in a related field.</li>
+                                <li>• Proven experience as a BI Developer, BI Analyst, or similar role.</li>
+                                <li>• Expertise in BI tools such as Power BI.</li>
+                                <li>• Strong SQL and data warehousing skills.</li>
+                                <li>• Experience in ETL tools and processes.</li>
+                                <li>• Knowledge of data governance principles.</li>
+                                <li>• Excellent problem-solving and communication skills.</li>
                             </ul>
                         </div>
                     </div>
@@ -380,7 +380,7 @@
             </div>
             <div class="form-block w-form">
 
-               @*  @using (@Html.BeginForm("SendEmail", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                @*  @using (@Html.BeginForm("SendEmail", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     @Html.TextBoxFor(x => x.Name, new { @class = "form-field w-input", @placeholder = "Full Name *", @required = "" })
                     @Html.TextBoxFor(x => x.Email, new { @class = "form-field w-input", @placeholder = "Email Address *", @required = "" })
@@ -389,35 +389,35 @@
                     <input asp-for="file" name="CV" type="file" />
 
                     <div class="Positions">
-                        <select asp-for="Position" name="Open Position" required="">
-                            <option value="">Please select a position:</option>
-                            <option value=".NET Developer">.NET Developer</option>
-                            <option value="Al Developer">Al Developer</option>
-                            <option value="BC Consultant">BC Consultant</option>
-                            <option value="SUPPLY CHAIN MANAGEMENT CONSULTANT">
-                                SUPPLY CHAIN MANAGEMENT CONSULTANT
-                            </option>
-                        </select>
+                    <select asp-for="Position" name="Open Position" required="">
+                    <option value="">Please select a position:</option>
+                    <option value=".NET Developer">.NET Developer</option>
+                    <option value="Al Developer">Al Developer</option>
+                    <option value="BC Consultant">BC Consultant</option>
+                    <option value="SUPPLY CHAIN MANAGEMENT CONSULTANT">
+                    SUPPLY CHAIN MANAGEMENT CONSULTANT
+                    </option>
+                    </select>
                     </div>
                     <div class="col-md-offset-4 col-md-8">
-                        <input type="submit" class="btn btn-info btn-block col-md-12" />
+                    <input type="submit" class="btn btn-info btn-block col-md-12" />
                     </div>
-                } *@
+                    } *@
 
-                <form id="myform" asp-action="SendEmail" method="POST" enctype="multipart/form-data">
-                    <input  asp-for="Name" type="text" class="form-field w-input" name="Name" placeholder="Full Name *"
-                        required="">
-                    <input id="emailfield" class="form-field w-input" asp-for="Email" name="Email" type="email"
-                        placeholder="Email Address *" required="">
+                    <form id="myform" asp-action="SendEmail" method="POST" enctype="multipart/form-data">
+                        <input asp-for="Name" type="text" class="form-field w-input" name="Name"
+                            placeholder="Full Name *" required="">
+                        <input id="emailfield" class="form-field w-input" asp-for="Email" name="Email" type="email"
+                            placeholder="Email Address *" required="">
 
-                    <input class="form-field w-input" asp-for="Phone" name="Phone" type="tel"
-                           placeholder="Phone number(Optional)">
+                        <input class="form-field w-input" asp-for="Phone" name="Phone" type="tel"
+                            placeholder="Phone number(Optional)">
 
                         <label for="inputfile">CV ( resume )</label>
-                    <input asp-for="CvFile" name="CvFile" type="file" required="" />
+                        <input asp-for="CvFile" name="CvFile" type="file" required="" />
 
                         <div class="Positions">
-                        <select id="selectposition" asp-for="Position" name="Position" required="">
+                            <select id="selectposition" asp-for="Position" name="Position" required="">
                                 <option value="">Please select a position:</option>
                                 <option value=".NET Developer">.NET Developer</option>
                                 <option value="Al Developer">Al Developer</option>
@@ -427,21 +427,21 @@
                             </select>
                         </div>
                         <div class="button-box">
-                            <input type="submit" value="Apply" class="main-cta w-button"/>
+                            <input type="submit" value="Apply" class="main-cta w-button" />
                         </div>
-                </form>
+                    </form>
 
                 @* <input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024"> *@
                 @* <form id="myform" action="Home/SendEmail" method="POST">
                     <input id="namefield" type="text" class="form-field w-input" name="Name" placeholder="Full Name *"
-                        required="">
+                    required="">
                     <input id="emailfield" class="form-field w-input" name="Email" type="email"
-                        placeholder="Email Address *" required="">
+                    placeholder="Email Address *" required="">
                     <input id="phonefield" class="form-field w-input" name="Phone" type="number"
-                        placeholder="Phone number(Optional)">
+                    placeholder="Phone number(Optional)">
                     <div class="resume">
-                        <label for="inputfile">CV ( resume )</label>
-                        <div data-fileupload="true" style="dispaly:none">
+                    <label for="inputfile">CV ( resume )</label>
+                    <div data-fileupload="true" style="dispaly:none">
 
                         </div>
                         <div class="Positions">
@@ -479,6 +479,7 @@
                 content.style.maxHeight = null;
                 content.style.margin = "0px 25px";
             } else {
+                content.style.maxHeight = "430px";
                 content.style.maxHeight = "370" + "px";
                 content.style.margin = "0px 25px 15px";
             }
@@ -572,9 +573,6 @@
             }
         )
     }
-
-    @* <script>function SendMail() { var formData = new FormData(); formData.append('file', $('#cvfield')[0].files[0]); var _url = '@Url.Action("SendMail", "Home")'; $.ajax({ url: _url, type: 'POST', data: formData, processData: false, contentType: false, success: function (response) { } }); } </script>*@
-    
     const swalWithBootstrapButtons = Swal.mixin({ buttonsStyling: !1 });
 
     function SendMail() {
@@ -621,5 +619,6 @@
         });
         swalWithBootstrapButtons.close();
     }
-</script>
 
+
+</script>

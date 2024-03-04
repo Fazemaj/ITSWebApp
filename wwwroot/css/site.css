@@ -21,6 +21,7 @@ html {
 }
 
 body {
+  /* background: #4733A5; */
   background: linear-gradient(to bottom, #532284, #4539ae, #512d99, #3546c7);
   font-size: 17px;
   font-size: 17px;
@@ -75,7 +76,8 @@ body {
 }
 
 .stickyBg {
-  background: #2d2d30d7;
+  background: #1e0d40;
+
   backdrop-filter: blur(12px);
   box-shadow: 4px 3px 20px 2px #101010;
 }
