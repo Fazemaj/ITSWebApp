@@ -36,7 +36,6 @@
         line-height: 1.42857;
         display: block;
     }
-
 </style>
 
 <div class="section wf-section">
@@ -62,7 +61,7 @@
 
             <div class="form-block w-form">
                 <h2> Partner with us: </h2>
-                <form asp-action="ContactEmail" method="POST">
+                <form asp-action="ContactEmail" method="POST" onsubmit="return onSubmit(event)">
                     <input id="name" type="text" asp-for="Name" name="Name" class="form-field w-input"
                         placeholder="Full Name *" required="">
                     <input id="emailfield" class="form-field w-input" asp-for="Email" name="Email" type="email"
@@ -71,13 +70,12 @@
                         maxlength="256" placeholder="Phone number (optional)">
                     <textarea id="tellMore" maxlength="5000" type="text" name="Message" asp-for="Message"
                         placeholder="Tell us some more *" required="" class="form-field textarea w-input"></textarea>
-                    <div class="button-box">
-                        <button type="submit" class="main-cta w-button">Send</button>
-                    </div>
-                </form>
+                    <button type="submit" class="main-cta w-button">Send</button>
             </div>
-            <div class="js-content">
-            </div>
+            </form>
+        </div>
+        <div class="js-content">
         </div>
     </div>
+</div>
 </div>
