@@ -2,7 +2,8 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 <style>
     .form-field {
-        background-color: white;
+        /* background-color: white; */
+        background-color: #1e0d40;
         border: 0 solid #000;
         border-top-color: #4d4d4d;
         border: 1px solid rgba(255, 255, 255, 0.5);
@@ -66,13 +67,13 @@
                         placeholder="Full Name *" required="">
                     <input id="emailfield" class="form-field w-input" asp-for="Email" name="Email" type="email"
                         placeholder="Email Address *" required="">
-                    <input id="phone" class="form-field w-input" asp-for="Phone" name="Phone" type="number"
+                    <input id="phone" class="form-field w-input" asp-for="Phone" name="Phone" type="tel"
                         maxlength="256" placeholder="Phone number (optional)">
                     <textarea id="tellMore" maxlength="5000" type="text" name="Message" asp-for="Message"
                         placeholder="Tell us some more *" required="" class="form-field textarea w-input"></textarea>
                     <button type="submit" class="main-cta w-button">Send</button>
+                </form>
             </div>
-            </form>
         </div>
         <div class="js-content">
         </div>
