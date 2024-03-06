@@ -390,31 +390,40 @@
                     } *@
 
                 <form id="myform" asp-action="SendEmailFromForl" method="POST" enctype="multipart/form-data">
-                        <input asp-for="Name" type="text" class="form-field w-input" name="Name"
-                            placeholder="Full Name *" required="">
-                        <input id="emailfield" class="form-field w-input" asp-for="Email" name="Email" type="email"
-                            placeholder="Email Address *" required="">
+                    <input asp-for="Name" type="text" class="form-field w-input" name="Name"
+                        placeholder="Full Name *" required="">
+                    <span class="text-danger" asp-validation-for="Position"></span>
 
-                        <input class="form-field w-input" asp-for="Phone" name="Phone" type="tel"
-                            placeholder="Phone number(Optional)">
+                    <input id="emailfield" class="form-field w-input" asp-for="Email" name="Email" type="email"
+                        placeholder="Email Address *" required="">
+                    <span class="text-danger" asp-validation-for="Position"></span>
 
-                        <label for="inputfile">Upload CV</label>
-                        <input asp-for="CvFile" name="CvFile" type="file" required="" />
+                    <input class="form-field w-input" asp-for="Phone" name="Phone" type="tel"
+                        placeholder="Phone number(Optional)">
+                    <span class="text-danger" asp-validation-for="Position"></span>
 
-                        <div class="Positions">
-                            <select id="selectposition" asp-for="Position" name="Position" required="">
-                                <option value="">Please select a position:</option>
-                                <option value=".NET Developer">.NET Developer</option>
-                                <option value="Al Developer">Al Developer</option>
-                                <option value="BC Consultant">BC Consultant</option>
-                                <option value="SUPPLY CHAIN MANAGEMENT CONSULTANT">SUPPLY CHAIN MANAGEMENT CONSULTANT
-                                </option>
-                            </select>
-                        </div>
-                        <div class="button-box">
-                            <input type="submit" value="Apply" class="main-cta w-button" />
-                        </div>
-                    </form>
+                    <input class="form-field w-input" asp-for="Position" name="Position" placeholder="Enter job position *" required="" />
+                    <span class="text-danger" asp-validation-for="Position"></span>
+
+                    <label asp-for="CvFile">Upload CV</label>
+                    <input asp-for="CvFile" name="CvFile" type="file" required="" />
+                    <span asp-validation-for="Position"></span>
+
+                   @*  <div class="Positions">
+                        <select id="selectposition" asp-for="Position" name="Position" required="">
+                            <option value="">Please select a position:</option>
+                            <option value=".NET Developer">.NET Developer</option>
+                            <option value="Al Developer">Al Developer</option>
+                            <option value="BC Consultant">BC Consultant</option>
+                            <option value="SUPPLY CHAIN MANAGEMENT CONSULTANT">SUPPLY CHAIN MANAGEMENT CONSULTANT
+                            </option>
+                        </select>
+                       </div>
+                    *@
+                    <div class="button-box">
+                        <input type="submit" value="Apply" class="main-cta w-button" />
+                    </div>
+                </form>
 
 
                 @* <input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024"> *@

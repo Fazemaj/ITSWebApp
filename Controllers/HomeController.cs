@@ -34,17 +34,21 @@ namespace ITS_Web.Controllers
         [HttpPost]
         public IActionResult SendEmailFromForl(JobApply data)
         {
-            var response = _emailService.SendEmailAsync(data);
-
-            ViewBag.ShowTopBar = true;
-
-            Layout layout = new Layout
+            if (ModelState.IsValid)
             {
-                IsSucces = response
-            };
-            this.ViewData["Layout"] = layout;
+                var response = _emailService.SendEmailAsync(data);
 
-            return View("Career");
+                ViewBag.ShowTopBar = true;
+
+                Layout layout = new Layout
+                {
+                    IsSucces = response
+                };
+                this.ViewData["Layout"] = layout;
+
+                return View("Career");
+            }
+            return Redirect("Career");
         }
 
         [HttpPost]
@@ -60,17 +64,21 @@ namespace ITS_Web.Controllers
         [HttpPost]
         public IActionResult ContactEmail(Contact data)
         {
-            var response = _emailService.ContactEmailAsync(data);
-
-            ViewBag.ShowTopBar = true;
-
-            Layout layout = new Layout
+            if (ModelState.IsValid)
             {
-                IsSucces = response
-            };
-            this.ViewData["Layout"] = layout;
+                var response = _emailService.ContactEmailAsync(data);
 
-            return View("Contact");
+                ViewBag.ShowTopBar = true;
+
+                Layout layout = new Layout
+                {
+                    IsSucces = response
+                };
+                this.ViewData["Layout"] = layout;
+
+                return View("Contact");
+            }
+            return RedirectToAction("Contact");
         }
 
         public IActionResult Itoutsourcing()
