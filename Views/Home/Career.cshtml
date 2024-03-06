@@ -404,7 +404,7 @@
                     </div>
                     } *@
 
-                    <form id="myform" asp-action="SendEmail" method="POST" enctype="multipart/form-data">
+                <form id="myform" asp-action="SendEmailFromForl" method="POST" enctype="multipart/form-data">
                         <input asp-for="Name" type="text" class="form-field w-input" name="Name"
                             placeholder="Full Name *" required="">
                         <input id="emailfield" class="form-field w-input" asp-for="Email" name="Email" type="email"
@@ -430,6 +430,7 @@
                             <input type="submit" value="Apply" class="main-cta w-button" />
                         </div>
                     </form>
+
 
                 @* <input type="hidden" name="access_key" value="a508f18d-27ad-455a-a10d-af959ec0d024"> *@
                 @* <form id="myform" action="Home/SendEmail" method="POST">
@@ -608,9 +609,9 @@
             success: function (response) {
                 // window.location.href = response.redirectToUrl;
                 if (response == true)
-                    alert("Success");
+                    alert("Your application was submited sucessfully");
                 else
-                    alert("Email did not sent");
+                    alert("Email was not sent");
             },
             error: function (jqXHR) {
             },
@@ -619,6 +620,4 @@
         });
         swalWithBootstrapButtons.close();
     }
-
-
 </script>

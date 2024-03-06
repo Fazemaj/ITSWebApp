@@ -197,22 +197,20 @@ to {opacity:1 ;}
 
 @if (viewModel !=null && viewModel.IsSucces == false)
     {
-        <div id="bar-notification-error" class="bar-notification-container" data-close="Close" style=display:none>
-            <div class="bar-notification error" style=display:block>
-                <p id="errorMessage" class="content">Failure: Email did not send , try again</p>
-                <span class="close" title="Close"></span>
-            </div>
-        </div>
+       <script type="text/javascript">  
+            window.onload = function () {  
+                alert("Email was not sent");  
+            };  
+       </script>  
     }
 
 @if (viewModel !=null && viewModel.IsSucces == true)
 {
-    <div id="bar-notification-success" class="bar-notification-container" data-close="Close" style=display:none>
-        <div class="bar-notification success" style=display:block>
-            <p id="succesMessage" class="content">Succes, We reached ypur eamil!</p>
-            <span class="close" title="Close"></span>
-        </div>
-    </div>
+    <script type="text/javascript">  
+            window.onload = function () {  
+                alert("Your email was submited sucessfully");  
+            };  
+    </script>  
 }
 
 @if (ViewBag.ShowTopBar ?? false)
