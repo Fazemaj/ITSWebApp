@@ -40,15 +40,17 @@ namespace ITS_Web.Controllers
 
                 ViewBag.ShowTopBar = true;
 
-                Layout layout = new Layout
-                {
-                    IsSucces = response
-                };
-                this.ViewData["Layout"] = layout;
+                //Layout layout = new Layout
+                //{
+                //    IsSucces = response
+                //};
+                //this.ViewData["Layout"] = layout;
 
-                return View("Career");
+                TempData["response"] = response;
+
+                return RedirectToAction("Career");
             }
-            return Redirect("Career");
+            return RedirectToAction("Career");
         }
 
         [HttpPost]
@@ -70,13 +72,10 @@ namespace ITS_Web.Controllers
 
                 ViewBag.ShowTopBar = true;
 
-                Layout layout = new Layout
-                {
-                    IsSucces = response
-                };
-                this.ViewData["Layout"] = layout;
+                TempData["response"] = response;
 
-                return View("Contact");
+                return RedirectToAction("Contact");
+
             }
             return RedirectToAction("Contact");
         }
@@ -100,7 +99,21 @@ namespace ITS_Web.Controllers
         public IActionResult Career()
         {
             ViewBag.ShowTopBar = true;
-            return View();
+
+            try
+            {
+                bool? response = (bool)TempData["response"];
+                var layout = new Layout
+                {
+                    IsSucces = response
+                };
+                this.ViewData["Layout"] = layout;
+                return View();
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         [HttpGet]
@@ -108,7 +121,21 @@ namespace ITS_Web.Controllers
         public IActionResult Contact()
         {
             ViewBag.ShowTopBar = true;
-            return View();
+
+            try
+            {
+                bool? response = (bool)TempData["response"];
+                var layout = new Layout
+                {
+                    IsSucces = response
+                };
+                this.ViewData["Layout"] = layout;
+                return View();
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         [HttpGet]

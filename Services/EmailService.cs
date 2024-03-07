@@ -34,7 +34,7 @@ namespace ITS_Web.Configuration
                 MailAddress from = new MailAddress("testweb202323@hotmail.com", "Website");
 
                 //create receiver address
-                MailAddress to = new MailAddress("testweb202323@hotmail.com", "Customer");
+                MailAddress to = new MailAddress("fazemaj@itechsolutions.al", "Customer");
 
                 MailMessage Mymessage = new MailMessage(from, to);
                 Mymessage.Subject = "Job application";

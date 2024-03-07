@@ -2,6 +2,6 @@
 {
     public class Layout
     {
-        public bool IsSucces {  get; set; }
+        public bool? IsSucces {  get; set; }
     }
 }
