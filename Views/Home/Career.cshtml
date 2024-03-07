@@ -10,6 +10,9 @@
         opacity: 0.8;
         transform: translateZ(0);
     }
+.swal2-confirm {
+    color: black !important;
+}
 
     .carrer-container img {
         width: 251px;
@@ -415,8 +418,6 @@
 
                     <input class="form-field w-input" asp-for="Phone" name="Phone" type="tel"
                         placeholder="Phone number(Optional)">
-                    <input class="form-field w-input" asp-for="Phone" name="Phone" type="tel"
-                        placeholder="Phone number(Optional)">
                     <span class="text-danger" asp-validation-for="Position"></span>
 
                     <input class="form-field w-input" asp-for="Position" name="Position"
@@ -583,7 +584,7 @@
         swalWithBootstrapButtons.fire(
             {
                 title: "Confirm",
-                html: '    <div class="form-block w-form"><div id="myform" method="Post"><input id="fposition" class="form-field w-input" value="' + position + '"" name="position" required"""><input id="fname" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required=""><input id="femail" name="email" class="form-field w-input" type="email" placeholder="Email Address *" required=""><input id="fphone" name="phone" class="form-field w-input" type="number" placeholder="Phone number(Optional)"><div class="resume"><input id="cvfield" type="file"><\/div><div class="button-box"> <span id="errorMessage" style="color: red;"></span>  <button onclick="SendMail()" type="submit" class="main-cta w-button">Apply</button> <\/div><\/div><\/div>'
+                html: '    <div class="form-block w-form"><div id="myform" method="Post"><input id="fposition" class="form-field w-input" value="' + position + '"" name="position" required"""><input id="fname" type="text" name="name" class="form-field w-input" placeholder="Full Name *" required=""><input id="femail" name="email" class="form-field w-input" type="email" placeholder="Email Address *" required=""><input id="fphone" name="phone" class="form-field w-input" type="number" placeholder="Phone number" required=""><div class="resume"><input id="cvfield" type="file"><\/div><div class="button-box"> <span id="errorMessage" style="color: red;"></span>  <button onclick="SendMail()" type="submit" class="main-cta w-button">Apply</button> <\/div><\/div><\/div>'
                 , showConfirmButton: !1
             }
         )
@@ -628,8 +629,21 @@
             contentType: false,
             success: function (response) {
                 // window.location.href = response.redirectToUrl;
-                if (response == true)
-                    alert("Your application was submitted successfully");
+                if (response == true){
+                    swalWithBootstrapButtons.fire({
+                        title: "Success!",
+                        text: "Your application was submitted successfully.",
+                        icon: "success",
+                        confirmButtonText: "OK"
+                    });
+                } else {
+                 swalWithBootstrapButtons.fire({
+                        title: "Error!",
+                        text: "There was an error submitting your application. Please try again later.",
+                        icon: "error",
+                        confirmButtonText: "OK"
+                    });
+                    }
             },
             error: function (jqXHR) {
                 // Handle error if needed

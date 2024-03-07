@@ -11,7 +11,7 @@ namespace ITS_Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IEmailService _emailService ;
+        private readonly IEmailService _emailService;
 
         string name = "";
         string email = "";
@@ -48,11 +48,11 @@ namespace ITS_Web.Controllers
 
                 return View("Career");
             }
-            return Redirect("Career");
+            return RedirectToAction("Career");
         }
 
         [HttpPost]
-        public  IActionResult SendEmail(JobApply data)
+        public IActionResult SendEmail(JobApply data)
         {
             var response = _emailService.SendEmailAsync(data);
 
