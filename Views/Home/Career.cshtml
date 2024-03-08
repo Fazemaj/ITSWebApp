@@ -10,9 +10,7 @@
         opacity: 0.8;
         transform: translateZ(0);
     }
-.swal2-confirm {
-    color: black !important;
-}
+
 
     .carrer-container img {
         width: 251px;
@@ -413,15 +411,19 @@
                 <form id="myform" asp-action="SendEmailFromForl" method="POST" enctype="multipart/form-data">
                     <input asp-for="Name" type="text" class="form-field w-input" name="Name" placeholder="Full Name *"
                         required="">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+
                     <input id="emailfield" class="form-field w-input" asp-for="Email" name="Email" type="email"
                         placeholder="Email Address *" required="">
+                    <span class="text-danger" asp-validation-for="Email"></span>
+
 
                     <input class="form-field w-input" asp-for="Phone" name="Phone" type="tel"
                         placeholder="Phone number(Optional)">
-                    <span class="text-danger" asp-validation-for="Position"></span>
+                    <span class="text-danger" asp-validation-for="Phone"></span>
 
-                    <input class="form-field w-input" asp-for="Position" name="Position"
-                        placeholder="Enter job position *" required="" />
+                    <input class="form-field w-input textarea" asp-for="Position" name="Position"
+                        placeholder=" Which position are you interested in? *" required=""/> 
                     <span class="text-danger" asp-validation-for="Position"></span>
 
                     <label asp-for="CvFile">Upload CV</label>
@@ -630,19 +632,17 @@
             success: function (response) {
                 // window.location.href = response.redirectToUrl;
                 if (response == true){
-                    swalWithBootstrapButtons.fire({
-                        title: "Success!",
-                        text: "Your application was submitted successfully.",
-                        icon: "success",
-                        confirmButtonText: "OK"
-                    });
+                                        Swal.fire({
+  title: "Success!",
+  text: "Your application was submitted successfully.",
+  icon: "success"
+}); 
                 } else {
-                 swalWithBootstrapButtons.fire({
-                        title: "Error!",
-                        text: "There was an error submitting your application. Please try again later.",
-                        icon: "error",
-                        confirmButtonText: "OK"
-                    });
+                 Swal.fire({
+  icon: "error",
+  title: "Error!",
+  text: "There was an error submitting your application. Please try again later.",
+});
                     }
             },
             error: function (jqXHR) {

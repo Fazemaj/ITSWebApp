@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="~/js/scripts/sweetalert.js"></script>
     <script src="~/js/scripts/jquery.min.js"></script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
@@ -158,13 +158,10 @@
     }
 
 
-.swal2-confirm {
-    color: black !important;
-}
 
     .dropClick{
         cursor: pointer;
-        font-size: 16px;  
+        font-size: 20px;  
         border: none;
         outline: none;
         color: white;
@@ -194,100 +191,98 @@ to {opacity:1 ;}
 
 
 @* //////////////////////////////////////////////////////////// *@
-    
-   
- 
+
+
+
 </style>
 
-@if (viewModel !=null && viewModel.IsSucces == false)
+@if (viewModel != null && viewModel.IsSucces == false)
     {
-       <script type="text/javascript">  
-            window.onload = function () {  
-                 swalWithBootstrapButtons.fire({
-                        title: "Error!",
-                        text: "There was an error submitting your application. Please try again later.",
-                        icon: "error",
-                        confirmButtonText: "OK"
-                    });
-            };  
-       </script>  
+           <script type="text/javascript">  
+                window.onload = function () {  
+                    Swal.fire({
+  icon: "error",
+  title: "Error!",
+  text: "There was an error submitting your application. Please try again later.",
+});
+                };  
+           </script>  
     }
 
-@if (viewModel !=null && viewModel.IsSucces == true)
-{
-    <script type="text/javascript">  
-            window.onload = function () {  
-               swalWithBootstrapButtons.fire({
-                        title: "Success!",
-                        text: "Your application was submitted successfully.",
-                        icon: "success",
-                        confirmButtonText: "OK"
-                        
-                    });
-            };  
-    </script>  
-}
+    @if (viewModel != null && viewModel.IsSucces == true)
+    {
+        <script type="text/javascript">  
+                window.onload = function () { 
+                    Swal.fire({
+  title: "Success!",
+  text: "Your application was submitted successfully.",
+  icon: "success"
+}); 
+                 
+                };  
+        </script>  
+    }
 
-@if (ViewBag.ShowTopBar ?? false)
-{
-   <div id="navcontainer" class="container sticky">
-        <div id="navbar" class="topnav nav stickyBg">
-            <div class="img-container">
-                <a id="its-a" class="navbtn its logo" asp-action="Index">
-                    <img id="logo-its" src="~/imgs/LogoITS.png" alt="ITS-logo" />
-                    @* <div class="its-name">
+    @if (ViewBag.ShowTopBar ?? false)
+    {
+       <div id="navcontainer" class="container sticky">
+            <div id="navbar" class="topnav nav stickyBg">
+                <div class="img-container">
+                    <a id="its-a" class="navbtn its logo" asp-action="Index">
+                        <img id="logo-its" src="~/imgs/LogoITS.png" alt="ITS-logo" />
+                        @* <div class="its-name">
                     INTEGRATED <br>
                     TECH <br>
                     SOLUTIONS
                     </div> *@
-                </a>
-            </div>
-            <nav class="nav-menu w-nav-menu">
-                <a class="menubtn navbtn" asp-action="Index">Home</a>
-                <a class="menubtn navbtn" asp-action="About">About</a>
-                <div class="dropdown navbtn">
-                    <a class="menubtn dropbtn">Services
-                        <i class="fa fa-caret-down"></i>
                     </a>
-                    <div class="dropdown-content">
-                        <a class="menubtn" asp-action="MC">Management Consulting</a>
-                        <a class="menubtn" asp-action="BC">Microsoft Dynamics D365 Business Central</a>
-                        @* <div class="serviceItem">
-                            <img src="~/imgs/business-central-logo.png" alt="BC logo">
-                            <div style="margin-top: auto; margin-bottom:auto;">Buisness Central</div>
-                        </div> *@
-                        <a class="menubtn" asp-action="Itoutsourcing">IT Outsourcing</a>
-                    </div>
                 </div>
-                <a class="menubtn navbtn"  asp-action="Career">Career</a>
-                <a class="menubtn navbtn" asp-action="Contact">Contact</a>
-            </nav>
-            <div id="menuToggle">
-                <input type="checkbox" />
-                <span></span>
-                <span></span>
-                <span></span>
-                <ul id="menu" style="height: 380px; overflow: scroll;">
-                    <a class="menubtn navbtn navitem" asp-action="Index">Home</a>
-                    <a class="menubtn navbtn navitem" asp-action="About">About</a>
-                    <button class="dropClick navbtn navitem" onclick="dropfunction()">Services
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div  class="dropdown-mobile" id="dropServices" >
-                        <a class="navitem" asp-action="MC">Management Consulting</a>
-                        <a class="navitem" asp-action="BC">Microsoft Dynamics D365 Business Central</a>
-                        @* <div class="serviceItem">
+                <nav class="nav-menu w-nav-menu">
+                    <a class="menubtn navbtn" asp-action="Index">Home</a>
+                    <a class="menubtn navbtn" asp-action="About">About</a>
+                    <div class="dropdown navbtn">
+                        <a class="menubtn dropbtn">Services
+                            <i class="fa fa-caret-down" style="margin-top:auto; margin-bottom:auto"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="menubtn" asp-action="MC">Management Consulting</a>
+                            <a class="menubtn" asp-action="BC">Microsoft Dynamics D365 Business Central</a>
+                            @* <div class="serviceItem">
                             <img src="~/imgs/business-central-logo.png" alt="BC logo">
                             <div style="margin-top: auto; margin-bottom:auto;">Buisness Central</div>
                         </div> *@
-                        <a class="navitem" asp-action="Itoutsourcing">IT outsourcing</a>
+                            <a class="menubtn" asp-action="Itoutsourcing">IT Outsourcing</a>
+                        </div>
                     </div>
-                    <a class="navitem navbtn"  asp-action="Career">Career</a>
-                    <a class="navitem navbtn" asp-action="Contact">Contact</a>
-                </ul>
+                    <a class="menubtn navbtn"  asp-action="Career">Career</a>
+                    <a class="menubtn navbtn" asp-action="Contact">Contact</a>
+                </nav>
+                <div id="menuToggle">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="menu" style="height: 380px; overflow: scroll;">
+                        <a class="menubtn navbtn navitem" asp-action="Index">Home</a>
+                        <a class="menubtn navbtn navitem" asp-action="About">About</a>
+                        <button class="dropClick navbtn navitem" onclick="dropfunction()">Services
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div  class="dropdown-mobile" id="dropServices" >
+                            <a class="navitem" asp-action="MC">Management Consulting</a>
+                            <a class="navitem" asp-action="BC">Microsoft Dynamics D365 Business Central</a>
+                            @* <div class="serviceItem">
+                            <img src="~/imgs/business-central-logo.png" alt="BC logo">
+                            <div style="margin-top: auto; margin-bottom:auto;">Buisness Central</div>
+                        </div> *@
+                            <a class="navitem" asp-action="Itoutsourcing">IT outsourcing</a>
+                        </div>
+                        <a class="navitem navbtn"  asp-action="Career">Career</a>
+                        <a class="navitem navbtn" asp-action="Contact">Contact</a>
+                    </ul>
+                </div>
             </div>
-        </div>
-        @* <div class="mobile-nav-wrapper" style="transform: translate3d(0vh, 16px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+            @* <div class="mobile-nav-wrapper" style="transform: translate3d(0vh, 16px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
     will-change: background, transform;
     background-color: rgba(49, 58, 72, 0.85);
@@ -306,9 +301,9 @@ to {opacity:1 ;}
                 </div>
             </div>
         </div> *@
-    </div>
-}
-    
+        </div>
+    }
+
     <div>
         <main role="main">
             @RenderBody()
@@ -316,72 +311,75 @@ to {opacity:1 ;}
     </div>
     @if (ViewBag.ShowTopBar ?? false)
     {
-       <div class="footer-its">
-    <div class="logo-container">
-        <img src="~/imgs/ITS01.png" alt="" >
-        <hr class="hr-horizontal">
+           <div class="footer-its">
+        <div class="logo-container">
+            <img src="~/imgs/ITS01.png" alt="" >
+            <hr class="hr-horizontal">
+        </div>
     </div>
-</div>
 
-           
-        <div class="container links">
-            <div class="footer-div">
-                <h5 class="footer-title">Get in Touch</h5>
-                <a href="tel:+355 69 260 3591" class="footer-link">+355 69 260 3591
-                </a>
-                <div class="footer-link copy">
-                    <div id="email" fs-copyclip-element="copy-sibling" class="copy-email">info@itechsolutions.al</div>
-                    <img class="copy-js" onclick="copyContent()" src="~/imgs/CopyIcon2.png" loading="lazy" alt="">
-                    <div id="copied" class="copied-div copiedStyle">
-                        <div  class="copied">Copied</div>
+
+            <div class="container links">
+                <div class="footer-div">
+                    <h5 class="footer-title">Get in Touch</h5>
+                    <a href="tel:+355 69 260 3591" class="footer-link">+355 69 260 3591
+                    </a>
+                    <div class="footer-link copy">
+                        <div id="email" fs-copyclip-element="copy-sibling" class="copy-email">info@itechsolutions.al</div>
+                        <img class="copy-js" onclick="copyContent()" src="~/imgs/CopyIcon2.png" loading="lazy" alt="">
+                        <div id="copied" class="copied-div copiedStyle">
+                            <div  class="copied">Copied</div>
                         @* <img src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/6256dfa94208d802d48cae34_polygon.svg" loading="lazy" alt="" class="triangle-2"> *@
                         @* <img src="https://uploads-ssl.webflow.com/623b0c2afad0188787f8925e/6256e09a9ad67a21ea6e5ae6_yellow-tick.svg" loading="lazy" alt="" class="yellow-tick"> *@
                         @* <img src="~/imgs/tick.png" loading="lazy" alt="" class="yellow-tick"> *@
+                        </div>
+                    </div>
+
+
+                    <a asp-action="Contact" class="main-cta left w-button footer-link" style="margin-left:0">Contact</a>
+                </div>
+                <div class="footer-div">
+                    <h5 class="footer-title">Links</h5>
+                    <a href="/" aria-current="page" class="footer-link w--current">Home</a>
+                    <a asp-action="About" class="footer-link">About Us</a>
+                    <a asp-action="Career" class="footer-link">Career</a>
+                </div>
+                <div class="footer-div">
+                    <h5 class="footer-title">Services</h5>
+                    <a asp-action="MC" class="footer-link">Management Consulting</a>
+                    <a asp-action="BC" class="footer-link">Microsoft Dynamics D365 Business Central</a>
+                    <a asp-action="Itoutsourcing" class="footer-link">IT Outsourcing</a>
+                </div>
+                <div class="footer-div">
+        <h5 class="footer-title" >Follow Us</h5>
+        <a href="https://www.linkedin.com/company/integrated-tech-solutions-its/" target="_blank" class="socials-div w-inline-block">
+            <i class="fa fa-linkedin-square" style="font-size:24px"></i>
+            <div class="footer-link social">LinkedIn</div>
+        </a>
+        <a href="https://www.facebook.com/itechsalbania/" target="_blank" class="socials-div w-inline-block">
+            <i class="fa fa-facebook-f" style="font-size:24px"></i>
+            <div class="footer-link social" style="margin-left: 17px;">Facebook</div>
+        </a>
+        <a href="https://www.instagram.com/i_techsolutions.al/" target="_blank" class="socials-div w-inline-block">
+            <i class="fa fa-instagram" style="font-size:24px"></i>
+            <div class="footer-link social">Instagram</div>
+        </a>
+    </div>
+    </div>
+
+
+            <div class="container footer">
+                    <div class="container">
+                        &copy; 2024 Integrated Tech Solutions – All Rights reserved
                     </div>
                 </div>
-
-
-                <a asp-action="Contact" class="main-cta left w-button footer-link" style="margin-left:0">Contact</a>
-            </div>
-            <div class="footer-div">
-                <h5 class="footer-title">Links</h5>
-                <a href="/" aria-current="page" class="footer-link w--current">Home</a>
-                <a asp-action="About" class="footer-link">About Us</a>
-                <a asp-action="Career" class="footer-link">Career</a>
-            </div>
-            <div class="footer-div">
-                <h5 class="footer-title">Services</h5>
-                <a asp-action="MC" class="footer-link">Management Consulting</a>
-                <a asp-action="BC" class="footer-link">Microsoft Dynamics D365 Business Central</a>
-                <a asp-action="Itoutsourcing" class="footer-link">IT Outsourcing</a>
-            </div>
-            <div class="footer-div">
-    <h5 class="footer-title" >Follow Us</h5>
-    <a href="https://www.linkedin.com/company/integrated-tech-solutions-its/" target="_blank" class="socials-div w-inline-block">
-        <i class="fa fa-linkedin-square" style="font-size:24px"></i>
-        <div class="footer-link social">LinkedIn</div>
-    </a>
-    <a href="https://www.facebook.com/itechsalbania/" target="_blank" class="socials-div w-inline-block">
-        <i class="fa fa-facebook-f" style="font-size:24px"></i>
-        <div class="footer-link social" style="margin-left: 17px;">Facebook</div>
-    </a>
-    <a href="https://www.instagram.com/i_techsolutions.al/" target="_blank" class="socials-div w-inline-block">
-        <i class="fa fa-instagram" style="font-size:24px"></i>
-        <div class="footer-link social">Instagram</div>
-    </a>
-</div>
-</div>
-
-
-        <div class="container footer">
-                <div class="container">
-                    &copy; 2024 Integrated Tech Solutions – All Rights reserved
-                </div>
-            </div>
     }
-    
+
     @* <footer class="footer text-muted">
     </footer> *@
+
+  
+
     <script>
         function navFunction() {
             var x = document.getElementById("navbar");
@@ -422,7 +420,7 @@ to {opacity:1 ;}
                 }
             }
         )
-            
+
     function dropfunction(){
         document.getElementById("dropServices").classList.toggle("show");
     }
@@ -437,8 +435,8 @@ to {opacity:1 ;}
         }
     }
 
-        
-        
+
+
     </script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
