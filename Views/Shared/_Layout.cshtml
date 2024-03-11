@@ -193,7 +193,12 @@ to {opacity:1 ;}
 @* //////////////////////////////////////////////////////////// *@
 
 
-
+@@media screen and (max-width: 479px) {
+  
+  .logo-container img{
+   width: 23%;
+  }
+}
 </style>
 
 @if (viewModel != null && viewModel.IsSucces == false)
