@@ -174,8 +174,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  opacity: 0; /* Initially set opacity to 0 */
-  animation: slideAndFade 1.4s ease forwards; /* Apply animation */
+  opacity: 0;
+  animation: slideAndFade 1.4s ease forwards;
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .cards-div {
@@ -207,16 +207,14 @@
     margin-top: 0px;
   }
   .secondary-title {
-    margin-top: 110px;
-    text-align: center;
+    margin-top: 20px;
     font-size: 30px;
   }
 
   .main-title {
-    font-size: 22px;
-    line-height: 29px;
-    right: -10%;
-    top: 17%;
+    font-size: 27px;
+    right: -40%;
+    top: 30%;
   }
   .section-header {
     padding-bottom: 40px;

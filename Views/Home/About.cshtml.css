@@ -103,7 +103,7 @@
   text-align: left;
   font-family: General Sans, sans-serif;
   font-size: 57px;
-  font-weight: 600;
+  font-weight: 499;
   line-height: 61px;
   margin-top: 140px;
   margin-bottom: 40px;
@@ -243,8 +243,8 @@
     text-align: left;
     padding-left: 0px;
     font-size: 18px;
-    line-height: 23px;
-    font-weight: 600;
+    line-height: 27px;
+    font-weight: 400;
   }
   .left {
     margin-left: 20px;
